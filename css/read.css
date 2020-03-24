@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color:#333;
+}
+
+#main_read_cont{
+	color:#C3C3C3;
+	width:1100px;
+	margin:0 auto 30px;;
+}
+
+#top_title_cont{
+	text-align:center;
+	margin:30px 0 10px;
+}
+
+#title_word{
+	font:40px "华文楷体", "楷体", "华文行楷", "宋体";
+}
+
+#sub_title_word{
+	font:30px "华文楷体", "楷体", "华文行楷", "宋体";
+}
+
+#author_word,#date_word,#serial_title_word,#next_chapter{
+	font:20px "仿宋", "华文隶书", "华文楷体", "楷体";
+	display:inline-block;
+	padding:7px;
+}
+
+.main_article_paragraphs{
+	font:25px "微软雅黑", "黑体", "宋体";
+	text-indent:2em;
+	line-height:1.7em;
+	padding:20px 0;
+}
+
+#author_date_cont{
+	margin-top:10px;
+}
+
+.holder_word{
+	font-size:15px;
+}
+
+/*-----------用户个人框------------*/
+#user_head_operation_cont{
+	width:50px;
+	position:fixed;
+	top:100px;
+	right:100px;
+}
+
+
+/*----用户操作logo----*/
+#user_operation_cont{
+	text-align:center;
+	display:none;
+}
+
+#user_head{
+	width:50px;
+	border-radius:25px;
+}
+
+#user_head_operation_cont{
+	border-radius: 50px;
+	border: solid 2px #ececec;
+}
+
+#user_head_cont{
+	
+}
+
+.operation_logo{
+	width:40px;
+	margin:5px 0;
+}
+
+
+#next_chapter{
+	float:right;
+	margin-right:10px;
+}

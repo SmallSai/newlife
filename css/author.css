@@ -1,0 +1,74 @@
+/*----------详细推荐作者信息-----------*/
+.td_cont{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:420px;
+}
+
+.excellent_au_head_cont{
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+
+.excellent_au_head{
+	width:66px;
+	border-radius:33px;
+}
+
+.excellent_au_info_cont{
+	display: inline-block;
+	width: 300px;
+	text-align:left;
+	
+}
+
+.name_follow_mark_cont{
+	display: inline-block;
+}
+
+
+.excellent_au_info_top_cont{
+	display:inline-block;
+}
+
+/*---------名字文字------------*/
+.excellent_au_name{
+	font:25px "华文楷体", "楷体", "华文行楷", "宋体";
+	display:inline-block;
+	float:left;
+	margin-right:3px;
+	line-height:25px;
+}
+
+/*---------关注标记----------*/
+.follow_mark{
+	font:15px "微软雅黑", "黑体", "宋体";
+	display:inline-block;
+	margin-left: 80px;
+	color: #f53e66;
+}
+
+/*----代表作品文字----*/
+.excellent_au_info_bottom_word{
+	font-size:16px;
+	display:inline-block;
+}
+
+/*----------粉丝数据------------*/
+.fan_data{
+	display:inline-block;
+	font:13px "微软雅黑", "黑体", "宋体";
+	text-align:left;
+	color:#444;
+	width:200px;
+	padding-left:5px;
+	padding-bottom:2px;
+	margin-bottom:3px;
+	border-bottom:solid 1px #444;
+}
+
+.fan_data,.excellent_au_name,.excellent_au_info_bottom_word{
+	color:#444;
+}
