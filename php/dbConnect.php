@@ -7,4 +7,5 @@
 	if(!$dbc){
 		die("数据库连接失败：".mysqli_connect_error());
 	}
+	mysqli_select_db($dbc,'newlife');
 ?>
