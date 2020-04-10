@@ -28,10 +28,13 @@
 			$birth=time();
 			
 			$queryInsert="INSERT INTO user (userName,userAccount,userPass,birth) VALUE ('$userName','$inpEmail','$inpPassword','$birth')";
-			print mysqli_affected_rows($dbc);//没有意外就是返回1
+			$userDir="../../userFile/".$inpEmail;
+			mkdir($userDir); //生成用户目录
+			copy("../../userFile/public/headPortrait/head".rand(1,13).".jpg",$userDir."/headPortrait.jpg");
+			print mysqli_affected_rows($dbc); //没有意外就是返回1
 		}
 		else{//输入验证码不正确
-			print '0';
+			print '2';
 		}
 	}
 	else{

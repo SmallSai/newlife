@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>写作-新生文学</title>
+<link href="../css/general_purpose.css" rel="stylesheet">
+<link href="../css/writing.css" rel="stylesheet">
+<script src="../include/jquery-3.4.1.min.js"></script>
+<script src="js/writing.js"></script>
+
+</head>
+
+<body>
+	
+    <!--用户草稿栏-->
+	<div id="user_cont">
+		
+		<!-- 连载文章框 -->
+    	<div class="user_draft_cont">
+    		<h1 class="frame_title" id="serial">我的连载</h1>
+			<div class="serial_single_frame_cont" id="serial_draft_frame">
+				
+				<!-- 具体一篇连载 -->
+				<div class="specific_draft">
+					<h1 class="draft_title"><span class="big_title">花牌情缘</span>一、相见</h1>
+				</div>
+				
+				<!-- 具体一篇连载 -->
+				<div class="specific_draft">
+					<h1 class="draft_title"><span class="big_title">花牌情缘</span>一、相见</h1>
+				</div>
+				
+				<!-- 具体一篇连载 -->
+				<div class="specific_draft">
+					<h1 class="draft_title"><span class="big_title">花牌情缘</span>一、相见</h1>
+				</div>
+				
+				<!-- 具体一篇连载 -->
+				<div class="specific_draft">
+					<h1 class="draft_title"><span class="big_title">花牌情缘</span>一、相见</h1>
+				</div>
+				
+			</div>
+    	</div>
+		
+		<!-- 单篇文章框 -->
+		<div class="user_draft_cont">
+			<h1 class="frame_title" id="single">单篇草稿</h1>
+			<div class="serial_single_frame_cont" id="single_draft_frame">
+				
+				<!-- 具体一篇单篇 -->
+				<div class="specific_draft">
+					<h1 class="draft_title">恋如雨止</h1>
+				</div>
+				
+				<!-- 具体一篇单篇 -->
+				<div class="specific_draft">
+					<h1 class="draft_title">恋如雨止</h1>
+				</div>
+				
+				<!-- 具体一篇单篇 -->
+				<div class="specific_draft">
+					<h1 class="draft_title">恋如雨止</h1>
+				</div>
+				
+				<!-- 具体一篇单篇 -->
+				<div class="specific_draft">
+					<h1 class="draft_title">恋如雨止</h1>
+				</div>
+				
+			</div>
+		</div>
+    </div>
+    
+    <!--文章信息栏-->
+    <div id="article_info_cont"> 	
+        
+        <!--文章标题-->
+        <div id="article_title_cont">
+        	<h1 id="article_title">文章标题:</h1>
+        	<input type="text" id="title">
+        </div>
+        
+     	
+        <!--是否原创-->
+        
+        <div id="isOriginal_cont">
+        	<div class="radio_word" id="org_radio"><input type="radio" name="isOriginal">原创</div><span class="span_word" id="org_span">原创</span>
+			<div class="radio_word" id="copy_radio"><input type="radio" name="isOriginal">转载</div><span class="span_word" id="copy_span">转载</span>
+        </div>
+        
+        
+        <!--转载则弹出原作者-->
+        <div id="original_author_cont">
+        	<h1 id="original_author">原作者:</h1>
+            <input type="text" id="org_author_input" name="originalAuthor">
+        </div>
+        
+        <!--是否连载-->
+         <div id="is_serial_cont">
+         	<div class="radio_word" id="single_radio"><input type="radio" name="isSerial">单篇</div><span class="span_word" id="single_span">单篇</span>
+         	<div class="radio_word" id="serial_radio"><input type="radio" name="isSerial">连载</div><span class="span_word" id="serial_span">连载</span>
+         </div>
+        
+        <!--连载弹则出连载信息-->
+        <div id="serial_info_cont">
+        
+        	<!--章节名-->
+        	<div id="serial_title_cont">
+        		<h1 id="chapter_title">章节标题:</h1>
+           		<input type="text" id="chapterTitle">
+            </div>
+            
+            <!--章节类型-->
+             <div id="chapter_class_cont">
+            	<div class="radio_word" title="如版权声明，写作背景等" id="preface_radio"><input type="radio" name="chapterClass"/>前言</div>
+				<span class="span_word" id="preface_span">前言</span>
+            	<div class="radio_word" id="text_radio"><input type="radio" name="chapterClass"/>正文</div><span class="span_word" id="text_span">正文</span>
+                <div class="radio_word" id="end_radio"><input type="radio" name="chapterClass"/>完结</div><span class="span_word" id="end_span">完结</span>
+        	</div>
+        </div> 
+		
+    </div>
+    
+    <!--文章写作栏-->
+    <div id="writing_cont">
+		<textarea id="textarea" style="line-height: 2em;"></textarea>
+    </div>
+    
+    <!--提示信息栏-->
+    <div id="tip_cont">
+		
+		<!-- 提示帮助栏 -->
+		<div id="help">
+			<h1 id="help_title">写作帮助</h1>
+			<div id="specifi_help">
+				<p class="help_word">1.标题不超过10个字</p>
+				<p class="help_word">2.文章总字数需要大于等于800字，大家都是经历过高考的，你懂得</p>
+				<p class="help_word">3.若是文章连载记得选择章节类型哦</p>
+			</div>
+		</div>
+		
+		<!-- 保存，删除，发布操作 -->
+		<div id="save_other_operation">
+			<div id="sava_delete">
+				<img src="../file/icon/save.svg" alt="save" id="save" title="保存">
+				<img src="../file/icon/delete.svg" alt="delete" id="delete" title="删除">
+			</div>
+			
+			<div id="release">
+				文章发表
+			</div>
+		</div>
+    </div>
+</body>
+</html>

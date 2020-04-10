@@ -9,7 +9,8 @@ $queryAccount="SELECT userAccount,userPass FROM user WHERE userAccount==".$inpAc
 if($result=mysqli_query($dbc,$queryAccount)){ //存在输入账号
 	$userPass=mysqli_fetch_assoc($result)['userPass']; //获取用户密码
 	if(md5($inpPassword)==$userPass){ //密码正确
-		setcookie('isLoad',$inpPassword,time()+604800); //登录cookie一周后过期
+		setcookie('user',$inpAccount,time()+604800); //登录cookie一周后过期
+		setcookie('password',$p$inpPassword,time()+604800);
 		print '2';
 	}
 	else{ //密码不正确
