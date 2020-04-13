@@ -53,7 +53,6 @@ $(function(){
 	var serial_rad=$("#serial_radio");
 	var preface_rad=$("#preface_radio");
 	var text_rad=$("#text_radio");
-	var end_rad=$("#end_radio");
 	
 	/*--------span按钮---------*/
 	var org_sp=$("#org_span");
@@ -62,11 +61,11 @@ $(function(){
 	var serial_sp=$("#serial_span");
 	var preface_sp=$("#preface_span");
 	var text_sp=$("#text_span");
-	var end_sp=$("#end_span");
 	
 	/*-------触发弹出的信息框-------*/
 	var org_author=$("#original_author_cont");
 	var serial_info=$("#serial_info_cont");
+	var chapter_num=$("#chapter_num_cont");
 	/*--------指针点击选择事件----------*/
 	org_rad.click(function(){
 		org_author.slideUp();
@@ -94,21 +93,16 @@ $(function(){
 	});
 	
 	preface_rad.click(function(){
+		chapter_num.slideUp();
 		preface_sp.css({"background-color":"#ff557f","color": "#FFFFFF","border": "solid 1px #ff557f"});
 		text_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
-		end_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
 	});
 	
 	text_rad.click(function(){
-		
+		chapter_num.slideDown();
+		chapter_num.css({"display":"flex"});
 		text_sp.css({"background-color":"#ff557f","color": "#FFFFFF","border": "solid 1px #ff557f"});
 		preface_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
-		end_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
 	});
 	
-	end_rad.click(function(){
-		end_sp.css({"background-color":"#ff557f","color": "#FFFFFF","border": "solid 1px #ff557f"});
-		text_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
-		preface_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
-	});
 });

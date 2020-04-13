@@ -7,6 +7,7 @@
 <link href="css/writing.css" rel="stylesheet">
 <script src="../include/jquery-3.4.1.min.js"></script>
 <script src="js/writing.js"></script>
+<script src="js/triangle.js"></script>
 
 </head>
 
@@ -22,7 +23,7 @@
 				
 				<!-- 具体一篇连载 -->
 				<div class="specific_draft">
-					<h1 class="draft_title">花牌情缘</h1>
+					<h1 class="draft_title"><img src="image/triangle.svg" class="list_triangle">花牌情缘</h1>
 					
 					<!-- 连载的具体篇目 -->
 					<div class="serial_chapter_title_cont">
@@ -35,7 +36,7 @@
 				
 				<!-- 具体一篇连载 -->
 				<div class="specific_draft">
-					<h1 class="draft_title">花牌情缘</h1>
+					<h1 class="draft_title"><img src="image/triangle.svg" class="list_triangle">花牌情缘</h1>
 					
 					<!-- 连载的具体篇目 -->
 					<div class="serial_chapter_title_cont">
@@ -56,22 +57,22 @@
 				
 				<!-- 具体一篇单篇 -->
 				<div class="specific_draft">
-					<h1 class="draft_title">恋如雨止</h1>
+					<h1 class="single_draft_title">恋如雨止</h1>
 				</div>
 				
 				<!-- 具体一篇单篇 -->
 				<div class="specific_draft">
-					<h1 class="draft_title">恋如雨止</h1>
+					<h1 class="single_draft_title">恋如雨止</h1>
 				</div>
 				
 				<!-- 具体一篇单篇 -->
 				<div class="specific_draft">
-					<h1 class="draft_title">恋如雨止</h1>
+					<h1 class="single_draft_title">恋如雨止</h1>
 				</div>
 				
 				<!-- 具体一篇单篇 -->
 				<div class="specific_draft">
-					<h1 class="draft_title">恋如雨止</h1>
+					<h1 class="single_draft_title">恋如雨止</h1>
 				</div>
 				
 			</div>
@@ -91,8 +92,13 @@
         <!--是否原创-->
         
         <div id="isOriginal_cont">
-        	<div class="radio_word" id="org_radio"><input type="radio" name="isOriginal">原创</div><span class="span_word" id="org_span">原创</span>
-			<div class="radio_word" id="copy_radio"><input type="radio" name="isOriginal">转载</div><span class="span_word" id="copy_span">转载</span>
+			<h1 id="article_title">文章性质:</h1>
+			
+			<!-- 文章信息单选容器 -->
+			<div class="radio_info_cont">
+				<div class="radio_word" id="org_radio"><input type="radio" name="isOriginal">原创</div><span class="span_word" id="org_span">原创</span>
+				<div class="radio_word" id="copy_radio"><input type="radio" name="isOriginal">转载</div><span class="span_word" id="copy_span">转载</span>
+			</div>
         </div>
         
         
@@ -104,8 +110,14 @@
         
         <!--是否连载-->
          <div id="is_serial_cont">
-         	<div class="radio_word" id="single_radio"><input type="radio" name="isSerial">单篇</div><span class="span_word" id="single_span">单篇</span>
-         	<div class="radio_word" id="serial_radio"><input type="radio" name="isSerial">连载</div><span class="span_word" id="serial_span">连载</span>
+			<h1 id="article_title">是否连载:</h1>
+			
+			<!-- 文章信息单选容器 -->
+			<div class="radio_info_cont">
+				<div class="radio_word" id="single_radio"><input type="radio" name="isSerial">单篇</div><span class="span_word" id="single_span">单篇</span>
+				<div class="radio_word" id="serial_radio"><input type="radio" name="isSerial">连载</div><span class="span_word" id="serial_span">连载</span>
+			</div>
+         	
          </div>
         
         <!--连载弹则出连载信息-->
@@ -119,11 +131,22 @@
             
             <!--章节类型-->
              <div id="chapter_class_cont">
-            	<div class="radio_word" title="如版权声明，写作背景等" id="preface_radio"><input type="radio" name="chapterClass"/>前言</div>
-				<span class="span_word" id="preface_span">前言</span>
-            	<div class="radio_word" id="text_radio"><input type="radio" name="chapterClass"/>正文</div><span class="span_word" id="text_span">正文</span>
-                <div class="radio_word" id="end_radio"><input type="radio" name="chapterClass"/>完结</div><span class="span_word" id="end_span">完结</span>
+				<h1 id="article_title">章节类型:</h1>
+				
+				<!-- 文章信息单选容器 -->
+				<div class="radio_info_cont">
+					<div class="radio_word" title="如版权声明，写作背景等" id="preface_radio"><input type="radio" name="chapterClass"/>前言</div>
+					<span class="span_word" id="preface_span">前言</span>
+					<div class="radio_word" id="text_radio"><input type="radio" name="chapterClass"/>正文</div><span class="span_word" id="text_span">正文</span>
+				</div>
         	</div>
+			
+			<!--章节序号-->
+			<div id="chapter_num_cont">
+				<h1 id="chapter_title">章节序号:</h1>
+				<input type="number" id="chapterNum" title="序号用于连载篇章排序">
+			</div>
+			
         </div> 
 		
     </div>

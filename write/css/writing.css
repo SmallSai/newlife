@@ -44,21 +44,56 @@ body{
 
 /*------具体一篇连载,单篇草稿------*/
 .draft_title{
-	font: 18px "宋体","黑体";
-	padding: 7px 0;
+	font: 20px "宋体","黑体";
+	padding: 7px 0 7px 12px;
 	margin: 0 auto;
-	text-align: center;
+	text-align: left;
+}
+
+/*-----展开三角-----*/
+
+.list_triangle{
+	margin-right: 5px;
+	transform: rotate(-90deg);
+	vertical-align: middle;
+	margin-top: -5px;
+	fill: #FFFFFF;
 }
 
 /*---鼠标动态样式----*/
- .frame_title:hover,.draft_title:hover{
+ .frame_title:hover,.serial_chapter_title:hover,.single_draft_title:hover{
 	cursor: pointer;
 	background-color:#126a58;
 	border-left: solid 5px;
-} 
+}
+ 
+.draft_title:hover{
+	cursor: pointer;
+	background-color:#126a58;
+}
+/*----连载章节标题容器----*/
+.serial_chapter_title_cont{
+	display: none;
+}
+	
+/*----连载章节标题----*/
+.serial_chapter_title{
+	font: 15px "黑体";
+	padding: 3px 0;
+	text-align: center;
+}
+
 
 .big_title{
 	font: 20px "宋体","黑体","微软雅黑";
+}
+
+/*-----单篇标题-----*/
+.single_draft_title{
+	font: 20px "宋体","黑体";
+	padding: 7px 0 7px 32px;
+	margin: 0 auto;
+	text-align: left;
 }
 
 /*-------------文章信息-------------*/
@@ -68,7 +103,7 @@ body{
 }
 
 /*---各标题容器---*/
-#article_title_cont,#original_author_cont,#serial_title_cont{
+#article_title_cont,#original_author_cont,#serial_title_cont,#chapter_num_cont{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -87,13 +122,19 @@ body{
 }
 
 /*---各输入框---*/
-#title,#org_author_input,#chapterTitle{
+#title,#org_author_input,#chapterTitle,#chapterNum{
 	font: 15px "宋体","微软雅黑", "黑体";
 	color: #434343;
 	line-height: 24px;
 	padding-left: 5px;
 	outline: none;
 	width: 170px;
+}
+
+/*-----文章信息单选容器-----*/
+.radio_info_cont{
+	width: 179px;
+	display: inline-block;
 }
 
 /*---单选按钮---*/
@@ -128,7 +169,6 @@ body{
 	background-color: #ff557f !important;
 	color: #FFFFFF !important;
 	border: solid 1px #ff557f !important;
-	
 }
 
 /*---是否原创---*/
@@ -145,22 +185,34 @@ body{
 #serial_info_cont{
 	height: 100px;
 	display: none;
+	margin-top: 30px;
 }
 
-#serial_title_cont{
+#serial_title_cont,#chapter_num_cont{
 	height: 50px;
 }
 
-#chapter_class_cont{
+#chapter_num_cont{
+	display: none;
 }
 
 /*------文章信息各部分上边距---------*/
 #article_title_cont{
 	margin-top: 200px;
 }
-#isOriginal_cont,#is_serial_cont{
+
+/*----信息每行容器----*/
+#isOriginal_cont,#is_serial_cont,#chapter_class_cont{
 	margin-top: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+#chapter_class_cont{
+	margin-top: 0px;
+}
+
 
 /*-------写作区------------*/
 #writing_cont{
