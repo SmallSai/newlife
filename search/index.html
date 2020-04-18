@@ -1,0 +1,320 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>搜索-白居易</title>
+		<link href="../css/general_purpose.css" rel="stylesheet">
+		<link href="css/search.css" rel="stylesheet">
+		<link href="../css/top_footer_searcht.css" rel="stylesheet">
+		<script src="../include/jquery-3.4.1.min.js"></script>
+		<script src="../include/user_head_appear.js"></script>
+	</head>
+
+	<body>
+
+		<!--顶部栏-->
+		<div id="top_frame_cont">
+
+			<!-- 新生logo -->
+			<div id="newlife_logo_cont" class="right_top">
+				<h1 id="newlife_logo_word">新生文学</h1>
+			</div>
+
+			<!--搜索栏-->
+			<form id="search_cont">
+				<input type="text" id="input_box" placeholder="输入作者或文章进行搜索">
+				<input type="submit" name="submit" id="search_submit" value="">
+			</form>
+
+			<div id="user_cont">
+
+				<!-- 用户头像 -->
+				<div id="user_head_cont">
+					<img src="../file/icon/mine_fill.svg" alt="my_head" id="my_head">
+				</div>
+
+				<!-- 用户操作 -->
+				<div id="user_operation_cont">
+					<div class="one_operation_cont">
+						<img src="../file/icon/brush_fill.svg" alt="write" class="user_operation">
+						<h1 class="one_operation_word">写文章</h1>
+					</div>
+
+					<div class="one_operation_cont">
+						<img src="../file/icon/marketing_fill.svg" alt="favorite" class="user_operation">
+						<h1 class="one_operation_word">书签</h1>
+					</div>
+
+					<div class="../one_operation_cont">
+						<img src="../file/icon/remind_fill.svg" alt="remind" class="user_operation">
+						<h1 class="one_operation_word">消息</h1>
+					</div>
+
+					<div class="one_operation_cont">
+						<img src="../file/icon/activity_fill.svg" alt="activity" class="user_operation">
+						<h1 class="one_operation_word">动态</h1>
+					</div>
+
+					<div class="one_operation_cont">
+						<img src="../file/icon/return.svg" alt="logout" class="user_operation">
+						<h1 class="one_operation_word">退出登录</h1>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!--主视图容器-->
+		<div id="main_view_cont">
+
+			<!--搜索结果：作者-->
+			<div id="search_author_cont">
+
+				<!--结果框标题-->
+				<h1 class="frame_title">
+					<img src="image/group.svg" class="title_logo">相关作者
+				</h1>
+
+				<!-- 具体相关作者容器-->
+				<div id="search_article">
+
+					<!-- 具体一个相关作者 -->
+					<div class="search_specific_article">
+						<img src="../test/head_portrait.jpg" alt="head" class="search_author_head">
+						<h1 class="search_author_name">白居易</h1>
+						<h2 class="search_follow_mark">+关注</h2>
+					</div>
+
+					<div class="divsion">
+
+					</div>
+
+					<!-- 具体一个相关作者 -->
+					<div class="search_specific_article">
+						<img src="../test/head_portrait.jpg" alt="head" class="search_author_head">
+						<h1 class="search_author_name">白居易</h1>
+						<h2 class="search_follow_mark">+关注</h2>
+					</div>
+
+					<div class="divsion">
+
+					</div>
+
+					<!-- 具体一个相关作者 -->
+					<div class="search_specific_article">
+						<img src="../test/head_portrait.jpg" alt="head" class="search_author_head">
+						<h1 class="search_author_name">白居易</h1>
+						<h2 class="search_follow_mark">+关注</h2>
+					</div>
+
+					<div class="divsion">
+
+					</div>
+
+					<!-- 具体一个相关作者 -->
+					<div class="search_specific_article">
+						<img src="../test/head_portrait.jpg" alt="head" class="search_author_head">
+						<h1 class="search_author_name">白居易</h1>
+						<h2 class="search_follow_mark">+关注</h2>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+			<!--搜索结果：文章-->
+			<div id="search_article_cont">
+
+				<!--结果框文章-->
+				<div id="search_article_class">
+					<!-- 分类 -->
+					<div id="class_cont">
+						<p class="specifi_class">青春</p>
+						<p class="specifi_class">现实</p>
+						<p class="specifi_class">幻想</p>
+						<p class="specifi_class">小说</p>
+						<p class="specifi_class">散文</p>
+						<p class="specifi_class">连载</p>
+					</div>
+					
+					<h1 class="frame_title">
+						<img src="image/order.svg" class="title_logo">相关文章
+					</h1>
+				</div>
+				
+
+				<!--第1篇-->
+				<div class="real_time_article" >
+
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”
+
+						　　今年北平的春天来的特别的晚，而且在还不知春在哪里的时候......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						<div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<img src="../file/icon/up.svg" class="info_logo">
+							<span class="detailed_data">32</span>
+							<img src="../file/icon/collection.svg" class="info_logo">
+							<span class="detailed_data">55</span>
+						</div>
+
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!--第2篇-->
+				<div class="real_time_article">
+				
+					<!--标题处的一行-->
+					<div class="title_row_cont">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”
+				
+						　　今年北平的春天来的特别的晚，而且在还不知春在哪里的时候......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						<div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<img src="../file/icon/up.svg" class="info_logo">
+							<span class="detailed_data">32</span>
+							<img src="../file/icon/collection.svg" class="info_logo">
+							<span class="detailed_data">55</span>
+						</div>
+				
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+				
+					</div>
+				</div>
+
+				<!--第3篇-->
+				<div class="real_time_article">
+				
+					<!--标题处的一行-->
+					<div class="title_row_cont">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”
+				
+						　　今年北平的春天来的特别的晚，而且在还不知春在哪里的时候......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						<div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<img src="../file/icon/up.svg" class="info_logo">
+							<span class="detailed_data">32</span>
+							<img src="../file/icon/collection.svg" class="info_logo">
+							<span class="detailed_data">55</span>
+						</div>
+				
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+				
+					</div>
+				</div>
+
+				<!--第1篇-->
+				<div class="real_time_article">
+				
+					<!--标题处的一行-->
+					<div class="title_row_cont">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”
+				
+						　　今年北平的春天来的特别的晚，而且在还不知春在哪里的时候......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						<div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<img src="../file/icon/up.svg" class="info_logo">
+							<span class="detailed_data">32</span>
+							<img src="../file/icon/collection.svg" class="info_logo">
+							<span class="detailed_data">55</span>
+						</div>
+				
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+				
+					</div>
+				</div>
+				
+				<!-- 无更多结果文字 -->
+				<div class="real_time_article">
+					<p id="no_result">没有更多结果了~</p>
+				</div>
+
+			</div>
+			<!--搜索结果文章结束-->
+
+
+		</div>
+
+		<footer>
+			<div id="about_me_cont">
+				<div id="about_me">
+					<p class="about_me_word">关于我们</p>
+					<p class="about_me_word">加入我们</p>
+					<p class="about_me_word">意见反馈</p>
+					<p class="about_me_word">&copy;Sailulu无限公司</p>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+</html>

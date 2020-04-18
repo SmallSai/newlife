@@ -176,3 +176,12 @@
 		margin-left: 30%;
 	}
 }
+
+/*-----注册表单错误提示-----*/
+.error_register{
+	display: inline-block;
+	margin-right: -90px;
+	margin-top: 20px;
+	float: right;
+	color: red;
+}

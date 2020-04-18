@@ -3,7 +3,7 @@
 	$dbHost='localhost';
 	$dbUser='saiA';
 	$dbPassword='pass321';
-	$dbc=mysqli_connect($host,$dbUser,$dbPassword);
+	$dbc=mysqli_connect($dbHost,$dbUser,$dbPassword);
 	if(!$dbc){
 		die("数据库连接失败：".mysqli_connect_error());
 	}

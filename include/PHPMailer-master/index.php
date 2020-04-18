@@ -51,8 +51,8 @@ class Email{
             $mail->send();
             
             //return array('errCode'=>0,'msg'=>'ok');
-        } catch (Exception $e) {
-            echo $e;
+        } catch (Exception $e) { //邮件未发送成功
+            echo "error";
             //return array('errCode'=>-1,'msg'=>$mail->ErrorInfo);
         }
     }

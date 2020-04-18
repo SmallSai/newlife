@@ -1,6 +1,7 @@
+<!-- 发送验证码脚本 -->
 <?php
 	
-	$inpEmail=$_POST['email'];//获取用户邮箱
+	$inpEmail=$_GET['email'];//获取用户邮箱
 	include("../../include/PHPMailer-master/index.php");//加载邮件类
 	$randCode=rand(10000,99999);//生成验证码
 	
