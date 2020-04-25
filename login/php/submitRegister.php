@@ -29,7 +29,7 @@
 			$birth=time();
 			
 			//注册数据插入数据库
-			$queryInsert="INSERT INTO user (userName,userAccount,userPass,birth) VALUE ('$userName','$inpEmail','$inpPassword','$birth')";
+			$queryInsert="INSERT INTO user (userName,userAccount,userPass,birth) VALUE ('$userName','$inpEmail','$inpPassword','$birth');";
 			mysqli_query($dbc,$queryInsert);
 			print mysqli_affected_rows($dbc); //没有意外就是返回1
 			

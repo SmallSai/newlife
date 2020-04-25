@@ -1,9 +1,8 @@
 //注册页面
-window.onload = function() {
+function funcRegister(){
 	//标记各信息输入合法性
 	var emailOK=false;
 	var passOk=false;
-	
 	//发送验证码按钮样式
 	var verifyBut = document.getElementById("verify_but");
 	verifyBut.style.cursor = "not-allowed";
@@ -74,7 +73,7 @@ window.onload = function() {
 							verifyBut.style.background = "#aaaaaa";
 						} else { //不存在该邮箱，可以注册
 							emailOK=true;
-							mailBox.style.boxShadow = "0 0 2px #4fff4f";
+							mailBox.style.boxShadow = "none";
 							errorEmail.innerHTML = "";
 							email = inpEmailText; //将收到验证码的邮箱存储起来
 
@@ -225,5 +224,6 @@ window.onload = function() {
 			}
 		}
 	}
-
 }//window.onload事件
+
+window.onload=funcRegister();

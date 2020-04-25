@@ -103,7 +103,7 @@ body{
 }
 
 /*---各标题容器---*/
-#article_title_cont,#original_author_cont,#serial_title_cont,#chapter_num_cont{
+#article_title_cont,#original_author_cont,#serial_title_cont,#chapter_num_cont,#article_class_cont{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -115,20 +115,29 @@ body{
 }
 
 /*---各标题文字---*/
-#article_title,#original_author,#chapter_title{
+#article_title,#original_author,.chapter_title{
 	display: inline-block;
 	vertical-align: middle;
 	font: 20px "幼圆","宋体","微软雅黑", "黑体";
 }
 
 /*---各输入框---*/
-#title,#org_author_input,#chapterTitle,#chapterNum{
+#title,#org_author_input,#chapterTitle,#chapterNum,#article_class_select{
 	font: 15px "宋体","微软雅黑", "黑体";
 	color: #434343;
 	line-height: 24px;
 	padding-left: 5px;
 	outline: none;
 	width: 170px;
+}
+
+/*----文章分类----*/
+#article_class_cont{
+	margin-top: 70px;
+}
+
+#article_class_select{
+	width: 178px;
 }
 
 /*-----文章信息单选容器-----*/
@@ -183,7 +192,6 @@ body{
 /*---是否连载---*/
 /*---弹出连载信息---*/
 #serial_info_cont{
-	height: 100px;
 	display: none;
 	margin-top: 30px;
 }
@@ -196,14 +204,17 @@ body{
 	display: none;
 }
 
+/*----文章分类----*/
+
+
 /*------文章信息各部分上边距---------*/
 #article_title_cont{
-	margin-top: 200px;
+	margin-top: 160px;
 }
 
 /*----信息每行容器----*/
 #isOriginal_cont,#is_serial_cont,#chapter_class_cont{
-	margin-top: 60px;
+	margin-top: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -213,6 +224,20 @@ body{
 	margin-top: 0px;
 }
 
+/*----输入信息错误提示框----*/
+.error_info{
+	margin-top: 7px;
+	height: 20px;
+	text-align: center;
+	font-size: 15px;
+	color: red;
+}
+
+/*----成功信息提示框----*/
+.success{
+	color: green;
+	font-size: 15px;
+}
 
 /*-------写作区------------*/
 #writing_cont{
@@ -255,7 +280,7 @@ body{
 
 /*------保存等其他操作-------*/
 #save_other_operation{
-	margin-top: 610px;
+	margin-top: 585px;
 	text-align: center;
 }
 
@@ -280,4 +305,8 @@ body{
 	border-radius: 30px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+#save,#delete,#release{
+	cursor: pointer;
 }

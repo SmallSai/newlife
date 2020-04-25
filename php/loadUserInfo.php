@@ -1,9 +1,12 @@
 <?php
+// 此脚本可通用，用于检查是否为登录状态
+
 include("dbConnect.php");
 
 if(isset($_COOKIE['comic'])&&isset($_COOKIE['anima'])){ //验证是否存有cookie，即是否在登录状态
-	$userAccount=$_COOKIE['comic'];
-	$password=$_COOKIE['anima'];
+
+	$userAccount=mysqli_real_escape_string($dbc,$_COOKIE['comic']);
+	$password=mysqli_real_escape_string($dbc,$_COOKIE['anima']);
 	
 	//匹配身份信息是否正确
 	$queryUser="SELECT userId,userName FROM user WHERE (userAccount='".$userAccount."' OR userName='".$userAccount."') AND userPass='".$password."';";
