@@ -11,6 +11,7 @@ if(isset($_COOKIE['comic'])&&isset($_COOKIE['anima'])){ //验证是否存有cook
 	//匹配身份信息是否正确
 	$queryUser="SELECT userId,userName FROM user WHERE (userAccount='".$userAccount."' OR userName='".$userAccount."') AND userPass='".$password."';";
 	if($result=mysqli_query($dbc,$queryUser)){
+		// print '查询语句:'.$queryUser."----";
 		print json_encode(mysqli_fetch_assoc($result));
 	}
 	else{ //身份匹配不正确

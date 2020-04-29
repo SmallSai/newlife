@@ -10,6 +10,7 @@ window.onload=function(){
 			}
 			else{
 				var bodyObj=document.getElementsByTagName("body")[0];
+				// alert(xhr.responseText);
 				var userObj=JSON.parse(xhr.responseText);
 				
 				var userId=userObj['userId'];

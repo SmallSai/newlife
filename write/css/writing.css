@@ -51,13 +51,23 @@ body{
 }
 
 /*-----展开三角-----*/
-
 .list_triangle{
 	margin-right: 5px;
 	transform: rotate(-90deg);
 	vertical-align: middle;
 	margin-top: -5px;
 	fill: #FFFFFF;
+}
+
+/*-----增加新章节按钮-----*/
+.addChapter_logo{
+	visibility: hidden;
+	cursor: pointer;
+	float: right;
+	margin-right: 20px;
+	margin-top: 3px;
+	color: #FFFFFF;
+	font-size: 20px;
 }
 
 /*---鼠标动态样式----*/
