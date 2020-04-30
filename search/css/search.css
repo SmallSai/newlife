@@ -9,6 +9,7 @@ body{
 #search_author_cont,#search_article_cont{
 	background-color: #FFFFFF;
 	box-shadow: 0 2px 5px #bcbcbc;
+	border-radius: 10px;
 }
 
 /*-------主视图容器-------*/
@@ -22,28 +23,28 @@ body{
 
 }
 
-#search_article_cont{
-	height:870px;
-}
-
 /*---相关作者标题----*/
 .title_logo{
-	width: 32px;
+	width: 27px;
 	vertical-align: top;
 	margin-right: 3px;
 }
 
 .frame_title{
-	font: 25px "微软雅黑","黑体";
+	border-bottom: solid 1px;
+	font: 25px "宋体","楷体";
 	color: #e6757d;
-	padding: 10px;
-	padding-left: 20px;
+	padding: 10px 0 5px;
+	padding-left: 16px;
+	margin: 0 20px;
 }
 
 /*---具体作者----*/
 #search_article{
+	margin-top: 17px;
 	display: flex;
 	align-items: center;
+	padding: 0 10px;
 }
 
 .search_specific_article{
@@ -79,21 +80,21 @@ body{
 
 /*-----搜索文章结果----*/
 #search_article_cont{
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 /*----分类----*/
 #class_cont{
 	padding-top: 10px;
-	float: right;
-	margin-right: 50px;
+	text-align: center;
+	margin: 6px 0;
 }
 
 .specifi_class{
 	border-bottom: solid 1px;
 	padding-bottom: 20px;
 	color: #e6757d;
-	padding: 4px 38px;
+	padding: 4px 64px;
 	font: 24px "宋体";
 	cursor: pointer;
 	display: inline-block;
@@ -104,8 +105,8 @@ body{
 }
 
 .real_time_article{
-	height:150px;
-	padding:5px 15px;
+	height:170px;
+	padding:5px 25px;
 }
 
 .real_time_article:last-child{
@@ -121,7 +122,7 @@ body{
 }
 
 .article_preview{
-	font:20px "华文楷体", "楷体", "华文行楷", "宋体";
+	font:20px "宋体";
 	color:#696969;
 	text-indent:2em;
 	line-height:1.2em;
@@ -131,7 +132,7 @@ body{
 /*----标题的一行信息------*/
 .title_row_cont{
 	overflow:hidden;
-	padding: 5px 0;
+	padding: 20px 0 5px;
 }
 
 .title_word{
@@ -192,18 +193,18 @@ body{
 }
 
 .head_portrait{
-	width:25px;
-	border-radius:12.5px;	
+	width:30px;
+	border-radius:20px;	
 }
 
 .user_name{
 	display:inline-block;
-	font:15px "微软雅黑", "黑体", "宋体";
+	font:16px "微软雅黑", "黑体", "宋体";
 	color:#2F2F2F;
 	margin-left:5px;
 	vertical-align:top;
-	line-height:25px;
-	width:100px;
+	line-height:30px;
+	width:120px;
 }
 
 /*----没有更多结果----*/

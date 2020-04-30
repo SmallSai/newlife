@@ -1,0 +1,194 @@
+/*------各部分背景色以及阴影-------*/
+body{
+	background-color:#f7f7f7;
+}
+
+#screen_time,#screen_class,#screen_time_up,.specific_article_cont{
+	background-color: #FFFFFF;
+	box-shadow: 0 2px 5px #bcbcbc;
+}
+/*-------主视图容器--------*/
+#main_view_cont{
+	width: 1800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/*----文库大字----*/
+#library_word{
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	font: 80px "宋体","华文行楷","行楷";
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+}
+
+/*-----右侧筛选框------*/
+#screen_cont{
+	width: 100px;
+	position: absolute;
+	left: 40px;
+	text-align: center;
+}
+
+/*------单选以及覆盖文字块------*/
+.screen_lab{
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	font-size: 15px;
+	position: relative;
+	opacity: 0;
+	margin-bottom: -20px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.screen_sp{
+	display: inline-block;
+	border-top: solid 1px #dcdcdc;
+	width: 100%;
+	height: 50px;
+	font-size: 15px;
+	position: relative;
+	z-index: 1;
+	margin-top: -31px;
+}
+
+.screen_sp:not(#time_order){
+	line-height: 50px;
+}
+
+/*-----各字体------*/
+.screen_title{
+	font: 20px "幼圆","微软雅黑","黑体";
+	font-weight: 100;
+	margin: 5px 0;
+}
+
+#screen_time>:first-child{
+	font-size: 15px;
+}
+
+/*-----按时间和点赞排序-------*/
+#screen_time_up{
+	border-radius: 5px;
+	border: solid 1px #FFFFFF;
+	margin-bottom: 20px;
+	background-color: #FFFFFF;
+}
+
+/*------顺序三角-------*/
+#time_order{
+	color: #22C4F2;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#up{
+	display: none;
+}
+
+#triangle_cont{
+	width: 10px;
+	display: inline-block;
+}
+
+.triangle{
+	width: 10px;
+	line-height: 10px;
+	display: inline-block;
+	font-size: 3px;
+}
+
+/*------按文章类型-------*/
+#screen_class{
+	border-radius: 5px;
+	border: solid 1px #FFFFFF;
+	margin-bottom: 20px;
+	background-color: #FFFFFF;
+}
+
+#screen_time{
+	border-radius: 5px;
+	border: solid 1px #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+/*-----按时间区间------*/
+#time_start,#time_end{
+	font-size: 12px;
+}
+
+#time_start{
+	border-top: solid 1px #dcdcdc;
+	padding-top: 10px;
+	line-height: 20px;
+}
+
+#time_end{
+	margin-bottom: 8px;
+}
+
+select{
+	font-size: 12px;
+}
+
+.select_month{
+	height: 10px;	
+}
+
+/*-------筛选后文章结果--------*/
+#result_article_cont{
+	width: 1500px;
+	height: 1200px;
+	margin: 30px auto 0;
+	text-align: center;
+}
+
+
+.specific_article_cont{
+	display: inline-block;
+	height: 50px;
+	width: 350px;
+	margin: 5px 10px;
+	background-color: #FFFFFF;
+}
+
+/*-----具体一篇文章------*/
+.article_flex_cont{
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.author{
+	float: right;
+	font: 15px "微软雅黑", "黑体", "宋体";
+	color: #707070;
+}
+
+.article_title{
+	width: 220px;
+	text-align: left;
+	font:18px "微软雅黑", "黑体", "宋体";
+	color:#585858;
+}
+
+.up_logo_cont{
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+}
+
+.info_logo{
+	width: 20px;
+}
+
+.detailed_data{
+	font: 18px "微软雅黑", "黑体", "宋体";
+}
