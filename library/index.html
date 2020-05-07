@@ -4,77 +4,297 @@
 		<meta charset="utf-8">
 		<title>新生文学-文库</title>
 		<link rel="stylesheet" type="text/css" href="../css/general_purpose.css"/>
-		<link rel="stylesheet" type="text/css" href="css/top.css"/>
 		<link rel="stylesheet" type="text/css" href="css/library.css"/>
 		<script src="../include/jquery-3.4.1.min.js"></script>
-		<script src="../include/user_head_appear.js"></script>
 		<script src="js/library.js"></script>
 	</head>
 	<body>
 		
 		<!-- 顶部栏大容器 -->
 		<div id="top_cont">
-			<!--顶部栏-->
-			<div id="top_frame_cont">
-			
-				<!-- 新生logo -->
-				<div id="newlife_logo_cont" class="right_top">
-					<h1 id="newlife_logo_word">新生文学</h1>
-				</div>
-			
-				<!--搜索栏-->
-				<form id="search_cont">
-					<input type="text" id="input_box" placeholder="输入作者或文章进行搜索">
-					<input type="submit" name="submit" id="search_submit" value="">
-				</form>
-			
-				<div id="user_cont">
-			
-					<!-- 用户头像 -->
-					<div id="user_head_cont">
-						<img src="../file/icon/mine_fill.svg" alt="my_head" id="my_head">
-					</div>
-			
-					<!-- 用户操作 -->
-					<div id="user_operation_cont">
-						<div class="one_operation_cont">
-							<img src="../file/icon/brush_fill.svg" alt="write" class="user_operation">
-							<h1 class="one_operation_word">写文章</h1>
-						</div>
-			
-						<div class="one_operation_cont">
-							<img src="../file/icon/marketing_fill.svg" alt="favorite" class="user_operation">
-							<h1 class="one_operation_word">书签</h1>
-						</div>
-			
-						<div class="../one_operation_cont">
-							<img src="../file/icon/remind_fill.svg" alt="remind" class="user_operation">
-							<h1 class="one_operation_word">消息</h1>
-						</div>
-			
-						<div class="one_operation_cont">
-							<img src="../file/icon/activity_fill.svg" alt="activity" class="user_operation">
-							<h1 class="one_operation_word">动态</h1>
-						</div>
-			
-						<div class="one_operation_cont">
-							<img src="../file/icon/return.svg" alt="logout" class="user_operation">
-							<h1 class="one_operation_word">退出登录</h1>
-						</div>
-			
-					</div>
-			
-				</div>
-			</div>
-			
+			<!-- 顶部header -->
+			<script src="../include/header.js"></script>
 			<h1 id="library_word">目录</h1>
 		</div>
 		
-		
-		
-			
 		<!-- 主视图 -->
 		<div id="main_view_cont">
+			
+			<!-- 筛选后文章结果 -->
+			<div id="result_article_cont">
+				<!--第1篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”  ......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第2篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”  ......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第3篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”  ......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第4篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第5篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第6篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第7篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，点赞等logo-->
+						  <div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!--第8篇-->
+				<div class="real_time_article" >
+							
+					<!--标题处的一行-->
+					<div class="title_row_cont" id="first_article">
+						<div class="title_word">一日的春光</div>
+						<div class="serial_mark_author_cont">
+							<div class="serial_mark">连载</div>
+							<div class="original_author">原作者：冰心</div>
+						</div>
+					</div>
+					<!--预览文字-->
+					<p class="article_preview">
+						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
+					</p>
+					<!--文章底部阅读量等信息-->
+					<div id="article_bottom_info_cont">
+						<!--左侧阅读，发布日期，点赞等logo-->
+						<div class="info_logo_cont">
+							<img src="../file/icon/browse.svg" class="info_logo">
+							<span class="detailed_data">123</span>
+							<p class="release_time">2020-05-03</p>
+						</div>
+							
+						<!--右侧投稿者-->
+						<div class="head_name_cont">
+							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+							<div class="user_name">陈独秀asdasd</div>
+						</div>
+							
+					</div>
+				</div><!-- 第N篇结束 -->
+				
+				<!-- 翻页栏 -->
+				<div id="page_turn_cont">
+					<p class="page_trun">当前:1页</p>
+					<p class="page_trun">共30页</p>
+					<p class="page_trun">翻到<input type="number" min="1" max="30" id="page_trun_inp"/>页</p>
+					<button class="page_trun" type="button" id="page_button">go</button>
+				</div>
+			</div><!-- div id="result_article_cont"结束 -->
+			
 				
 			<!-- 侧边筛选框 -->
 			<div id="screen_cont">
@@ -100,298 +320,24 @@
 					<label class="screen_lab"><input type="radio" name="article_class" class="inp_lab"/>只看连载</label><span class="screen_sp">只看连载</span>
 				</div>
 				
-				<!-- 按文章发表时间区间 -->
-				<div id="screen_time">
-					<h1 class="screen_title">筛选器-时间</h1>
-					<div id="time_start">
-						2020年<select>
-							<option value ="1" class="select_month">1</option>
-							<option value ="2" class="select_month">2</option>
-							<option value ="3" class="select_month">3</option>
-							<option value ="4" class="select_month">4</option>
-							</select>
-							月至
-					</div>
-					
-					
-					<div id="time_end">
-						2020年<select>
-							<option value ="1" class="select_month">1</option>
-							<option value ="2" class="select_month">2</option>
-							<option value ="3" class="select_month">3</option>
-							<option value ="4" class="select_month">4</option>
-							</select>
-							月
+				<!-- 按文章分类 -->
+				<div id="screen_type">
+					<h1 class="screen_title">筛选器-分类</h1>
+					<div id="select_cont">
+						<select id="type_select">
+							<option value="0">全部</option>
+							<option value="1">青春</option>
+							<option value="2">现实</option>
+							<option value="3">幻想</option>
+							<option value="4">小说</option>
+							<option value="5">散文</option>
+						</select>
 					</div>
 					
 				</div>
 				
 			</div>
-		
-			<!-- 筛选后文章结果 -->
-			<div id="result_article_cont">
-				
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-				
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-				
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-					
-				<div class="specific_article_cont">
-					<div class="article_flex_cont">
-						<h1 class="article_title">中二病也要谈恋爱</h1>
-						<h2 class="author">虎虎</h2>
-						
-						<div class="up_logo_cont">
-						        <img src="../file/icon/up.svg" class="info_logo">
-						        <span class="detailed_data">0</span>
-						</div>
-						
-					</div>
-				</div>
-				
-			</div>
+			
 		</div>
 		
 		<footer>

@@ -71,8 +71,8 @@ if($unSerial==1){
 		mysqli_query($dbc,$insertArticle);
 		// $resultArticleId=mysqli_query($dbc,"SELECT LAST_INSERT_ID()");
 		// articleId=mysqli_fetch_assoc($resultArticleId)['LAST_INSERT_ID()'];
-		$articleId=mysqli_insert_id($dbc);
-		$insertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,wordNum,date) VALUES($articleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$wordNum,$date);";
+		$mysqliArticleId=mysqli_insert_id($dbc);
+		$insertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,wordNum,date) VALUES($mysqliArticleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$wordNum,$date);";
 		mysqli_query($dbc,$insertSerial);
 		print mysqli_insert_id($dbc);//返回的是最后一次连载表插入得到的自增ID
 	}
@@ -81,8 +81,9 @@ if($unSerial==1){
 	
 	//更新操作，更新现有连载文章，章节
 	if($articleId>=1){
-		//增加新的章节
+		
 		if(array_key_exists("inputFlag",$_POST)&&$_POST['inputFlag']==1){
+			//增加新的章节
 			$queryArticle="UPDATE article SET title='".$title."',type='".$type."',nature='".$nature."',oriAuthor='".$oriAuthor."',unSerial='".$unSerial."',articleText='".$articleText."',wordNum=".$wordNum.",date=".$date." WHERE articleId=".$articleId." AND userId=".$userId.";";
 			mysqli_query($dbc,$queryArticle);
 			$quertInsertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,wordNum,date) VALUES($articleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$wordNum,$date);";
@@ -91,6 +92,7 @@ if($unSerial==1){
 			print mysqli_insert_id($dbc);
 		}
 		else{
+			//增加新连载文章以及章节
 			//由章节ID获取文章ID
 			$queryId="SELECT articleId FROM serial WHERE chapterId=".$articleId.";";
 			$resultId=mysqli_query($dbc,$queryId);

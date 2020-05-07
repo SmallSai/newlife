@@ -1,4 +1,7 @@
 window.onload=function(){
+	//移除搜索的placeholder
+	var search_input=document.getElementById("search_input");
+	search_input.removeAttribute("placeholder");
 	
 	//radio对象
 	var labs=document.getElementsByClassName("inp_lab");

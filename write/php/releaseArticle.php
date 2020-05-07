@@ -37,7 +37,7 @@ if($unSerial==1){
 }
 	
 if($unSerial==0){
-
+	$articleText=mysqli_real_escape_string($dbc,htmlspecialchars($_POST['articleText']));
 	//情况1：直接发表新的单篇文章
 	if($articleId==-1){
 		$query="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','$state','$articleText','$wordNum',$date);";

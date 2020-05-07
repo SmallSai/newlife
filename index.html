@@ -3,12 +3,232 @@
 	<head>
 		<meta charset="utf-8">
 		<title>新生文学-文学塑造灵魂</title>
-		<script src="js/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/general_purpose.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/myIndex.js"></script>
 	</head>
 	<body>
-		<div id="top">
-			<a href="login/">登录</a>
-		</div>
+		<header>
+			<div id="header_cont">
+				
+				<!-- logo容器 -->
+				<div id="logo_cont">
+					<img src="file/image/logo.png" id="logo_ima">
+				</div>
+				
+				<!-- 搜索框 -->
+				<div id="search_cont">
+					<input type="text" name="" id="search_input" placeholder="作者/文章"/>
+					<img src="file/icon/search.svg" id="search_logo">
+				</div>
+				
+				<!-- 右侧登录等按钮 -->
+				<div id="login_operation">
+					<!-- 登录注册容器 -->
+					<div id="login_on_cont">
+						<p id="login_word">登录</p>
+						<p id="logon_word">注册</p>
+					</div>
+					
+					<!-- 右侧登录后显示的个人框 -->
+					<div id="user_head_cont">
+						<a href=""><img src="userFile/"+userId+"/headPortrait.jpg" id="user_head"></a>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			<!-- 写作按钮 -->
+			<div id="write_but_cont">
+				<img src="file/icon/brush_fill_white.svg" id="write_logo">写作
+			</div>
+			
+		</header>
 		
+		<!-- 主视图 -->
+		<div id="main_cont">
+			<!-- 右边推荐文章，优秀作者 -->
+			<div id="right_cont">
+				<!-- 推荐文章 -->
+				<div id="recommend_article_cont">
+					<h1 id="recommend_article_word">优秀文章</h1>
+					
+					<!--第1篇-->
+					<div class="re_real_time_article" >
+					
+						<!--标题处的一行-->
+						<div class="re_title_row_cont">
+							
+							<!--左侧阅读，点赞等logo-->
+							<div class="re_info_logo_cont">
+								<img src="file/icon/up.svg" class="re_info_logo">
+								<span class="re_detailed_data">32</span>
+							</div>	
+							
+							<div class="re_title_word">一日的春光</div>				
+							<div class="re_serial_mark_author_cont">		 
+								<div class="re_original_author">原作者：冰心</div>
+							</div>
+						</div>
+						
+						<!--预览文字-->
+						<p class="re_article_preview">
+							去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”今年北平的春天来的特别的晚，而且......
+						</p>
+					</div>
+					
+					<!--第2篇-->
+					   <div class="re_real_time_article" >
+					
+						<!--标题处的一行-->
+						<div class="re_title_row_cont">
+							
+							<!--左侧阅读，点赞等logo-->
+							<div class="re_info_logo_cont">
+								<img src="file/icon/up.svg" class="re_info_logo">
+								<span class="re_detailed_data">32</span>
+							</div>	
+							
+							<div class="re_title_word">一日的春光</div>				
+							<div class="re_serial_mark_author_cont">		 
+								<div class="re_original_author">原作者：冰心</div>
+							</div>
+						</div>
+						
+						<!--预览文字-->
+						<p class="re_article_preview">
+							去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”今年北平的春天来的特别的晚，而且......
+						</p>
+					</div>
+					
+					<!--第3篇-->
+					   <div class="re_real_time_article" >
+					
+						<!--标题处的一行-->
+						<div class="re_title_row_cont">
+							
+							<!--左侧阅读，点赞等logo-->
+							<div class="re_info_logo_cont">
+								<img src="file/icon/up.svg" class="re_info_logo">
+								<span class="re_detailed_data">32</span>
+							</div>	
+							
+							<div class="re_title_word">一日的春光</div>				
+							<div class="re_serial_mark_author_cont">		 
+								<div class="re_original_author">原作者：冰心</div>
+							</div>
+						</div>
+						
+						<!--预览文字-->
+						<p class="re_article_preview">
+							去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”今年北平的春天来的特别的晚，而且......
+						</p>
+					</div>
+					
+					<!--第4篇-->
+					   <div class="re_real_time_article" >
+					
+						<!--标题处的一行-->
+						<div class="re_title_row_cont">
+							
+							<!--左侧阅读，点赞等logo-->
+							<div class="re_info_logo_cont">
+								<img src="file/icon/up.svg" class="re_info_logo">
+								<span class="re_detailed_data">32</span>
+							</div>	
+							
+							<div class="re_title_word">一日的春光</div>				
+							<div class="re_serial_mark_author_cont">		 
+								<div class="re_original_author">原作者：冰心</div>
+							</div>
+						</div>
+						
+						<!--预览文字-->
+						<p class="re_article_preview">
+							去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”今年北平的春天来的特别的晚，而且......
+						</p>
+					</div>
+					
+				</div>
+			</div>
+			
+			<!-- 主视图左滚动图，目录 -->
+			<div id="main_top_cont">
+				<!-- 左边滚动图和目录 -->
+				<div id="left_cont">
+					<img src="image/scrollIma.jpg" id="scroll_ima">
+					
+					<!-- 目录 -->
+					<div id="catalog_bg_ima_cont">
+						<div id="catalog_cont">
+							<p id="catalog">目录</p>
+						</div>
+						
+						<img src="image/catalog.jpg" id="catalog_bg_ima">
+					</div>
+
+				</div>
+			</div>
+			
+			<!--搜索结果：文章-->
+			<div id="search_article_cont">
+			
+				<!--结果框文章-->
+				<div id="search_article_class">
+					<!-- 分类 -->
+					<div id="class_cont">
+						<p class="specifi_class" id="classYouth">青春</p>
+						<p class="specifi_class" id="classReality">现实</p>
+						<p class="specifi_class" id="classFantasy">幻想</p>
+						<p class="specifi_class" id="classNovel">小说</p>
+						<p class="specifi_class" id="classProse">散文</p>
+						<p class="specifi_class" id="classSerial">连载</p>
+					</div>
+				</div>
+				
+				<!-- 具体每个文章容器 -->
+				<div id="every_article_cont">
+					
+				<!--第1篇-->
+					<div class="real_time_article" >
+				
+						<!--标题处的一行-->
+						<div class="title_row_cont" id="first_article">
+							<div class="title_word">一日的春光</div>
+							<div class="serial_mark_author_cont">
+								<div class="serial_mark">连载</div>
+								<div class="original_author">原作者：冰心</div>
+							</div>
+						</div>
+						<!--预览文字-->
+						<p class="article_preview">
+							去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”今年北平的春天来的特别的晚，而且在还不知春在哪里的时候，我给一位远方的朋友写信，我给一位远方的朋友写信......
+						</p>
+						<!--文章底部阅读量等信息-->
+						<div id="article_bottom_info_cont">
+							<!--左侧阅读，点赞等logo-->
+							<div class="info_logo_cont">
+								<img src="file/icon/browse.svg" class="info_logo">
+								<span class="detailed_data">123</span>
+								<img src="file/icon/up.svg" class="info_logo">
+								<span class="detailed_data">32</span>
+								<img src="file/icon/collection.svg" class="info_logo">
+								<span class="detailed_data">55</span>
+							</div>
+				
+							<!--右侧投稿者-->
+							<div class="head_name_cont">
+								<img src="test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
+								<div class="user_name">陈独秀asdasd</div>
+							</div>
+				
+						</div>
+					</div>
+				</div><!-- 具体每个文章容器结束 -->
+			</div>
+		</div>
+		<script src="js/indexAjax.js"></script>
 	</body>
 </html>

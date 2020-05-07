@@ -3,31 +3,128 @@ body{
 	background-color:#f7f7f7;
 }
 
-#screen_time,#screen_class,#screen_time_up,.specific_article_cont{
+#screen_type,#screen_class,#screen_time_up,.specific_article_cont,.real_time_article{
 	background-color: #FFFFFF;
 	box-shadow: 0 2px 5px #bcbcbc;
 }
-/*-------主视图容器--------*/
-#main_view_cont{
-	width: 1800px;
-	margin: 0 auto;
-	position: relative;
+
+/* 顶部大容器 */
+#top_cont{
+	background-image: url(../image/book.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 200px;
+	min-width: 1300px;
 }
 
-/*----文库大字----*/
+/* 目录两个字 */
 #library_word{
-	width: 1000px;
+	color: #FFFFFF;
+	border-bottom: solid 2px;
+	float: right;
+	font: 70px "宋体","华文行楷","行楷";
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	margin: 36px 200px 0 0;
+}
+
+/*-----顶部header-----*/
+header{
+	/* border-bottom: solid 1px #0B92B9; */
+}
+
+#header_cont{
+	width: 96%;
+	min-width: 1300px;
 	margin: 0 auto;
+	padding: 4px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#logo_cont{
+	display: inline-block;
+	width: 200px;
+}
+
+#logo_ima{
+	height: 30px;
+	float: left;
+	margin-left: 20px;
+}
+
+/* 搜索框 */
+#search_cont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#search_input{
+	border: solid 2px #FFFFFF;
+	width: 200px;
+	height: 22px;
+	border-right: none;
+	outline: none;
+	font:10px "宋体","幼圆";
+	color: #FFFFFF;
+	background:none;
+	padding-left: 10px;
+	/* border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px; */
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#search_logo{
+	cursor: pointer;
+	height: 22px;
+	padding-right: 6px;
+	border: solid 2px #FFFFFF;
+	border-left: none;
+	/* border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px; */
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* 登录注册容器 */
+#login_operation{
+	display: inline-block;
+	width: 200px;
+}
+
+#login_word{
+	cursor: pointer;
+	display: inline-block;
+	font: 15px "幼圆";
+	margin-right: 10px;
+	color: #FFFFFF;
+}
+
+#logon_word{
+	cursor: pointer;
+	display: inline-block;
+	font: 15px "幼圆";
+	border: solid 1px #FFFFFF;
+	color: #FFFFFF;
+	width: 60px;
 	text-align: center;
-	font: 80px "宋体","华文行楷","行楷";
-	letter-spacing: 0.5em;
-	text-indent: 0.5em;
+	line-height: 26px;
+	border-radius: 20px;
+}
+
+/*-------主视图容器--------*/
+#main_view_cont{
+	overflow: hidden;
+	width: 1300px;
+	margin: 30px auto 0;
 }
 
 /*-----右侧筛选框------*/
 #screen_cont{
 	width: 100px;
-	position: absolute;
 	left: 40px;
 	text-align: center;
 }
@@ -62,14 +159,11 @@ body{
 
 /*-----各字体------*/
 .screen_title{
-	font: 20px "幼圆","微软雅黑","黑体";
+	font: 16px "幼圆","微软雅黑","黑体";
 	font-weight: 100;
 	margin: 5px 0;
 }
 
-#screen_time>:first-child{
-	font-size: 15px;
-}
 
 /*-----按时间和点赞排序-------*/
 #screen_time_up{
@@ -112,29 +206,22 @@ body{
 	background-color: #FFFFFF;
 }
 
-#screen_time{
+#screen_type{
 	border-radius: 5px;
 	border: solid 1px #FFFFFF;
 	background-color: #FFFFFF;
 }
 
-/*-----按时间区间------*/
-#time_start,#time_end{
-	font-size: 12px;
+/* 文章分类筛选 */
+#select_cont{
+	border-top: solid 1px #dcdcdc;	
 }
 
-#time_start{
-	border-top: solid 1px #dcdcdc;
-	padding-top: 10px;
-	line-height: 20px;
-}
-
-#time_end{
-	margin-bottom: 8px;
-}
-
-select{
-	font-size: 12px;
+#type_select{
+	font-size: 13px;
+	width: 80px;
+	padding: 3px 0;
+	margin: 10px 0;
 }
 
 .select_month{
@@ -143,52 +230,161 @@ select{
 
 /*-------筛选后文章结果--------*/
 #result_article_cont{
-	width: 1500px;
-	height: 1200px;
-	margin: 30px auto 0;
+	float: right;
+	width: 1180px;
+}
+
+
+/*-----搜索文章结果----*/
+#search_article_cont{
+	margin-top: 30px;
+}
+
+/*----分类----*/
+#class_cont{
+	padding-top: 10px;
 	text-align: center;
 }
 
-
-.specific_article_cont{
+.specifi_class{
+	border-bottom: solid 2px;
+	padding-bottom: 20px;
+	color: #e6757d;
+	padding: 4px 80px;
+	font: 24px "黑体";
+	cursor: pointer;
 	display: inline-block;
-	height: 50px;
-	width: 350px;
-	margin: 5px 10px;
+}
+
+.specifi_class:hover{
+	color: #4584d5;
+}
+
+/* 文章预览样式 */
+.real_time_article{
 	background-color: #FFFFFF;
+	border-radius: 3px;
+	display: inline-block;
+	width: 561px;
+	padding:8px;
+	margin: 5px;
 }
 
-/*-----具体一篇文章------*/
-.article_flex_cont{
-	height: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.article_preview{
+	font:16px "宋体";
+	color:#696969;
+	text-indent:2em;
+	line-height:1.2em;
+	padding: 4px 5px 0;
 }
 
-.author{
-	float: right;
-	font: 15px "微软雅黑", "黑体", "宋体";
-	color: #707070;
+/*----标题的一行信息------*/
+.title_row_cont{
+	overflow:hidden;
+	/* border: solid 1px; */
+	margin-left: 30px;
 }
 
-.article_title{
-	width: 220px;
-	text-align: left;
-	font:18px "微软雅黑", "黑体", "宋体";
-	color:#585858;
+.title_word{
+	padding: 7px 0 0 5px;
+	font:16px "微软雅黑", "黑体", "宋体";
+	float:left;
 }
 
-.up_logo_cont{
-	display: flex;
-	align-items: center;
-	margin-left: 10px;
+.serial_mark_author_cont{
+	display:inline-block;
+	margin-left:10px;
+}
+
+.original_author{
+	font-size:13px;
+}
+
+.serial_mark{
+	padding:0 1px;
+	display:inline-block;
+	border:solid 1px #FF9933;
+	color:#FF9933;
+	border-radius:3px;
+	font:10px "微软雅黑", "黑体", "宋体";
+}
+
+
+/*-----文章数值信息以及信息logo-----*/
+#article_bottom_info_cont{
+	margin-top:8px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+
+/* 发布日期 */
+.release_time{
+	font-size: 13px;
+	color:#696969;	
+	display: inline-block;
+}
+
+.info_logo_cont{
+	display:inline-block;
+	vertical-align:bottom;
 }
 
 .info_logo{
-	width: 20px;
+	margin-left: 10px;
+	width:22px;
+	vertical-align:bottom;
 }
 
 .detailed_data{
-	font: 18px "微软雅黑", "黑体", "宋体";
+	margin-bottom: 3px;
+	font-size:13px;
+	color:#696969;	
+	width:42px;
+	display:inline-block;
+	padding-left:2px;
+}
+
+/*--------头像加昵称-------*/
+.head_name_cont{
+	float:right;
+}
+
+.head_portrait{
+	margin-top: 3px;
+	width:24px;
+	border-radius:20px;	
+}
+
+.user_name{
+	display:inline-block;
+	font:14px "微软雅黑", "黑体", "宋体";
+	color:#2F2F2F;
+	margin-left:5px;
+	vertical-align:top;
+	line-height:30px;
+	width:120px;
+}
+
+/* 翻页栏 */
+#page_turn_cont{
+	margin-top: 20px;
+	float: right;
+}
+
+.page_trun{
+	font-size: 15px;
+	display: inline-block;
+	margin: 0 10px;
+}
+
+#page_trun_inp{
+	font-size: 15px;
+	width: 40px;
+	margin: 0 3px;
+}
+
+#page_button{
+	font-size: 15px;
+	padding: 0 5px;
 }

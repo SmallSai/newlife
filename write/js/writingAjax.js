@@ -368,7 +368,7 @@ function funcAjax() {
 								var serialArticleId = this.getElementsByTagName("input")[0].value;
 								//获取连载标题写入容器
 								var serialTitleCont = this.getElementsByClassName("serial_chapter_title_cont")[0];
-
+								
 								//AJAX对象进行数据传输
 								var addSerialTitle = new XMLHttpRequest();
 								addSerialTitle.open('GET', 'php/addChapterTitle.php?articleId=' + serialArticleId, true);
@@ -380,11 +380,13 @@ function funcAjax() {
 										if (addSerialTitle.responseText != '0') { //查询到有数据
 											var serialTitleJsonStr = '{"serialTitle":[' + addSerialTitle.responseText + ']}';
 											var serialTitleObj = JSON.parse(serialTitleJsonStr)['serialTitle'];
+											var serialTitleContStr='';
 											for (var k = 0; k < serialTitleObj.length; k++) {
-												serialTitleCont.innerHTML += '<h1 class="serial_chapter_title">' + serialTitleObj[k]['chapterTitle'] +
+												serialTitleContStr+= '<h1 class="serial_chapter_title">' + serialTitleObj[k]['chapterTitle'] +
 													'<input type="hidden" value="' + serialTitleObj[k]['chapterId'] +
 													'"><input type="hidden" value="' + serialArticleId + '"></h1>';
 											}
+											serialTitleCont.innerHTML=serialTitleContStr;
 										}
 
 										//连载章节单击加载信息到文章信息栏
@@ -536,7 +538,7 @@ function funcAjax() {
 			//连载文章发送数据
 			if (dbUnSerial == 1) {
 				//alert("writingIdObj.value:"+writingIdObj.value+"-------");
-				console.log(writingIdObj.value);
+				console.log("保存连载文章时writingIdObj.value："+writingIdObj.value);
 				xhrSave.send("articleId=" + writingIdObj.value + "&title=" + dbTitle + "&userId=" + userId + "&userName=" +
 					userName + "&type=" + dbArticleType + "&nature=" + dbNature +
 					"&oriAuthor=" + dbOriAuthor + "&unSerial=" + dbUnSerial + "&serialText=" + dbSerialText + "&chapterTitle=" +
@@ -550,6 +552,8 @@ function funcAjax() {
 					// alert(xhrSave.responseText);
 					//保存成功
 					if (xhrSave.responseText >= 1) {
+						inputFlag=0;
+						console.log("保存成功后respText值："+xhrSave.responseText);
 						writingIdObj.value = xhrSave.responseText;
 						errorText.style.visibility = "visible";
 						errorText.innerHTML = "<span class='success'>保存成功！</span>";
@@ -559,8 +563,8 @@ function funcAjax() {
 					} else {
 						errorText.style.visibility = "visible";
 						errorText.innerHTML = "保存失败！";
-						alert(xhrSave.responseText);
-						// console.log(xhrSave.responseText);
+						//alert(xhrSave.responseText);
+						console.log("保存失败:"+xhrSave.responseText);
 						setTimeout(function() {
 							errorText.style.visibility = "hidden";
 						}, 2000); //延迟2s后提示消失
@@ -587,7 +591,7 @@ function funcAjax() {
 	releasObj.onclick = function() {
 		errorText.style.visibility = "visible";
 		var releasFlag = true; //能否发表该文章标志位
-		if (articleText.value.length < 5) {
+		if (articleText.value.length < 100) {
 			releasFlag = false;
 			errorText.innerHTML = "文章字数要>=800哦"
 			setTimeout(function() {
@@ -664,6 +668,7 @@ function funcAjax() {
 
 			//单篇文章发送数据
 			if (unSerial[0].checked) {
+				//alert("单篇发表，releaseArticleText:"+releasArticleText);
 				xhrReleas.send("articleId=" + writingIdObj.value + "&title=" + title.value + "&userId=" + userId + "&userName=" +
 					userName + "&type=" + articleType.value + "&nature=" + releasNature +
 					"&oriAuthor=" + oriAuthor.value + "&unSerial=" + releasUnSerial + "&articleText=" + releasArticleText +
@@ -685,6 +690,7 @@ function funcAjax() {
 					if (xhrReleas.responseText == '1') {
 						window.location.assign("../tempPages/finishReleas.html");
 					} else {
+						console.log("投稿失败的reText:"+xhrReleas.responseText);
 						errorText.innerHTML = "未知错误，投稿失败!";
 					}
 				}
@@ -702,8 +708,8 @@ function funcAjax() {
 				xhrDelete.send();
 				
 				xhrDelete.onreadystatechange=function(){
+					//console.log("删除文章："+xhrDelete.responseText);
 					if(xhrDelete.readyState==4&&xhrDelete.status==200){
-						articleText.value=xhrDelete.responseText;
 						if(xhrDelete.responseText=='1'){
 							location.reload();//删除成功刷新页面
 						}

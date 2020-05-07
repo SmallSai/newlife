@@ -1,0 +1,275 @@
+/* 背景色 */
+body{
+	
+}
+
+/* 首页样式 */
+#main_cont{
+	width: 1300px;
+	margin: 30px auto 0;
+}
+
+/* 主视图上部分 */
+#main_top_cont{
+	overflow: hidden
+}
+
+/* 左侧部分 */
+#left_cont{
+	margin-left: 5px;
+}
+
+#scroll_ima{
+	width: 600px;
+	border-radius: 5px;
+}
+
+/* 目录样式 */
+#catalog_bg_ima{
+	margin-top: -55px;
+	transition: transform 0.8s;
+}
+
+#catalog_bg_ima_cont{
+	border-radius: 5px;
+	margin-top: 5px;
+	overflow: hidden;
+	width: 600px;
+	height: 55px;
+}
+
+#catalog_cont{
+	overflow: hidden;
+	width: 600px;
+	padding: 8px 0;
+	text-align: center;
+	border-radius: 5px;
+	position: relative;
+	z-index: 99;
+}
+
+#catalog_bg_ima_cont:hover #catalog_bg_ima{
+	transform: scale(1.1);
+	z-index: 1;
+}
+
+#catalog{
+	font:32px "楷体","幼圆";
+	color: #FFFFFF;
+	float: right;
+	margin-right: 30px;
+	letter-spacing: 0.4em;
+	border-bottom: solid 1px;
+}
+
+/* 右侧部分 */
+/* 优秀文章 */
+#recommend_article_cont{
+	padding: 5px;
+	/* border: solid 1px; */
+	border-radius: 5px;
+}
+
+#right_cont{
+	width: 680px;
+	float: right;
+}
+
+#recommend_article_word{
+	font: 26px "楷体";
+	border-left: solid 4px #3ccf77;
+	padding-left: 4px;
+}
+
+/* 优秀文章预览 */
+.re_real_time_article{
+	padding:0px 5px;
+	border-bottom: solid 1px #d6d6d6;
+	margin-top: 10px;
+}
+
+.re_real_time_article:last-child{
+	border: none;
+}
+
+.re_article_preview{
+	font:20px "楷体";
+	color:#696969;
+	text-indent:2em;
+	line-height:1.2em;
+	margin: 7px 0 4px;
+}
+
+/*----标题的一行信息------*/
+.re_title_row_cont{
+	margin-left: 30px;
+	margin-bottom: 5px;
+}
+
+.re_title_word{
+	font:18px "微软雅黑", "黑体", "宋体";
+	float:left;
+}
+
+.re_serial_mark_author_cont{
+	display:inline-block;
+	margin-left:10px;
+}
+
+.re_original_author{
+	margin-top: 5px;
+	font-size:13px;
+}
+
+/*-----文章数值信息以及信息logo-----*/
+.re_info_logo_cont{
+	margin-top: 6px;
+	display:inline-block;
+	float: right;
+}
+
+.re_info_logo{
+	width:20px;
+	vertical-align:bottom;
+}
+
+.re_detailed_data{
+	font-size:15px;
+	color:#696969;	
+	width:42px;
+	display:inline-block;
+	padding-left:2px;
+}
+
+/* 分类以及文章预览 */
+
+/*-----搜索文章结果----*/
+#search_article_cont{
+	margin-top: 30px;
+}
+
+/*----分类----*/
+#class_cont{
+	padding-top: 10px;
+	text-align: center;
+}
+
+.specifi_class{
+	border-bottom: solid 2px;
+	padding-bottom: 20px;
+	color: #e6757d;
+	padding: 4px 80px;
+	font: 24px "黑体";
+	cursor: pointer;
+	display: inline-block;
+}
+
+.specifi_class:hover{
+	color: #4584d5;
+}
+
+/* 文章预览样式 */
+.real_time_article{
+	height:170px;
+	padding:5px 25px;
+	border-bottom: solid 1px #d6d6d6;
+}
+
+.article_preview{
+	font:20px "宋体";
+	color:#696969;
+	text-indent:2em;
+	line-height:1.2em;
+	padding: 10px 5px 0;
+}
+
+/*----标题的一行信息------*/
+.title_row_cont{
+	overflow:hidden;
+	padding: 20px 0 5px;
+	/* border: solid 1px; */
+	margin-left: 30px;
+}
+
+.title_word{
+	padding: 7px 0 0 5px;
+	font:20px "微软雅黑", "黑体", "宋体";
+	float:left;
+}
+
+.serial_mark_author_cont{
+	margin-top: 12px;
+	display:inline-block;
+	margin-left:10px;
+}
+
+.original_author{
+	margin-left: 5px;
+	font-size:13px;
+	display: inline-block;
+}
+
+.serial_mark{
+	padding:0 1px;
+	display:inline-block;
+	border:solid 1px #FF9933;
+	color:#FF9933;
+	border-radius:3px;
+	font:10px "微软雅黑", "黑体", "宋体";
+}
+
+
+/*-----文章数值信息以及信息logo-----*/
+#article_bottom_info_cont{
+	margin-top:8px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+
+.info_logo_cont{
+	display:inline-block;
+	vertical-align:bottom;
+
+}
+
+.info_logo{
+	width:20px;
+	vertical-align:bottom;
+}
+
+.detailed_data{
+	font-size:15px;
+	color:#696969;	
+	width:42px;
+	display:inline-block;
+	padding-left:2px;
+}
+
+/*--------头像加昵称-------*/
+.head_name_cont{
+	float:right;
+}
+
+.head_portrait{
+	width:30px;
+	border-radius:20px;	
+}
+
+.user_name{
+	display:inline-block;
+	font:16px "微软雅黑", "黑体", "宋体";
+	color:#2F2F2F;
+	margin-left:5px;
+	vertical-align:top;
+	line-height:30px;
+	width:120px;
+}
+
+/*----没有更多结果----*/
+#no_result{
+	text-align: center;
+	font: 25px "微软雅黑", "黑体", "宋体";
+	color:#696969;	
+	line-height: 150px;
+}
