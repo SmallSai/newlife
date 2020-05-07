@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* CSS Document */
+/*-----各部分阴影------*/
+#top_frame_cont,footer{
+	box-shadow: 0 0 3px #BCBCBC;
+}
+
+#user_operation_cont{
+	box-shadow: 0 1px 3px #BCBCBC;
+}
+
+/*-----顶部栏大容器-----*/
+#top_cont{
+	border: solid 1px;
+}
+
+/*-------顶部框--------*/
+#top_frame_cont{  
+	height:48px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+/* ----新生logo----- */
+#newlife_logo_cont{
+	flex-shrink: 0;
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	padding-right: 50px;
+	padding-left: 50px;
+	margin-left: 50px;
+	
+}
+
+#newlife_logo_word{
+	font: 40px "华文行楷", "华文隶书", "华文楷体";
+}
+
+/* -----用户头像----- */
+#user_cont{
+	text-align: center;
+	margin-top: 2px;
+	margin-right: 220px;
+	width: 130px;
+	flex-shrink: 0;
+	align-self: flex-start;
+}
+
+#user_head_cont{
+	display: inline-block;
+}
+
+#my_head{
+	width:45px;
+	border-radius:25px;
+}
+
+/*-----用户操作--------*/
+#user_operation_cont{
+	background-color: #FFFFFF;
+	margin-top: 2px;
+	display: none;
+}
+
+.one_operation_cont{
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 6px 0;
+}
+.one_operation_word{
+	padding-top: 2px;
+	width: 80px;
+	text-align: center;
+	display: inline-block;
+	font:15px "微软雅黑","楷体";
+}
+.user_operation{
+	width:25px;
+	vertical-align: middle;
+}
+
+/*------搜索框---------*/
+#search_cont{      
+	display:flex;
+	width: 350px;
+	margin:0 30px;
+}
+
+#input_box{
+	flex-grow:1;
+	height:30px;
+	font-size:15px;
+	color:#5A5A5A;
+	padding-left:10px;
+	border:solid 1px #5CCBC2;
+	outline: none;
+}
+
+#search_submit{
+	width:35px;
+	background:#fff url(../file/icon/search.svg) no-repeat center;
+	background-size:30px;
+	border:solid 1px #5CCBC2;
+	border-left:none;
+	
+}
+
+#search_submit:hover{
+	cursor:pointer;	
+}
+
+/*----------页尾框-----------*/
+footer{
+	margin-top:100px;            
+	/* border-top:solid 1px #8d8d8d; */
+	background-color: #FFFFFF;
+	box-shadow: 0 0 3px #BCBCBC;
+}
+
+#about_me{
+	text-align:center;
+}
+
+.about_me_word{
+	color:#444;
+	display:inline-block;
+	margin:7px 0;
+	padding:6px;
+	border-right:solid 1px;
+	line-height:13px;
+}
+
+.about_me_word:last-child{
+	border:none;
+}
+
+.about_me_word,#copyright{
+	font-size:20px;
+}
+
+

@@ -1,0 +1,120 @@
+/* 顶部栏复用css */
+*{
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	min-width: 1300px;
+	/* border-bottom: solid 1px #0B92B9; */
+	box-shadow: 0 2px 3px #dedede;
+	background-color: #FFFFFF;
+}
+
+#header_cont{
+	width: 96%;
+	min-width: 1300px;
+	margin: 0 auto;
+	padding: 8px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#logo_cont{
+	display: inline-block;
+	width: 300px;
+}
+
+#logo_ima{
+	height: 38px;
+	float: left;
+	margin-left: 20px;
+}
+
+/* 搜索框 */
+#search_cont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#search_input{
+	border: solid 1px #0B92B9;
+	width: 200px;
+	height: 28px;
+	border-right: none;
+	outline: none;
+	font:14px "宋体","幼圆";
+	color: #666666;
+	padding-left: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+#search_logo{
+	cursor: pointer;
+	height: 28px;
+	padding-right: 6px;
+	border: solid 1px #0B92B9;
+	border-left: none;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+/* 登录注册容器 */
+#login_operation{
+	display: inline-block;
+	width: 150px;
+	margin-right: 150px;
+}
+
+#login_word{
+	cursor: pointer;
+	display: inline-block;
+	font: 16px "幼圆";
+	margin-right: 10px;
+}
+
+#logon_word{
+	cursor: pointer;
+	display: inline-block;
+	font: 18px "幼圆";
+	border: solid 1px #78d333;
+	color: #78d333;
+	width: 70px;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 20px;
+}
+
+/* 用户个人头像 */
+#user_head_cont{
+	display: none;
+}
+
+#user_head{
+	width: 40px;
+	border-radius: 20px;
+}
+
+/* 写文章按钮 */
+#write_but_cont{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	z-index: 9;
+	color: #FFFFFF;
+	background-color: #6ff461;
+	padding: 15px 15px 17px 5px;
+	margin-right: 90px;
+	margin-top: -57px;
+	float: right;
+	font: 22px "幼圆";
+	cursor: pointer;
+}
+
+#write_logo{
+	width: 30px;
+	vertical-align: middle;
+}

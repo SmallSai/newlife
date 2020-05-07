@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>登录/注册</title>
+	<link rel="stylesheet" type="text/css" href="css/log_on.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript">
+    	function blockornone(id){
+  		// alert("id:"+id);
+  		// login.html里面的内容
+  		//显示传过来的值
+	  		if(id=="register"){
+	    	//显示注册，隐藏登录
+	      		document.getElementById(id).style.display='block';
+	      		document.getElementById("login").style.display='none';
+	      		document.getElementById("t_reg").style.color='#d35e42';
+	      		document.getElementById("t_log").style.color='#9b927e';
+	      		document.getElementById("log").style.fontWeight='normal';
+	      		document.getElementById("registerfont").style.fontWeight='bold';
+	      		document.getElementById("log").style.borderBottom='none';
+	      		document.getElementById("registerfont").style.borderBottom='3px solid #d35e42';
+	  		}
+	  		if(id=="login"){
+	      	//显示登录，隐藏注册
+				document.getElementById(id).style.display='block';
+				document.getElementById("register").style.display='none';
+				document.getElementById("t_reg").style.color='#9b927e';
+				document.getElementById("t_log").style.color='#d35e42';
+
+				document.getElementById("log").style.fontWeight='bold';
+	      		document.getElementById("registerfont").style.fontWeight='normal';
+	      		document.getElementById("log").style.borderBottom='3px solid #d35e42';
+	      		document.getElementById("registerfont").style.borderBottom='none';
+	  		}
+  		//my.html里面的内容
+		}
+    </script>
+</head>
+<body background="img/背景图.jpg" style="background-repeat: no-repeat;background-size: 100% 100%;background-attachment: fixed;">
+	<!-- logo左上角放置 -->
+	<div style="width: 100%;height: auto;float: left">
+		<div class="logo" style="background-image: url(img/logo.png);background-size: cover">
+		</div>
+	</div>
+	<!-- 登陆注册盒子 -->
+	<div class="div_menu">
+		<div class="menu">
+			<div id="log">
+				<p onclick="blockornone('login')"  id="t_log" style="margin-top: 15px;cursor: pointer;">登录</p>
+			</div>
+			<div class="dot">
+				<p style="margin-top: 13px">·</p>
+			</div>
+			<div id="registerfont">
+				<p onclick="blockornone('register')" id="t_reg" style="margin-top: 15px;cursor: pointer;">注册</p>
+			</div>
+		</div>
+	</div>
+	<!-- 登录界面盒子 -->
+	<div id="login">
+		<div class="content">
+			<form>
+				<div class="form1">
+				    <div class="usericon">
+				    	<span class="glyphicon glyphicon-user" aria-hidden="true" style="margin-top: 20px"></span>
+				    </div>
+				    <input type="text" name="user" style="width: 87%;height: 60px;float: left;background-color:transparent;border-radius: 0px;outline: none;border: none;" placeholder="昵称/邮箱" id="login_account">
+				</div>
+				<div class="form2">
+					<div class="usericon">
+						<span class="glyphicon glyphicon-lock" aria-hidden="true" style="margin-top: 20px"></span>
+					</div>
+					<input type="password" name="password" style="width: 87%;height: 60px;float: left;background-color:transparent;border-radius: 0px;outline: none;border: none;" placeholder="密码" id="login_password">
+				</div>
+				<div id="error_password_login" class="error_register"></div>
+				
+			</form>
+		</div>
+		<div class="form3">
+			<form>
+				<input type="checkbox" checked="checked" name="记住我" value="记住我" style="">
+				<label style="font-weight: lighter;color: #9b927e">记住我</label>
+				<label style="float: right;font-weight: lighter;color: #9b927e">登录时遇到问题？</label>
+			</form>
+		</div>
+		<div class="submit">
+			<button type="button" style="width: 100%;height: 45px;border-radius: 18px;background-color: #2d76b6;border: none;color: #ece4d5;font-weight: 500;font-size: 19px" id="login_button">登录</button>
+		</div>
+	</div>
+	<!-- 注册界面盒子 -->
+	<div id="register">
+		<div class="content_rs">
+			<form>
+				
+				<div class="mailbox">
+					<div id="error_email" class="error_register"></div>
+					<div class="usericon">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-top: 20px"></span>
+					</div>
+					<input type="email" name="email" style="width: 87%;height: 60px;float: left;background-color:transparent;border-radius: 0px;outline: none;border: none;" id="inp_email">
+				</div>
+
+				
+				
+				<div class="form1">
+				    <div class="usericon">
+				    	<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" style="margin-top: 20px"></span>
+				    </div>
+				    <input type="text" style="width: 57%;height: 60px;float: left;background-color:transparent;border-radius: 0px;outline: none;border: none;" id="inp_verify_code">
+				    <button type="button" style="width: 95px;height: 35px;float: left;border-radius: 15px;background-color: #43ba25;border: none;color: #ece4d5;font-weight: 500;font-size: 15px;margin-top: 15px" id="verify_but">发送验证码</button>
+				</div>
+				<div id="error_verify_code" class="error_register"></div>
+				
+				<div class="form2">
+					<div class="usericon">
+						<span class="glyphicon glyphicon-lock" aria-hidden="true" style="margin-top: 20px"></span>
+					</div>
+					<input type="password" name="password" style="width: 87%;height: 60px;float: left;background-color:transparent;border-radius: 0px;outline: none;border: none;" id="inp_password">
+				</div>
+				<div id="error_password" class="error_register"></div>
+				
+			</form>
+		</div>
+		<div class="submit_rs">
+			<button type="button" style="width: 100%;height: 45px;border-radius: 18px;background-color: #43ba25;border: none;color: #ece4d5;font-weight: 500;font-size: 19px" id="register_but">注册
+			</button>
+		</div>
+	</div>
+
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript"></script>
+	<script src="js/register.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

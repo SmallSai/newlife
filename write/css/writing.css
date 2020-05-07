@@ -1,0 +1,322 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{
+	height:100%;
+}
+
+body{
+	display:flex;
+}
+
+#user_cont,#article_info_cont,#writing_cont,#tip_cont{
+	height:100%;
+	border-right:solid 1px;
+	flex-shrink:0;
+}
+
+#tip_cont{
+	flex-grow:1;
+	border:none;
+}
+
+/*------用户草稿箱-------*/
+#user_cont{
+	width:300px;
+	color: #FFFFFF;
+	background-color: #0e9378;
+}
+
+.serial_single_frame_cont{
+	display: none;
+}
+
+.user_draft_cont:first-child{
+	margin-top: 15px;
+}
+
+.frame_title{
+	cursor: pointer;
+	font: 22px "幼圆","黑体","微软雅黑";
+	font-weight: lighter;
+	padding: 7px 0 7px 5px;
+	margin-bottom: 8px;
+}
+
+/*------具体一篇连载,单篇草稿------*/
+.draft_title{
+	font: 20px "宋体","黑体";
+	padding: 7px 0 7px 12px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+/*-----展开三角-----*/
+.list_triangle{
+	margin-right: 5px;
+	transform: rotate(-90deg);
+	vertical-align: middle;
+	margin-top: -5px;
+	fill: #FFFFFF;
+}
+
+/*-----增加新章节按钮-----*/
+.addChapter_logo{
+	visibility: hidden;
+	cursor: pointer;
+	float: right;
+	margin-right: 20px;
+	margin-top: 3px;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+/*---鼠标动态样式----*/
+ .frame_title:hover,.serial_chapter_title:hover,.single_draft_title:hover{
+	cursor: pointer;
+	background-color:#126a58;
+	border-left: solid 5px;
+}
+ 
+.draft_title:hover{
+	cursor: pointer;
+	background-color:#126a58;
+}
+/*----连载章节标题容器----*/
+.serial_chapter_title_cont{
+	display: none;
+}
+	
+/*----连载章节标题----*/
+.serial_chapter_title{
+	font: 15px "黑体";
+	padding: 3px 0;
+	text-align: center;
+}
+
+
+.big_title{
+	font: 20px "宋体","黑体","微软雅黑";
+}
+
+/*-----单篇标题-----*/
+.single_draft_title{
+	font: 20px "宋体","黑体";
+	padding: 7px 0 7px 32px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+/*-------------文章信息-------------*/
+#article_info_cont{
+	text-align: center;
+	width:300px;
+}
+
+/*---各标题容器---*/
+#article_title_cont,#original_author_cont,#serial_title_cont,#chapter_num_cont,#article_class_cont{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*---文章标题输入---*/
+#article_title_cont{
+	margin-top: 30px;
+}
+
+/*---各标题文字---*/
+#article_title,#original_author,.chapter_title{
+	display: inline-block;
+	vertical-align: middle;
+	font: 20px "幼圆","宋体","微软雅黑", "黑体";
+}
+
+/*---各输入框---*/
+#title,#org_author_input,#chapterTitle,#chapterNum,#article_class_select{
+	font: 15px "宋体","微软雅黑", "黑体";
+	color: #434343;
+	line-height: 24px;
+	padding-left: 5px;
+	outline: none;
+	width: 170px;
+}
+
+/*----文章分类----*/
+#article_class_cont{
+	margin-top: 70px;
+}
+
+#article_class_select{
+	width: 178px;
+}
+
+/*-----文章信息单选容器-----*/
+.radio_info_cont{
+	width: 179px;
+	display: inline-block;
+}
+
+/*---单选按钮---*/
+.radio_word,.span_word{
+	display: inline-block;
+	padding: 1px 0;
+	width: 60px;
+	vertical-align: top;
+	font: 18px "微软雅黑","黑体";
+}
+
+.span_word{
+	z-index: -1;
+	position: relative;
+	color: #ff557f;
+	border: solid 1px;
+}
+
+.radio_word{
+	cursor: pointer;
+	opacity: 0;
+	margin-right: -62px;
+}
+
+.oblique_line{
+	font-size: 15px;
+	line-height: 20px;
+	vertical-align: top;
+}
+
+.radio_word:hover+.span_word{
+	background-color: #ff557f !important;
+	color: #FFFFFF !important;
+	border: solid 1px #ff557f !important;
+}
+
+/*---是否原创---*/
+
+/*---弹出原作者---*/
+#original_author_cont{
+	display: none;
+	height: 50px;
+	text-indent: 20px;
+}
+
+/*---是否连载---*/
+/*---弹出连载信息---*/
+#serial_info_cont{
+	display: none;
+	margin-top: 30px;
+}
+
+#serial_title_cont,#chapter_num_cont{
+	height: 50px;
+}
+
+#chapter_num_cont{
+	display: none;
+}
+
+/*----文章分类----*/
+
+
+/*------文章信息各部分上边距---------*/
+#article_title_cont{
+	margin-top: 160px;
+}
+
+/*----信息每行容器----*/
+#isOriginal_cont,#is_serial_cont,#chapter_class_cont{
+	margin-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#chapter_class_cont{
+	margin-top: 0px;
+}
+
+/*----输入信息错误提示框----*/
+.error_info{
+	margin-top: 7px;
+	height: 20px;
+	text-align: center;
+	font-size: 15px;
+	color: red;
+}
+
+/*----成功信息提示框----*/
+.success{
+	color: green;
+	font-size: 15px;
+}
+
+/*-------写作区------------*/
+#writing_cont{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:1100px;
+}
+
+#textarea{
+	font: 20px "微软雅黑","宋体";
+	height: 98%;
+	width: 1070px;
+	outline: none;
+	border: none;
+	resize: none;
+}
+
+/*----------帮助区----------*/
+#tip_cont{
+	
+}
+
+/*-----提示帮助栏-----*/
+#help{
+	width: 180px;
+	margin:50px auto 0;
+}
+
+#help_title{
+	text-align: center;
+	font: 15px "黑体","微软雅黑";
+}
+
+.help_word{
+	font: 15px "宋体","黑体","微软雅黑";
+	line-height: 20px;
+	margin-top: 8px;
+}
+
+/*------保存等其他操作-------*/
+#save_other_operation{
+	margin-top: 585px;
+	text-align: center;
+}
+
+#save{
+	width: 45px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+#delete{
+	margin-left: 15px;
+	width: 50px;
+	margin-bottom: 15px;
+}
+
+#release{
+	padding: 3px 0;
+	width: 190px;
+	font: 20px "微软雅黑","黑体";
+	color: #de1f18;
+	border: solid 1px;
+	border-radius: 30px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#save,#delete,#release{
+	cursor: pointer;
+}

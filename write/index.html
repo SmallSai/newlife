@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>写作-新生文学</title>
+<link href="../css/general_purpose.css" rel="stylesheet">
+<link href="css/writing.css" rel="stylesheet">
+<script src="../include/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	
+    <!--用户草稿栏-->
+	<div id="user_cont">
+		
+		<!-- 连载文章框 -->
+    	<div class="user_draft_cont">
+    		<h1 class="frame_title" id="serial">我的连载</h1>
+			<div class="serial_single_frame_cont" id="serial_draft_frame">
+				
+			</div>
+    	</div>
+		
+		<!-- 单篇文章框 -->
+		<div class="user_draft_cont">
+			<h1 class="frame_title" id="single">单篇草稿</h1>
+			<div class="serial_single_frame_cont" id="single_draft_frame">
+			
+			</div>
+		</div>
+    </div>
+    
+    <!--文章信息栏-->
+    <div id="article_info_cont"> 	
+        
+        <!--文章标题-->
+        <div id="article_title_cont">
+        	<h1 id="article_title">文章标题:</h1>
+        	<input type="text" id="title">
+        </div>
+		<div class="error_info"></div>
+        
+     	
+        <!--是否原创-->
+        <div id="isOriginal_cont">
+			<h1 id="article_title">文章性质:</h1>
+			
+			<!-- 文章信息单选容器 -->
+			<div class="radio_info_cont">
+				<label class="radio_word" id="org_radio"><input type="radio" name="isOriginal" value="0" id="org_radio_inp">原创</label><span class="span_word" id="org_span">原创</span>
+				<label class="radio_word" id="copy_radio"><input type="radio" name="isOriginal" value="1" id="copy_radio_inp">转载</label><span class="span_word" id="copy_span">转载</span>
+			</div>
+        </div>
+        
+        <!--转载则弹出原作者-->
+        <div id="original_author_cont">
+        	<h1 id="original_author">原作者:</h1>
+            <input type="text" id="org_author_input" name="originalAuthor">
+        </div>
+        <div class="error_info"></div>
+		
+        <!--是否连载-->
+         <div id="is_serial_cont">
+			<h1 id="article_title">是否连载:</h1>
+			
+			<!-- 文章信息单选容器 -->
+			<div class="radio_info_cont">
+				<label class="radio_word" id="single_radio"><input type="radio" name="isSerial" value="0" id="single_radio_inp">单篇</label><span class="span_word" id="single_span">单篇</span>
+				<label class="radio_word" id="serial_radio"><input type="radio" name="isSerial" value="1" id="serial_radio_inp">连载</label><span class="span_word" id="serial_span">连载</span>
+			</div>
+         	
+         </div>
+        
+        <!--连载弹则出连载信息-->
+        <div id="serial_info_cont">
+        
+        	<!--章节名-->
+        	<div id="serial_title_cont">
+        		<h1 class="chapter_title">章节标题:</h1>
+           		<input type="text" id="chapterTitle">
+            </div>
+            
+            <!--章节类型-->
+             <div id="chapter_class_cont">
+				<h1 id="article_title">章节类型:</h1>
+				
+				<!-- 文章信息单选容器 -->
+				<div class="radio_info_cont">
+					<label class="radio_word" title="如版权声明，写作背景等" id="preface_radio"><input type="radio" name="chapterClass" value="0" id="preface_radio_inp"/>前言</label>
+					<span class="span_word" id="preface_span">前言</span>
+					<label class="radio_word" id="text_radio"><input type="radio" name="chapterClass" value="1" id="text_radio_inp"/>正文</label><span class="span_word" id="text_span">正文</span>
+				</div>
+        	</div>
+			
+			<!--章节序号-->
+			<div id="chapter_num_cont">
+				<h1 class="chapter_title">章节序号:</h1>
+				<input type="number" min="1" max="108" id="chapterNum" value="0" title="序号用于连载篇章排序">
+			</div>
+		
+        </div>
+		<div class="error_info"></div>
+		
+		 <div id="article_class_cont">
+		 	<h1 class="chapter_title">文章分类:</h1>
+		 	<select id="article_class_select">
+		 		<option value ="1" class="article_class">青春</option>
+				<option value ="2" class="article_class">幻想</option>
+				<option value ="3" class="article_class">现实</option>
+				<option value ="4" class="article_class">小说</option>
+				<option value ="5" class="article_class">散文</option>
+		 	</select>
+		 </div>
+		 <div class="error_info"></div>
+		
+    </div>
+    
+    <!--文章写作栏-->
+    <div id="writing_cont">
+		<textarea id="textarea" style="line-height: 2em;"></textarea>
+		<input type="hidden" id="writing_article" value="-1">
+    </div>
+    
+    <!--提示信息栏-->
+    <div id="tip_cont">
+		
+		<!-- 提示帮助栏 -->
+		<div id="help">
+			<h1 id="help_title">写作帮助</h1>
+			<div id="specifi_help">
+				<p class="help_word">1.标题不超过10个字</p>
+				<p class="help_word">2.文章总字数需要大于等于800字</p>
+				<p class="help_word">3.若是文章连载记得选择章节类型哦</p>
+			</div>
+		</div>
+		
+		<!-- 保存，删除，发布操作 -->
+		<div id="save_other_operation">
+			
+			<!-- 文章报错栏 -->
+			<div class="error_info"></div>
+			
+			<div id="sava_delete">
+				<img src="../file/icon/save.svg" alt="save" id="save" title="保存">
+				<img src="../file/icon/delete.svg" alt="delete" id="delete" title="删除">
+			</div>
+			
+			<div id="release">
+				文章发表
+			</div>
+		</div>
+    </div>
+	<script src="js/writing.js"></script>
+	<script src="js/writingAjax.js"></script>
+</body>
+</html>
