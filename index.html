@@ -6,7 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="css/header.css"/>
 		<link rel="stylesheet" type="text/css" href="css/general_purpose.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
-		<script src="js/myIndex.js"></script>
+
+		
 	</head>
 	<body>
 		<header>
@@ -18,37 +19,57 @@
 				</div>
 				
 				<!-- 搜索框 -->
+				<form action="search/" method="get">
 				<div id="search_cont">
-					<input type="text" name="" id="search_input" placeholder="作者/文章"/>
-					<img src="file/icon/search.svg" id="search_logo">
+						<input type="text" id="search_input" placeholder="作者/文章"/>
+						
+						<!-- 搜索logo容器 -->
+						<div id="search_logo_cont">
+							<img src="file/icon/search.svg" class="search_logo" id="search_logo">
+							<input type="submit" name="submit" class="search_logo"  id="search_submit" />
+						</div>
 				</div>
+				</form>
 				
 				<!-- 右侧登录等按钮 -->
 				<div id="login_operation">
 					<!-- 登录注册容器 -->
 					<div id="login_on_cont">
-						<p id="login_word">登录</p>
-						<p id="logon_word">注册</p>
+						<a href="login/" target="_blank"><p id="login_word">登录</p></a>
+						<a href="login/" target="_blank"><p id="logon_word">注册</p></a>
 					</div>
 					
 					<!-- 右侧登录后显示的个人框 -->
 					<div id="user_head_cont">
-						<a href=""><img src="userFile/"+userId+"/headPortrait.jpg" id="user_head"></a>
+						<a href="aa" id="user_head_href"><img src="userFile/"+userId+"/headPortrait.jpg" id="user_head"></a>
+						
+						<!-- 个人操作框 -->
+						<div id="header_operation_cont">
+							<p id="first_operation_transparent"></p>
+							<a href="userPages/" target="_blank"><p class="header_operation"><img src="file/icon/people_fill.svg" class="header_operation_logo">我的空间</p></a>
+							<p class="header_operation"><img src="file/icon/mail_fill.svg" class="header_operation_logo">我的来信</p>
+							<p class="header_operation" id="sign_out_operation"><img src="file/icon/close.svg" class="header_operation_logo" id="last_header_operation_logo">退出登录</p>
+							<p id="last_operation_transparent"></p>
+						</div>
 					</div>
+					
+					
 				</div>
 				
 				
 			</div>
 			
 			<!-- 写作按钮 -->
-			<div id="write_but_cont">
+			<a href="write/" target="_blank"><div id="write_but_cont">
 				<img src="file/icon/brush_fill_white.svg" id="write_logo">写作
 			</div>
+			</a>
 			
 		</header>
 		
 		<!-- 主视图 -->
 		<div id="main_cont">
+			
 			<!-- 右边推荐文章，优秀作者 -->
 			<div id="right_cont">
 				<!-- 推荐文章 -->
@@ -158,9 +179,10 @@
 			<div id="main_top_cont">
 				<!-- 左边滚动图和目录 -->
 				<div id="left_cont">
-					<img src="image/scrollIma.jpg" id="scroll_ima">
+					<a href='' id="scroll_ima_href"><img src="" id="scroll_ima"></a>
 					
 					<!-- 目录 -->
+					<a href="library/" target="_blank">
 					<div id="catalog_bg_ima_cont">
 						<div id="catalog_cont">
 							<p id="catalog">目录</p>
@@ -168,7 +190,8 @@
 						
 						<img src="image/catalog.jpg" id="catalog_bg_ima">
 					</div>
-
+					</a>
+					
 				</div>
 			</div>
 			
@@ -229,6 +252,11 @@
 				</div><!-- 具体每个文章容器结束 -->
 			</div>
 		</div>
-		<script src="js/indexAjax.js"></script>
+			
+		<script src="include/jquery-3.4.1.min.js"></script>
+		<script src="js/indexScrollIma.js"></script>
+		<script src="js/indexAjax.js"></script>	
+		<script src="js/deleteCookie.js"></script>
+		<script src="js/myIndex.js"></script>		
 	</body>
 </html>

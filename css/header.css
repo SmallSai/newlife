@@ -53,14 +53,33 @@ header{
 	border-bottom-left-radius: 20px;
 }
 
-#search_logo{
+/* 搜索logo容器 */
+#search_logo_cont{
+	display: inline-block;
+}
+
+.search_logo{
+	display: inline-block;
+	vertical-align: bottom;
 	cursor: pointer;
+	width: 30px;
 	height: 28px;
-	padding-right: 6px;
 	border: solid 1px #0B92B9;
 	border-left: none;
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
+}
+
+#search_logo{
+	
+}
+
+#search_submit{
+	margin-left: -30px;
+	opacity: 0;
+	box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	-webkit-box-sizing:content-box;
 }
 
 /* 登录注册容器 */
@@ -94,9 +113,56 @@ header{
 	display: none;
 }
 
+/* 鼠标浮在头像(a元素)上以及本体上显示本体操作栏 */
+#header_operation_cont:hover,#user_head_href:hover+#header_operation_cont{
+	display: block;
+}
+
 #user_head{
 	width: 40px;
 	border-radius: 20px;
+	margin-left: 50px;
+}
+
+/* 个人操作按钮 */
+#header_operation_cont{
+	margin-top: -12px;
+	display: none;
+	position: absolute;
+	width: 150px;
+}
+
+.header_operation{
+	text-align: center;
+	font: 18px "宋体";
+	color: #676767;
+	padding: 8px 0;
+	background-color: #FFFFFF;
+	box-shadow: 0 2px 3px #dedede;
+}
+
+.header_operation:hover{
+	cursor: pointer;
+	background-color: #e1e1e1;
+}
+
+.header_operation_logo{
+	width: 22px;
+	vertical-align: bottom;
+	margin-right: 3px;
+}
+
+/* 透明占位容器 */
+#first_operation_transparent{
+	height: 20px;
+	background-color: red;
+	opacity: 0;
+}
+
+#last_operation_transparent{
+	background-color: #FFFFFF;
+	height: 10px;
+	box-shadow: 0 2px 3px #dedede;
 }
 
 /* 写文章按钮 */

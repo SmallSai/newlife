@@ -1,5 +1,5 @@
+// 加载用户信息脚本
 function addUserInfo(){
-	// 首页加载用户信息脚本
 	var xhrLoadUser=new XMLHttpRequest();
 	xhrLoadUser.open('GET','php/loadUserInfo.php',true);
 	xhrLoadUser.send();
