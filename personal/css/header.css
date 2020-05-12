@@ -1,5 +1,6 @@
 /* 顶部栏复用css */
 *{
+	font-size: 0;
 	margin: 0;
 	padding: 0;
 }
