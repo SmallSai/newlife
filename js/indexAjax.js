@@ -1,6 +1,6 @@
-//脚本作用：更改分类文章颜色，获取相应分类
-window.onload=articleClassFun();
-	
+//脚本作用：更改分类文章颜色，获取相应分类的文章
+window.onload = articleClassFun();
+
 
 //将分类作为参数，获取文章函数
 function getArticle(articleClass) {
@@ -20,12 +20,14 @@ function getArticle(articleClass) {
 		if (xhrGetArticle.readyState == 4 && xhrGetArticle.status == 200) {
 
 			//将返回字符串转换为JS对象
+			console.log(xhrGetArticle.responseText);
 			var articleJsonStr = '{"article":[' + xhrGetArticle.responseText + ']}';
 			var articleObj = JSON.parse(articleJsonStr)['article'];
-
 			//将文章插入
 			articleObjLength = articleObj.length;
 			for (var i = 0; i < articleObjLength; i++) {
+				//单篇情况
+				var articleId=articleObj[i]['A.articleId'];;
 				var authorId = articleObj[i]['userId'];
 				var authorName = articleObj[i]['userName'];
 				var articleTitle = articleObj[i]['title'];
@@ -34,33 +36,65 @@ function getArticle(articleClass) {
 				var articleNature = articleObj[i]['nature'];
 				var articleOriAuthor = articleObj[i]['oriAuthor'];
 				var articleSerial = articleObj[i]['unSerial'];
-				var readNum = articleObj[i]['readNum'];
-				var upNum = articleObj[i]['upNum'];
+				var readNum = articleObj[i]['A.readNum'];
+				var upNum = articleObj[i]['A.upNum'];
 				var favoriteNum = articleObj[i]['favoriteNum'];
 
-				outStr +=
-					'<div class="real_time_article" ><div class="title_row_cont" id="first_article"><div class="title_word">' +
-					articleTitle + '</div>';
+				//连载情况
+				var chapterId='';
+				var chapterTitle='';
+				var serialText = '';
+				var chapterTextPreview='';
+				var serialTextPreview='';			
 
-				//原作者判断与加载
-				if (articleNature == '1') {
+				outStr +='<div class="real_time_article" ><div class="title_row_cont" id="first_article">';
 
-					//是否连载判断
-					if (articleSerial == '1') {
-						//连载
-						outStr +=
-							'<div class="serial_mark_author_cont"><div class="serial_mark">连载</div><div class="original_author">原作者：' +
-							articleOriAuthor +
-							'</div></div>';
-					} else {
-						outStr += '<div class="serial_mark_author_cont"><div class="original_author">原作者：' + articleOriAuthor +
-							'</div></div>';
+
+				//是否连载判断
+				if (articleSerial == '1') {
+					//连载
+					readNum=articleObj[i]['B.readNum'];
+					upNum=articleObj[i]['B.upNum'];
+					// for(var key in articleObj[i]){
+					// 	console.log(key);
+					// 	console.log(articleObj[i][key]);
+					// }
+					
+					chapterId=articleObj[i]['chapterId'];
+					chapterTitle=articleObj[i]['chapterTitle'];
+					serialText =articleObj[i]['serialText'];
+					serialTextPreview=serialText.substr(0,88);
+					
+					outStr +='<div class="title_word">' +chapterTitle + '</div><div class="serial_mark_author_cont"><div class="serial_mark">连载</div>';
+					
+					//是否原创
+					if(articleNature=='1'){
+						outStr+='<div class="original_author">原作者：' +articleOriAuthor +'</div>';
 					}
+					
+					outStr+='</div></div><!--预览文字--><a href="read/index.php?aid='+articleId+'&cid='+chapterId+'" target="_blank"><p class="article_preview">' + serialTextPreview + '......</p></a>';
+					
+				} else {
+					articleId=articleObj[i]['A.articleId'];
+					
+					for(var key in articleObj[i]){
+						console.log("key:"+key+"---value:"+articleObj[i][key]);
+					}
+					
+					//单篇
+					outStr += '<div class="title_word">' +articleTitle + '</div><div class="serial_mark_author_cont">';
+					
+					//是否原创
+					if(articleNature=='1'){
+						outStr+='<div class="original_author">原作者：' +articleOriAuthor +'</div>';
+					}
+					
+					outStr+='</div></div><!--预览文字--><a href="read/index.php?aid='+articleId+'" target="_blank"><p class="article_preview">' + articleTextPreview + '......</p></a>';
 				}
 
+
 				//其他必有信息
-				outStr += '</div><!--预览文字--><p class="article_preview">' + articleTextPreview + '......' +
-					'</p><!--文章底部阅读量等信息--><div id="article_bottom_info_cont"><!--左侧阅读，点赞等logo--><div class="info_logo_cont">' +
+				outStr += '<!--文章底部阅读量等信息--><div id="article_bottom_info_cont"><!--左侧阅读，点赞等logo--><div class="info_logo_cont">' +
 					'<img src="file/icon/browse.svg" class="info_logo"><span class="detailed_data">' + readNum +
 					'</span><img src="file/icon/up.svg" class="info_logo"><span class="detailed_data">' + upNum + '</span>' +
 					'<img src="file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +

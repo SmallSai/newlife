@@ -18,7 +18,6 @@ function scrollIma(){
 	
 	//每5秒变化一次图片
 	setInterval(function(){
-		console.log(showFlag+'------');
 		$("#scroll_ima").fadeOut(300,function(){
 			placeIma.setAttribute("src","image/scrollIma"+(showFlag+1)%3+".jpg");
 			$("#scroll_ima").fadeIn(300);
