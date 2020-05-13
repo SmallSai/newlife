@@ -1,3 +1,4 @@
+// 该脚本主要用于搜索页面
 //脚本作用：更改分类文章颜色，获取相应分类的文章
 window.onload = articleClassFun();
 
@@ -10,9 +11,12 @@ function getArticle(articleClass) {
 
 	searchArticleContObj.innerHTML = '';
 	outStr = '';
-
+	
+	//页面隐藏input存储的关键字值
+	var wd=document.getElementById("hidden_wd_html").value;
+	
 	var xhrGetArticle = new XMLHttpRequest();
-	xhrGetArticle.open('GET', 'php/getArticle.php?articleClass=' + articleClass, true);
+	xhrGetArticle.open('GET', '../php/getSearchArticle.php?wd='+wd+'&articleClass='+articleClass, true);
 	xhrGetArticle.send();
 
 	xhrGetArticle.onreadystatechange = function() {
@@ -20,7 +24,7 @@ function getArticle(articleClass) {
 		if (xhrGetArticle.readyState == 4 && xhrGetArticle.status == 200) {
 
 			//将返回字符串转换为JS对象
-			//console.log(xhrGetArticle.responseText);
+			// console.log(xhrGetArticle.responseText);
 			var articleJsonStr = '{"article":[' + xhrGetArticle.responseText + ']}';
 			var articleObj = JSON.parse(articleJsonStr)['article'];
 			//将文章插入
@@ -58,23 +62,54 @@ function getArticle(articleClass) {
 					articleText=articleObj[i]['serialText'];
 					articleTextPreview =articleText.substr(0,88);
 					
-					for(var key in articleObj[i]){
-						console.log("key:"+key+"---value:"+articleObj[i][key]);
-					}
+					// for(var key in articleObj[i]){
+					// 	console.log("key:"+key+"---value:"+articleObj[i][key]);
+					// }
 					
 					chapterId=articleObj[i]['chapterId'];
 					chapterTitle=articleObj[i]['chapterTitle'];
 					serialText =articleObj[i]['serialText'];
 					serialTextPreview=serialText.substr(0,88);
 					
-					outStr +='<div class="title_word">' +chapterTitle + '</div><div class="serial_mark_author_cont"><div class="serial_mark">连载</div>';
+					// 判断关键字是否存在标题处
+					var strTitleIndex=chapterTitle.indexOf(wd);
+					if(strTitleIndex>=0){
+						// 存在于标题处
+						var wdHeadFooter=chapterTitle.split(wd);
+						var wdHead=wdHeadFooter[0];
+						var wdFooter=wdHeadFooter[1];
+						
+						console.log("wd:"+wd);
+						console.log("wdHead:"+wdHead);
+						console.log("wdFooter:"+wdFooter);
+						
+						outStr +='<div class="title_word">'+wdHead+'<span class="key_wd">' +wd+ '</span>'+wdFooter+'</div><div class="serial_mark_author_cont"><div class="serial_mark">连载</div>';
+					}
+					else{
+						outStr +='<div class="title_word">' +chapterTitle + '</div><div class="serial_mark_author_cont"><div class="serial_mark">连载</div>';
+					}
+					
 					
 					//是否原创
 					if(articleNature=='1'){
 						outStr+='<div class="original_author">原作者：' +articleOriAuthor +'</div>';
 					}
 					
-					outStr+='</div></div><!--预览文字--><a href="read/index.php?aid='+articleId+'&cid='+chapterId+'" target="_blank"><p class="article_preview">' + serialTextPreview + '......</p></a>';
+					// 判断关键字是否存在文章处
+					var strArticleIndex=chapterTitle.indexOf(wd);
+					if(strArticleIndex>=0){
+						// 存在于文章处
+						var wdHeadFooterArt=serialText.split(wd);
+						console.log(wdHeadFooterArt[1]);
+						var wdHeadArt=wdHeadFooterArt[0].substr(-35);
+						var wdFooterArt=wdHeadFooterArt[1].substr(0,50);
+						
+						outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'&cid='+chapterId+'" target="_blank">'+
+						'<p class="article_preview">' + wdHeadArt + '<span class="key_wd">'+wd+'</span>'+wdFooterArt+'......</p></a>';
+					}
+					else{
+						outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'&cid='+chapterId+'" target="_blank"><p class="article_preview">' + serialTextPreview + '......</p></a>';
+					}	
 					
 				} else {
 					//单篇
@@ -93,16 +128,16 @@ function getArticle(articleClass) {
 						outStr+='<div class="original_author">原作者：' +articleOriAuthor +'</div>';
 					}
 					
-					outStr+='</div></div><!--预览文字--><a href="read/index.php?aid='+articleId+'" target="_blank"><p class="article_preview">' + articleTextPreview + '......</p></a>';
+					outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'" target="_blank"><p class="article_preview">' + articleTextPreview + '......</p></a>';
 				}
 
 
 				//其他必有信息
 				outStr += '<!--文章底部阅读量等信息--><div id="article_bottom_info_cont"><!--左侧阅读，点赞等logo--><div class="info_logo_cont">' +
-					'<img src="file/icon/browse.svg" class="info_logo"><span class="detailed_data">' + readNum +
-					'</span><img src="file/icon/up.svg" class="info_logo"><span class="detailed_data">' + upNum + '</span>' +
-					'<img src="file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +
-					'</span></div><!--右侧投稿者--><div class="head_name_cont"><img src="userFile/' + authorId +
+					'<img src="../file/icon/browse.svg" class="info_logo"><span class="detailed_data">' + readNum +
+					'</span><img src="../file/icon/up.svg" class="info_logo"><span class="detailed_data">' + upNum + '</span>' +
+					'<img src="../file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +
+					'</span></div><!--右侧投稿者--><div class="head_name_cont"><img src="../userFile/' + authorId +
 					'/headPortrait.jpg" alt="head_portrait" class="head_portrait">' +
 					'<div class="user_name">' + authorName + '</div></div></div></div>';
 

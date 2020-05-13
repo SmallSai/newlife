@@ -4,7 +4,11 @@ $articleId=mysqli_real_escape_string($dbc,$_GET['aid']);
 $chapterId=-1;
 
 // 获取用户uid
-$userAccount=mysqli_real_escape_string($dbc,$_COOKIE['comic']);
+$userAccount=-1;
+if(isset($_COOKIE['comic'])){
+	$userAccount=mysqli_real_escape_string($dbc,$_COOKIE['comic']);
+}
+
 $quertUid="SELECT userId FROM user WHERE userAccount='".$userAccount."';";
 $resuluUserId=mysqli_query($dbc,$quertUid);
 $userId=mysqli_fetch_assoc($resuluUserId)['userId'];
@@ -33,10 +37,10 @@ if(mysqli_num_rows($resultRelesUser)){
 	$releasUserName=$row['userName'];
 }
 else{
-	// 未查询到有结果，跳转首页，终止脚本
-	// header("Location:../");
-	// die();
-	print "error!!!!!";
+	//未查询到有结果，跳转首页，终止脚本
+	header("Location:../");
+	die();
+
 }
 
 if(key_exists("cid",$_GET)&&$_GET['cid']!=null){
@@ -93,7 +97,8 @@ else{
 
 			$text=$row['articleText'];
 			$date=$row['date'];
-			$hiddenVal="articleId=".$artileId;
+			$hiddenVal="articleId=".$articleId;
+			// print "php中hiddenVal:".$hiddenVal."-----";
 			
 			// 增加本文阅读量
 			$insertRead="INSERT INTO `read` VALUES(".$userId.",".$articleId.");";
@@ -231,7 +236,7 @@ include("../php/dbClose.php");
 				<!-- 评论展示容器 -->
 				<div id="show_comment">
 					<!-- “精彩评论” -->
-					<h1 id="show_comment_title">精彩评论<span id="title_comment_num">3</span></h1>
+					<h1 id="show_comment_title">精彩评论<span id="title_comment_num">0</span></h1>
 	
 				</div>
 
@@ -251,7 +256,7 @@ include("../php/dbClose.php");
 			<!--操作logo-->
 			<div id="float_user_operation_cont">
 				<img src="../file/icon/up.svg" class="float_operation_logo" id="up_logo">
-				<img src="../file/icon/collection.svg" class="float_operation_logo">
+				<img src="../file/icon/collection.svg" class="float_operation_logo" id="favorite_logo">
 				<img src="../file/icon/share.svg" class="float_operation_logo" id="share_logo">
 				<img src="../file/icon/switch.svg" class="float_operation_logo" id="more_logo">
 			</div>
@@ -261,17 +266,17 @@ include("../php/dbClose.php");
 		<div id="more_cont">
 			<!-- 切换模式 -->
 			<div id="reading_mode" class="more_logo_cont">
-				<img src="../file/icon/day.svg" class="more_operation_logo" id="reading_mode_logo">
+				<img src="../file/icon/night.svg" class="more_operation_logo" id="reading_mode_logo" title="开启夜间模式">
 			</div>
 			
 			<!-- 分享 -->
 			<div id="share" class="more_logo_cont">
-				<img src="../file/icon/share.svg" class="more_operation_logo" id="share_logo">
+				<img src="../file/icon/share.svg" class="more_operation_logo" id="share_logo" title="分享">
 			</div>
 			
 			<!-- 举报 -->
 			<div id="report" class="more_logo_cont">
-				<img src="../file/icon/report.svg" class="more_operation_logo" id="report_logo">
+				<img src="../file/icon/report.svg" class="more_operation_logo" id="report_logo" title="举报">
 			</div>
 		</div>
 	</div>

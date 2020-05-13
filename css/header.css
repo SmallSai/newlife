@@ -70,12 +70,9 @@ header{
 	border-bottom-right-radius: 20px;
 }
 
-#search_logo{
-	
-}
 
 #search_submit{
-	margin-left: -30px;
+	margin-left: -31px;
 	opacity: 0;
 	box-sizing:content-box;
 	-moz-box-sizing:content-box;

@@ -30,4 +30,37 @@ $(document).ready(function() {
 	$("#more_logo").click(function(){
 		$("#more_cont").fadeToggle();
 	});
+	
+	// 切换日夜间模式
+	var dayFlag=true;
+	var readModeObj=document.getElementById("reading_mode_logo");
+	
+	// 需要改变颜色的对象
+	
+	readModeObj.onclick=function(){
+		
+		if(dayFlag){
+			// 切为夜间模式
+			readModeObj.setAttribute("src","../file/icon/day.svg");
+			readModeObj.setAttribute("title","开启日间模式");
+			
+			dayFlag=false;
+			// 夜间样式
+			// $("#main_cont").css({"background-color":"#3e3e3e"});
+			// $("body").css({"background-color":"#3e3e3e"});
+
+			
+		}
+		else{
+			// 切为日间模式
+			dayFlag=true;
+			readModeObj.setAttribute("src","../file/icon/night.svg");
+			readModeObj.setAttribute("title","开启夜间模式");
+			
+			// 日间样式
+			
+		}
+	}
+	
+	
 });
