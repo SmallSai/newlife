@@ -13,7 +13,7 @@ document.writeln("				");
 document.writeln("				<!-- 搜索框 -->");
 document.writeln("				<form action=\'../search/\' method=\'get\'>");
 document.writeln("				<div id=\'search_cont\'>");
-document.writeln("						<input type=\'text\' id=\'search_input\' name=\'wd\' placeholder=\'作者/文章\'/>");
+document.writeln("						<input type=\'text\' id=\'search_input\' placeholder=\'作者/文章\'/>");
 document.writeln("						");
 document.writeln("						<!-- 搜索logo容器 -->");
 document.writeln("						<div id=\'search_logo_cont\'>");
@@ -57,4 +57,3 @@ document.writeln("			</div>");
 document.writeln("			</a>");
 document.writeln("			");
 document.writeln("		</header>");
-css

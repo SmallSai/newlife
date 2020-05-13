@@ -1,0 +1,285 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 1519.2px;
+}
+.introduce{
+	width: 20%;
+	height: 625px;
+	float: left;
+	margin-left: 4%;
+	margin-top: 10px;
+}
+.intr_hp{
+	width: 90px;
+	height: 90px;
+	float: left;
+	border: 6px solid white;
+	margin-left: 14px;
+	margin-top: 40px;
+	border-radius: 50%;
+}
+.intr_name{
+	width: 185px;
+	height: 70px;
+	float: left;
+	margin-left:5px;
+	margin-top: 45px; 
+}
+.authorname{
+	width: 100%;
+	height: 45px;
+	float: left;
+	color: white;
+	letter-spacing: 5px;
+	font-size: 30px;
+	border-bottom: 3px solid white;
+}
+.intr_other{
+	width: 100%;
+	height: 15px;
+	float: left;
+	color: #f6f6f6;
+	font-size: 11px;
+	margin-top: 10px;
+	font-family: "楷体";
+}
+.authorgraph{
+	width: 70%;
+	height: 100px;
+	float: left;
+	margin-top: 60px;
+	margin-left: 15%;
+	font-size: 17px;
+	font-family: "楷体";
+	color: white;
+}
+.authordata{
+	width: 40%;
+	height: 200px;
+	float: left;
+	margin-top: 100px;
+	margin-left: 30%;
+	font-size: 20px;
+	color: white;
+	font-weight: 300;
+}
+.content{
+	width: 70%;
+	height: 615px;
+	margin-top: 20px;
+	margin-left: 50px;
+	float: left;
+}
+.nav{
+	width: 100%;
+	height: 60px;
+	float: left;
+}
+.nav ul{
+	padding: 0;
+}
+.nav li {
+	list-style: none;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	width: 150px;
+	cursor: pointer;
+	margin: 0px 50px;
+}
+.choice{
+	border-bottom: 2.4px solid #4bb8ed;
+	color: #4bb8ed;
+}
+#box{
+	width: 1063.43px;
+	height: 530px;
+	position: absolute;
+	float: left;
+	margin-top: 60px;
+}
+.tab-item{
+	width: 1063.43px;
+	height: 530px;
+	position: absolute;
+	float: left;
+	margin-top: 60px;
+    display: none;
+}
+.show{
+    display: block;
+}
+.wenzhang{
+	width: 1063.43px;
+	height: 530px;
+	position: absolute;
+	margin-top: 60px;
+	float: left;
+}
+.partone{
+	width: 38%;
+	height: 150px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 4%;
+}
+.partone{
+	width: 38%;
+	height: 150px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 4%;
+}
+.title{
+	height: 43px;
+	width: auto;
+	float: left;
+	font-size: 20px;
+}
+.tipdel{
+	width: 100px;
+	height: 25px;
+	position: absolute;
+	top: 33px;
+	left: 300px;
+	display: none;
+}
+.tip2{
+	width: 100px;
+	height: 25px;
+	position: absolute;
+	top: 33px;
+	left: 300px;
+	display: none;
+}
+.but{
+	border: 2px solid red;
+	width: 60px;
+	height: auto;
+	border-radius: 10px;
+	background: white;
+	color: red;
+}
+.butother{
+	margin-left: 5px;
+	border: none;
+	background-color: white;
+}
+#icon_sc{
+	width: 10%;
+	height: 43px;
+	left: 410px;
+	position: absolute;
+}
+.close{
+	position: absolute;
+	left: 0px;
+	top: 8px;
+	display: none;
+}
+.duanwen{
+	width: 98%;
+	height: 70px;
+	float: left;
+	text-indent: 2em;
+	color: #7b7b7b;
+}
+.downright{
+	width: 100%;
+	height: 30px;
+	float: left;
+	text-align: right;
+}
+.downright ul {
+	list-style: none;
+	padding: 0;
+}
+.downright li {
+	width: 45px;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+}
+.middle{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-right: 2px solid black;
+	margin-top: 60px;
+	margin-right: 20px;
+}
+.qiehuan{
+	width: 100%;
+	height: 25px;
+	margin-top: 530px;
+	float: left;
+}
+.turnleft{
+	width: 5%;
+	height: 25px;
+	float: left;
+	margin-left: 43.6%;
+}
+#delete{
+	display: none;
+}
+#delete2{
+	display: none;
+}
+.attentionpeop{
+	width: 80px;
+	height: 80px;
+	float: left;
+	border-radius: 50%;
+	margin-top: 10px;
+}
+.attentionpeop img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: fill;
+}
+.ap_content{
+	width: 270px;
+	height: 130px;
+	float: left;
+	margin-left: 40px;
+}
+.ap_name{
+	width: auto;
+	height: 60px;
+	float: left;
+	font-size: 23px;
+}
+.ap_button{
+	width: 100px;
+	height: 60px;
+	float: right;
+}
+.ap_but1{
+	width: 70px;
+	height: 25px;
+	position: absolute;
+	border: 2px solid black;
+	color: red;
+	background-color: white;
+	display: none;
+}
+.ap_but2{
+	width: 70px;
+	height: 25px;
+	position: absolute;
+	border: 2px solid orange;
+	color: orange;
+	background-color: white;
+	top: 41px;
+}
+.ap_intro{
+	width: 100%;
+	height: 60px;
+	float: left;
+	border-top: 2px solid black;
+
+}
