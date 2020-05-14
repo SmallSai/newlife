@@ -79,9 +79,9 @@ function getArticle(articleClass) {
 						var wdHead=wdHeadFooter[0];
 						var wdFooter=wdHeadFooter[1];
 						
-						console.log("wd:"+wd);
-						console.log("wdHead:"+wdHead);
-						console.log("wdFooter:"+wdFooter);
+						// console.log("wd:"+wd);
+						// console.log("wdHead:"+wdHead);
+						// console.log("wdFooter:"+wdFooter);
 						
 						outStr +='<div class="title_word">'+wdHead+'<span class="key_wd">' +wd+ '</span>'+wdFooter+'</div><div class="serial_mark_author_cont"><div class="serial_mark">连载</div>';
 					}
@@ -96,13 +96,13 @@ function getArticle(articleClass) {
 					}
 					
 					// 判断关键字是否存在文章处
-					var strArticleIndex=chapterTitle.indexOf(wd);
+					var strArticleIndex=serialText.indexOf(wd);
 					if(strArticleIndex>=0){
 						// 存在于文章处
 						var wdHeadFooterArt=serialText.split(wd);
 						console.log(wdHeadFooterArt[1]);
-						var wdHeadArt=wdHeadFooterArt[0].substr(-35);
-						var wdFooterArt=wdHeadFooterArt[1].substr(0,50);
+						var wdHeadArt=wdHeadFooterArt[0].substr(-40);
+						var wdFooterArt=wdHeadFooterArt[1].substr(0,40);
 						
 						outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'&cid='+chapterId+'" target="_blank">'+
 						'<p class="article_preview">' + wdHeadArt + '<span class="key_wd">'+wd+'</span>'+wdFooterArt+'......</p></a>';
@@ -120,15 +120,45 @@ function getArticle(articleClass) {
 					articleId=articleObj[i]['AarticleId'];
 					articleText=articleObj[i]['articleText'];
 					articleTextPreview =articleText.substr(0,88);
+					
+					// 判断关键字是否存在标题处
+					var strTitleIndex=articleTitle.indexOf(wd);
+					if(strTitleIndex>=0){
+						// 存在于标题处
+						var wdHeadFooter=articleTitle.split(wd);
+						var wdHead=wdHeadFooter[0];
+						var wdFooter=wdHeadFooter[1];
 						
-					outStr += '<div class="title_word">' +articleTitle + '</div><div class="serial_mark_author_cont">';
+						outStr += '<div class="title_word">' +wdHead+ '<span class="key_wd">'+wd+'</span>'+wdFooter+'</div><div class="serial_mark_author_cont">';
+					}
+					else{
+						// 不存在与标题处
+						outStr += '<div class="title_word">' +articleTitle + '</div><div class="serial_mark_author_cont">';
+					}
+					
 					
 					//是否原创
 					if(articleNature=='1'){
 						outStr+='<div class="original_author">原作者：' +articleOriAuthor +'</div>';
 					}
 					
-					outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'" target="_blank"><p class="article_preview">' + articleTextPreview + '......</p></a>';
+					// 判断关键字是否存在文章处
+					var strArticleIndex=articleText.indexOf(wd);
+					console.log(strArticleIndex);
+					if(strArticleIndex>=0){
+						// 存在于文章处
+						var wdHeadFooterArt=articleText.split(wd);
+						console.log(wdHeadFooterArt[1]);
+						var wdHeadArt=wdHeadFooterArt[0].substr(-35);
+						var wdFooterArt=wdHeadFooterArt[1].substr(0,50);
+						
+						outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'" target="_blank"><p class="article_preview">' + wdHeadArt + '<span class="key_wd">'+wd+'</span>'+wdFooterArt+ '......</p></a>';
+					}
+					else{
+						// 不存在与文章上
+						outStr+='</div></div><!--预览文字--><a href="../read/index.php?aid='+articleId+'" target="_blank"><p class="article_preview">' + articleTextPreview + '......</p></a>';
+					}
+					
 				}
 
 

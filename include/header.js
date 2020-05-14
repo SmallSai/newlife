@@ -57,4 +57,3 @@ document.writeln("			</div>");
 document.writeln("			</a>");
 document.writeln("			");
 document.writeln("		</header>");
-css

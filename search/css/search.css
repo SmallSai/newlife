@@ -146,6 +146,10 @@ body{
 	padding: 10px 5px 0;
 }
 
+.article_preview:hover{
+	text-decoration: underline;
+}
+
 /*----标题的一行信息------*/
 .title_row_cont{
 	overflow:hidden;
