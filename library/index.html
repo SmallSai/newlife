@@ -13,7 +13,47 @@
 		<!-- 顶部栏大容器 -->
 		<div id="top_cont">
 			<!-- 顶部header -->
-			<script src="../include/header.js"></script>
+			
+				<div id="header_cont">
+					
+					<!-- logo容器 -->
+					<div id="logo_cont">
+						<img src="image/logo.png" id="logo_ima">
+					</div>
+					
+					<!-- 搜索框 -->
+					<form action="search/" method="get">
+					<div id="search_cont">
+							<input type="text" id="search_input" placeholder="作者/文章"/>
+							
+							<!-- 搜索logo容器 -->
+							<div id="search_logo_cont">
+								<img src="file/icon/search.svg" class="search_logo" id="search_logo">
+								<input type="submit" name="submit" class="search_logo"  id="search_submit" />
+							</div>
+					</div>
+					</form>
+					
+					<!-- 右侧登录等按钮 -->
+					<div id="login_operation">
+						<!-- 登录注册容器 -->
+						<div id="login_on_cont">
+							<a href="login/" target="_blank"><p id="login_word">登录</p></a>
+							<a href="login/" target="_blank"><p id="logon_word">注册</p></a>
+						</div>
+						
+						<!-- 右侧登录后显示的个人框 -->
+						<div id="user_head_cont">
+							<!-- <a href="" id="user_head_href"><img src="../userFile/"+userId+"/headPortrait.jpg" id="user_head"></a> -->
+						</div>
+						
+						
+					</div>
+					
+					
+				</div>
+				
+			</header>
 			<h1 id="library_word">目录</h1>
 		</div>
 		

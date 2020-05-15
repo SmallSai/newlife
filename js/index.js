@@ -1,3 +1,4 @@
+//以前的demo
 window.onload=function(){
 	var xhr=new XMLHttpRequest();
 	xhr.open("GET","php/loadUserInfo.php",true);

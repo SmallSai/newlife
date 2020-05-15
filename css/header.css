@@ -69,12 +69,9 @@ header{
 	border-bottom-right-radius: 20px;
 }
 
-#search_logo{
-	
-}
 
 #search_submit{
-	margin-left: -30px;
+	margin-left: -31px;
 	opacity: 0;
 	box-sizing:content-box;
 	-moz-box-sizing:content-box;
@@ -118,14 +115,14 @@ header{
 }
 
 #user_head{
-	width: 40px;
+	width: 38px;
 	border-radius: 20px;
 	margin-left: 50px;
 }
 
 /* 个人操作按钮 */
 #header_operation_cont{
-	margin-top: -12px;
+	margin-top: -22px;
 	display: none;
 	position: absolute;
 	width: 150px;
@@ -153,7 +150,7 @@ header{
 
 /* 透明占位容器 */
 #first_operation_transparent{
-	height: 20px;
+	height: 30px;
 	background-color: red;
 	opacity: 0;
 }

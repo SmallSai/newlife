@@ -19,6 +19,13 @@ body{
 	margin-left: 5px;
 }
 
+#scroll_ima_cont{
+	width: 600px;
+	height: 338px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
 #scroll_ima{
 	width: 600px;
 	border-radius: 5px;
@@ -183,6 +190,10 @@ body{
 	padding: 10px 5px 0;
 }
 
+.article_preview:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
 /*----标题的一行信息------*/
 .title_row_cont{
 	overflow:hidden;

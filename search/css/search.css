@@ -39,12 +39,28 @@ body{
 	margin: 0 20px;
 }
 
+/* 未搜索到作者结果 */
+#no_author{
+	text-align: center;
+	font: 25px "微软雅黑", "黑体", "宋体";
+	color:#696969;	
+	line-height: 150px;
+	width: 300px;
+	margin: 0 auto;
+}
+
 /*---具体作者----*/
 #search_article{
 	margin-top: 17px;
 	display: flex;
 	align-items: center;
 	padding: 0 10px;
+}
+
+/* 输入的关键字，用红色突出 */
+.key_wd{
+	font-size: inherit;
+	color: #e80000;
 }
 
 .search_specific_article{
@@ -130,6 +146,10 @@ body{
 	padding: 10px 5px 0;
 }
 
+.article_preview:hover{
+	text-decoration: underline;
+}
+
 /*----标题的一行信息------*/
 .title_row_cont{
 	overflow:hidden;
@@ -145,12 +165,15 @@ body{
 }
 
 .serial_mark_author_cont{
+	margin-top: 12px;
 	display:inline-block;
 	margin-left:10px;
 }
 
 .original_author{
+	margin-left: 5px;
 	font-size:13px;
+	display: inline-block;
 }
 
 .serial_mark{
@@ -161,7 +184,6 @@ body{
 	border-radius:3px;
 	font:10px "微软雅黑", "黑体", "宋体";
 }
-
 
 /*-----文章数值信息以及信息logo-----*/
 #article_bottom_info_cont{
