@@ -133,16 +133,7 @@ include("../php/dbClose.php");
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>阅读 -
-		<?php
-			if($unSerial=='1'){
-				print $chapterTitle;
-			}
-			else{
-				print $title;
-			}
-		?>
-		</title>
+		<title>阅读</title>
 		<link rel="stylesheet" type="text/css" href="../css/header.css" />
 		<link rel="stylesheet" type="text/css" href="../css/general_purpose.css" />
 		<link rel="stylesheet" type="text/css" href="css/userOperationCont.css" />

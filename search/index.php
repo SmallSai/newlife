@@ -27,7 +27,7 @@ include("../php/dbClose.php");
 		<title>搜索-
 			<?php print $wd;?>
 		</title>
-		<link rel="stylesheet" type="text/css" href="../css/header.css"/>
+		<link rel="stylesheet" href="../css/header.css"/>
 		<link href="../css/general_purpose.css" rel="stylesheet">
 		<link href="css/search.css" rel="stylesheet">
 		<script src="../include/jquery-3.4.1.min.js"></script>

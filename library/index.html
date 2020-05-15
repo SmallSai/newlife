@@ -6,7 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/general_purpose.css"/>
 		<link rel="stylesheet" type="text/css" href="css/library.css"/>
 		<script src="../include/jquery-3.4.1.min.js"></script>
-		<script src="js/library.js"></script>
 	</head>
 	<body>
 		
@@ -17,20 +16,24 @@
 				<div id="header_cont">
 					
 					<!-- logo容器 -->
+					<a href="../" target="_blank">
 					<div id="logo_cont">
 						<img src="image/logo.png" id="logo_ima">
 					</div>
+					</a>
 					
 					<!-- 搜索框 -->
-					<form action="search/" method="get">
+					<form action="../search/" method="get" target="_blank">
 					<div id="search_cont">
-							<input type="text" id="search_input" placeholder="作者/文章"/>
+							<input type="text" id="search_input" name="wd" placeholder="作者/文章"/>
 							
 							<!-- 搜索logo容器 -->
 							<div id="search_logo_cont">
 								<img src="file/icon/search.svg" class="search_logo" id="search_logo">
-								<input type="submit" name="submit" class="search_logo"  id="search_submit" />
 							</div>
+							
+							<!-- 提交按钮 -->
+							<input type="submit" name="submit" class="search_logo"  id="search_submit" />
 					</div>
 					</form>
 					
@@ -38,15 +41,14 @@
 					<div id="login_operation">
 						<!-- 登录注册容器 -->
 						<div id="login_on_cont">
-							<a href="login/" target="_blank"><p id="login_word">登录</p></a>
-							<a href="login/" target="_blank"><p id="logon_word">注册</p></a>
+							<a href="../login/" target="_blank"><p id="login_word">登录</p></a>
+							<a href="../login/" target="_blank"><p id="logon_word">注册</p></a>
 						</div>
 						
 						<!-- 右侧登录后显示的个人框 -->
-						<div id="user_head_cont">
-							<!-- <a href="" id="user_head_href"><img src="../userFile/"+userId+"/headPortrait.jpg" id="user_head"></a> -->
-						</div>
+						<a id="user_href" target="_blank">
 						
+						</a>
 						
 					</div>
 					
@@ -95,237 +97,7 @@
 					</div>
 				</div><!-- 第N篇结束 -->
 				
-				<!--第2篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”  ......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						  <div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
-				<!--第3篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”  ......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						  <div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
-				<!--第4篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						  <div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
-				<!--第5篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						  <div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
-				<!--第6篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						  <div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
-				<!--第7篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						  <div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
-				<!--第8篇-->
-				<div class="real_time_article" >
-							
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">
-						去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，发布日期，点赞等logo-->
-						<div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<p class="release_time">2020-05-03</p>
-						</div>
-							
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-							
-					</div>
-				</div><!-- 第N篇结束 -->
-				
+			</div><!-- div id="result_article_cont"结束 -->
 				<!-- 翻页栏 -->
 				<div id="page_turn_cont">
 					<p class="page_trun">当前:1页</p>
@@ -333,7 +105,7 @@
 					<p class="page_trun">翻到<input type="number" min="1" max="30" id="page_trun_inp"/>页</p>
 					<button class="page_trun" type="button" id="page_button">go</button>
 				</div>
-			</div><!-- div id="result_article_cont"结束 -->
+			
 			
 				
 			<!-- 侧边筛选框 -->
@@ -375,20 +147,27 @@
 					</div>
 					
 				</div>
-				
 			</div>
-			
 		</div>
 		
-		<footer>
-			<div id="about_me_cont">
-		    	<div id="about_me">
-		        	<p class="about_me_word">关于我们</p>
-		        	<p class="about_me_word">加入我们</p>
-		            <p class="about_me_word">意见反馈</p>
-		            <p class="about_me_word">&copy;Sailulu无限公司</p>
-		        </div>
-		    </div>
-		</footer>
+		<!-- 沾满整个屏幕的容器，展示章节目录 -->
+		<div id="show_chapter_cont">
+			<!-- 展示章节目录容器 -->
+			<div id="show_chapter">
+				<!-- 关闭窗口的叉号 -->
+				<div id="close_window">×</div>
+				
+				<!-- 文章标题 -->
+				<h1 id="title"></h1>
+				
+				<!-- 装载章节的容器 -->
+				<div id="chapter_cont">
+					
+				</div>
+			</div>
+		</div><!-- 满屏容器结束 -->
+				
+		<script src="js/library.js"></script>
+		<script src="js/indexUserInfo.js"></script>
 	</body>
 </html>

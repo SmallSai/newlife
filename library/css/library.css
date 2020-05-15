@@ -89,6 +89,19 @@ header{
 	border-bottom-right-radius: 3px;
 }
 
+/* 提交按钮 */
+#search_submit{
+	box-sizing: content-box;
+	height: 26px;
+	width: 30px;
+	border: none;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	margin-left: -30px;
+	opacity: 0;
+	cursor: pointer;
+}
+
 /* 登录注册容器 */
 #login_operation{
 	display: inline-block;
@@ -113,6 +126,13 @@ header{
 	text-align: center;
 	line-height: 26px;
 	border-radius: 20px;
+}
+
+/* 初始隐藏的用户名字容器 */
+#user_href{
+	display: none;
+	font: 15px "幼圆";
+	color: #FFFFFF;
 }
 
 /*-------主视图容器--------*/
@@ -278,26 +298,38 @@ header{
 	padding: 4px 5px 0;
 }
 
+/* 未找到有文章 */
+#not_article{
+	font: 30px "黑体";
+	color: #8d8d8d;
+	text-align: center;
+	line-height: 200px;
+}
+
 /*----标题的一行信息------*/
 .title_row_cont{
 	overflow:hidden;
+	padding: 0px 0 5px;
 	/* border: solid 1px; */
 	margin-left: 30px;
 }
 
 .title_word{
 	padding: 7px 0 0 5px;
-	font:16px "微软雅黑", "黑体", "宋体";
+	font:20px "微软雅黑", "黑体", "宋体";
 	float:left;
 }
 
 .serial_mark_author_cont{
+	margin-top: 12px;
 	display:inline-block;
 	margin-left:10px;
 }
 
 .original_author{
+	margin-left: 5px;
 	font-size:13px;
+	display: inline-block;
 }
 
 .serial_mark{
@@ -345,6 +377,26 @@ header{
 	padding-left:2px;
 }
 
+.read_logo,.read_num_data{
+	display: none;
+}
+
+/* 连载文章预览文字 */
+.show_chapter{
+	font: 20px "宋体";
+	text-align: center;
+	color:#696969;
+	cursor: pointer;
+	border-bottom:solid 1px #696969;
+	width: 140px;
+	margin: 0 auto;
+}
+
+.single_preview{
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
 /*--------头像加昵称-------*/
 .head_name_cont{
 	float:right;
@@ -387,4 +439,71 @@ header{
 #page_button{
 	font-size: 15px;
 	padding: 0 5px;
+}
+
+/* 装载章节的满屏容器 */
+#show_chapter_cont{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(00,00,00,0.2);
+	z-index: 9;
+	display: none;
+}
+
+/* 真正展示章节的容器 */
+#show_chapter{
+	position: absolute;
+	width: 700px;
+	height: 800px;
+	z-index: 10;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin:auto;
+	background-color:  rgba(255,255,255,0.95);
+	border-radius: 5px;
+	
+}
+
+/* 关闭的叉号 */
+#close_window{
+	font-size: 40px;
+	float: right;
+	cursor: pointer;
+	line-height: 26px;
+	vertical-align:top;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+/* 文章标题 */
+#title{
+	margin-top: 40px;
+	font: 25px "黑体";
+	text-align: center;
+}
+
+/* 装载章节标题的容器 */
+#chapter_cont{
+	width: 550px;
+	margin: 30px auto 0;
+	height: 650px;
+}
+
+/* 具体章节 */
+.specifc_chapter{
+	font: 20px "宋体";
+	border-bottom: solid 1px;
+	margin-bottom: 10px;
+	line-height: 36px;
+	color: #666666;
+	cursor: pointer;
+}
+
+.specifc_chapter:hover{
+	color: #60bbd6;
 }

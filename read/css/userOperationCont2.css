@@ -1,19 +1,16 @@
 /* 阅读页面用户操作栏的样式 */
 /*-----------用户个人框------------*/
 #float_cont{
-	width: 70px;
+	width: 60px;
 	text-align: center;
 	position:fixed;
 	top:100px;
 	right:100px;
-	//background-color: #40E0D0;
-
 }
 
 #float_user_head_operation_cont{
-	width:55px;
+	width:50px;
 	margin: 0 auto;
-	background-color: #FFFFFF;
 }
 
 /*----用户操作logo----*/
@@ -41,14 +38,11 @@
 	width:37px;
 	margin:5px 0;
 }
-#more_logo{
-transform: rotate(90deg);
-}
 
 /* -----更多按钮后的其他按钮样式------- */
 #more_cont{
 	width: 150px;
-	margin-left: -40px;
+	margin-left: -45px;
 }
 
 .more_logo_cont{
@@ -57,7 +51,6 @@ transform: rotate(90deg);
 	border: solid 1px;
 	border-radius: 20px;
 	vertical-align: top;
-	background-color: #FFFFFF;
 }
 
 .more_operation_logo{
