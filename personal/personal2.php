@@ -1,3 +1,53 @@
+<?php
+include("../php/dbConnect.php");
+// 访问的Id
+$pId=mysqli_real_escape_string($dbc,$_GET['pid']);
+$queryPid="SELECT * FROM user WHERE userId=".$pId;
+$result=mysqli_query($dbc,$queryPid);
+
+$pName='';
+$pSex='';
+$pOld='';
+$pPlace='';
+$pSing='';
+$pArticleNum='';
+$pFavoriteNum='';
+$pFollowNum='';
+$pDraft='';
+$pFanNum='';
+$pUpNum='';
+$allReadNum='';
+
+if(mysqli_num_rows($result)!=1){
+	// 未查询到有用户
+	header("Location:../");
+	die();
+}
+else{
+	// 查询到有用户
+	$row=mysqli_fetch_assoc($dbc,$result);
+	
+	$pName=$row['userName'];
+	$pSex=$row['sex'];
+	$pOld=$row['old'];
+	$pPlace=$row['place'];
+	$pSign=$row['sign'];
+	$pArticleNum=$row['articleNum'];
+	$pFavoriteNum=$row['favoriteNum'];
+	$pFollowNum=$row['followNum'];
+	$pDraftNum=$row['draftNum'];
+	$pFanNum=$row['fanNum'];
+	$pUpNum=$row['upNum'];
+	$pAllReadNum=$row['allReadNum'];
+	
+	// 用户文章
+	$queryArticle="SELECT * FROM article WHERE userId=".$pId;
+	$resultArticle=mysqli_query($dbc,$queryArticle);
+}
+
+include("../php/dbClose.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,6 +145,7 @@
 </head>
 <body>
 	<!-- 顶部盒子 -->
+	<?php print '<input type="hidden" value="'.$pId.'" id="hidden_inp_pid">'; ?>
 	<script src="../include/header.js"></script>
 	<!-- 右侧简介 -->
 	<div class="introduce" style="background: url(img/bg.jpg);background-size: cover;">
@@ -102,17 +153,35 @@
 			<div class="intr_hp" style="background: url(img/touxiang.jpg);background-size: cover;">
 			</div>
 			<div class="intr_name">
-				<div class="authorname"><p>&nbsp;小红</p>
+				<div class="authorname"><p>&nbsp;
+					<?php print $pName; ?>
+				</p>
 				</div>
-				<div class="intr_other"><p>性别：保密&nbsp;&nbsp;年龄：17&nbsp;&nbsp;居住地：天朝</p></div>
+				<div class="intr_other"><p>性别：
+				<?php 
+					if(pSex=='0'){ 
+						print '保密';
+					}
+					else{
+						if(pSex=='1'){
+							print '男';
+						}
+						else{
+							print '女';
+						}
+					}
+				?>
+				&nbsp;&nbsp;年龄：<?php print $old; ?>&nbsp;&nbsp;居住地：<?php print $pPlace; ?> </p></div>
 			</div>
 			<div class="authorgraph">
-				<p>"&nbsp;&nbsp;&nbsp;寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。"</p>
+				<p>"&nbsp;&nbsp;&nbsp;
+					<?php print $pSign; ?>
+				"</p>
 			</div>
 			<div class="authordata">
-				<p>粉丝数：30</p>
-				<p>点赞数：30</p>
-				<p>总阅读：100</p>
+				<p>粉丝数：<?php print $pFanNum; ?></p>
+				<p>点赞数：<?php print $pUpNum; ?></p>
+				<p>总阅读：<?php print $pAllReadNum; ?></p>
 			</div>
 		</div>
 	</div>
@@ -127,6 +196,8 @@
 			</ul>
 		</nav>
 		<div class="wenzhang trans1">
+			
+			<!-- 第N篇文章 -->
 			<div class="partone" id="hoverdel">
 				<div class="title">
 					<p>济南的冬天</p>
@@ -149,7 +220,9 @@
 					</ul>
 				</div>
 			</div>
+			
 			<div class="middle"></div>
+			
 			<div class="partone">
 				<div class="title">三国演义</div>
 				<div style="margin-left: 10px;margin-top: 5px;font-size: 13px;float: left;border: 1px solid #4bb8ed;color: #4bb8ed;">连载</div>
@@ -164,6 +237,7 @@
 					</ul>
 				</div>
 			</div>
+			
 			<div class="partone">
 				<div class="title">
 					<p>济南的冬天</p>
