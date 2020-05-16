@@ -21,6 +21,7 @@ function addUserInfo(){
 				var loginCont=document.getElementById("login_on_cont");
 				loginCont.style.display="none";
 				userHeadCont.style.display="block";
+			
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-// 加载用户信息脚本，检查打开个人页面与自己userId是否匹配
+// 加载用户信息脚本
 function addUserInfo(){
 	var xhrLoadUser=new XMLHttpRequest();
 	xhrLoadUser.open('GET','../php/loadUserInfo.php',true);
@@ -21,16 +21,6 @@ function addUserInfo(){
 				var loginCont=document.getElementById("login_on_cont");
 				loginCont.style.display="none";
 				userHeadCont.style.display="block";
-				
-				var pid=document.getElementById("hidden_inp_pid").value;//页面主人userId
-				if(pid==userId){
-					// 打开的是自己页面，可以进入修改信息窗口
-					console.log("pid:"+pid);
-					document.getElementById("change_info_cont").onmouseover=function(){
-						var changInfoObj=document.getElementById("change_info");
-						changInfoObj.style.display="block";			
-					}
-				}
 			}
 		}
 	}

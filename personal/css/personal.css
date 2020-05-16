@@ -294,3 +294,18 @@ body {
 	font: 30px "黑体";
 	color: #6a6a6a;
 }
+
+.data_num{
+	font-family: "幼圆";
+}
+
+#change_info{
+	display: none;
+	text-align: center;
+	background-color: rgb(0,0,0,0.3);
+	color: #FFFFFF;
+	width: 78px;
+	line-height: 78px;
+	border-radius: 50%;
+	cursor: pointer;
+}

@@ -163,7 +163,8 @@ else{
 	<!-- 右侧简介 -->
 	<div class="introduce" style="background: url(img/bg.jpg);background-size: cover;">
 		<div style="width: 100%;height: 620px;background-color: rgba(0,0,0,0.3);">
-			<div class="intr_hp" style="background: url(img/touxiang.jpg);background-size: cover;">
+			<div class="intr_hp" style="background: url(img/touxiang.jpg);background-size: cover;" id="change_info_cont">
+				<p id="change_info">修改信息</p>
 			</div>
 			<div class="intr_name">
 				<div class="authorname"><p>&nbsp;
@@ -192,9 +193,9 @@ else{
 				"</p>
 			</div>
 			<div class="authordata">
-				<p>粉丝数：<?php print $pFanNum; ?></p>
-				<p>点赞数：<?php print $pUpNum; ?></p>
-				<p>总阅读：<?php print $pAllReadNum; ?></p>
+				<p class="data_num">粉丝数：<?php print $pFanNum; ?></p>
+				<p class="data_num">点赞数：<?php print $pUpNum; ?></p>
+				<p class="data_num">总阅读：<?php print $pAllReadNum; ?></p>
 			</div>
 		</div>
 	</div>
@@ -229,14 +230,14 @@ else{
 						print '<!-- 第N篇 --><div class="partone" id="hoverdel"><div class="title"><p>'.$row['title'].'</p></div>'.
 					'<div class="tipdel"><button class="but">删除</button><button class="butother">取消</button></div><div id="icon_sc" style="top: 35px">'.
 					'<a class="glyphicon glyphicon-trash" style="font-size: 20px;color: black;text-decoration: none;" id="delete"></a></div>'.
-					'<div class="duanwen" id="del"><p>'.$articlePreview.'......</p></div><div class="downright"><ul><li></li>'.
+					'<div class="duanwen" id="del"><p><a href="../read/index.php?aid='.$row['articleId'].'" target="_blank">'.$articlePreview.'</a>......</p></div><div class="downright"><ul><li></li>'.
 					'<li class="iconfont icon-view">&nbsp;&nbsp;'.$row['readNum'].'</li><li class="iconfont icon-good">&nbsp;&nbsp;'.$row['upNum'].'</li></ul></div></div>';	
 					}
 					else{
 						// 连载文章
 						print '<!-- 第N篇 --><div class="partone"><div class="title">'.$row['title'].'</div>'.
 						'<div style="margin-left: 10px;margin-top: 5px;font-size: 13px;float: left;border: 1px solid #4bb8ed;color: #4bb8ed;">连载</div>'.
-						'<div class="duanwen"><p>查看章节</p></div><div class="downright"><ul><li></li><li class="iconfont icon-view">&nbsp;&nbsp;'.$row['readNum'].'</li>'.
+						'<div class="duanwen"><p class="view_chapter">查看章节</p></div><div class="downright"><ul><li></li><li class="iconfont icon-view">&nbsp;&nbsp;'.$row['readNum'].'</li>'.
 						'<li class="iconfont icon-good">&nbsp;&nbsp;'.$row['upNum'].'</li></ul></div></div>';
 					}
 					
@@ -379,6 +380,6 @@ else{
 		</div>
 	</div>
 	<script src="../js/deleteCookieOtherPage.js"></script>
-	<script src="../js/myIndexOtherPage.js"></script>
+	<script src="js/personalAjax.js"></script>
 </body>
 </html>
