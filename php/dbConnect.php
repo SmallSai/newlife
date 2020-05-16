@@ -1,6 +1,6 @@
 <?php
 	//数据库连接
-	$dbHost='localhost';
+	$dbHost='39.98.117.187';
 	$dbUser='saiA';
 	$dbPassword='pass321';
 	$dbc=mysqli_connect($dbHost,$dbUser,$dbPassword);
