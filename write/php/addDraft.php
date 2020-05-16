@@ -3,7 +3,7 @@
 include("../../php/dbConnect.php");
 $userId=$_GET['userId'];
 
-$queryArticle="SELECT articleId,title,unSerial FROM article WHERE userId=".$userId." AND state='1';";
+$queryArticle="SELECT articleId,title,unSerial FROM article WHERE userId=".$userId." AND state='1' OR unSerial='1';";
 
 $result=mysqli_query($dbc,$queryArticle);
 $resultNum=mysqli_num_rows($result); //结果集行数

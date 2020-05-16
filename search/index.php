@@ -70,8 +70,8 @@ include("../php/dbClose.php");
 							$keyWdFooter=mb_substr(strstr($getUserName,$wd),$wdLength);//关键字之后部分
 	
 							
-							print '<!-- 具体一个相关作者 --><div class="search_specific_article">'.
-							'<img src="../userFile/'.$rowAuthor['userId'].'/headPortrait.jpg" alt="head" class="search_author_head">'.
+							print '<!-- 具体一个相关作者 --><a href="../personal/personal.php?pid='.$rowAuthor['userId'].'" target="_blank"><div class="search_specific_article">'.
+							'<img src="../userFile/'.$rowAuthor['userId'].'/headPortrait.jpg" alt="head" class="search_author_head"></a>'.
 							'<h1 class="search_author_name">'.$keyWdHead.'<span class="key_wd">'.$wd.'</span>'.$keyWdFooter.'</h1>'.
 							'<h2 class="search_follow_mark">+关注<input type="hidden" value="'.$rowAuthor['userId'].'" class="follow_hidden_inp"></h2></div><div class="divsion"></div>';
 							
@@ -79,8 +79,7 @@ include("../php/dbClose.php");
 								// 已经历遍最后一个结果，退出
 								break;
 							}
-						}
-						
+						}									
 					}
 					else{
 						// 没有搜索结果
@@ -115,47 +114,10 @@ include("../php/dbClose.php");
 				<!-- 具体每个文章容器 -->
 				<div id="every_article_cont">
 					
-				<!--第1篇-->
-				<div class="real_time_article" >
-
-					<!--标题处的一行-->
-					<div class="title_row_cont" id="first_article">
-						<div class="title_word">一日的春光</div>
-						<div class="serial_mark_author_cont">
-							<div class="serial_mark">连载</div>
-							<div class="original_author">原作者：冰心</div>
-						</div>
-					</div>
-					<!--预览文字-->
-					<p class="article_preview">去年冬末，我给一位远方的朋友写信，曾说：“我要尽量的吞咽今年北平的春天。”
-
-						　　今年北平的春天来的特别的晚，而且在还不知春在哪里的时候......
-					</p>
-					<!--文章底部阅读量等信息-->
-					<div id="article_bottom_info_cont">
-						<!--左侧阅读，点赞等logo-->
-						<div class="info_logo_cont">
-							<img src="../file/icon/browse.svg" class="info_logo">
-							<span class="detailed_data">123</span>
-							<img src="../file/icon/up.svg" class="info_logo">
-							<span class="detailed_data">32</span>
-							<img src="../file/icon/collection.svg" class="info_logo">
-							<span class="detailed_data">55</span>
-						</div>
-
-						<!--右侧投稿者-->
-						<div class="head_name_cont">
-							<img src="../test/head_portrait.jpg" alt="head_portrait" class="head_portrait">
-							<div class="user_name">陈独秀asdasd</div>
-						</div>
-
-					</div>
-				</div>
-
-				
+		
 				
 				<!-- 无更多结果文字 -->
-				<div class="real_time_article">
+				<div class="real_time_article" id="not_more_article">
 					<p id="no_result">没有更多结果了~</p>
 				</div>
 				
@@ -167,6 +129,6 @@ include("../php/dbClose.php");
 		</div>
 	<script src="../js/indexAjaxOtherPage.js"></script>
 	<script src="js/index.js"></script>
-	<script src="../js/myIndexOtherPage.js"></script>
+	<script src="../js/indexUserInfo.js"></script>
 	</body>
 </html>

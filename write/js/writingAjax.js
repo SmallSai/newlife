@@ -606,7 +606,7 @@ function funcAjax() {
 			releasFlag = false;
 			errorTitle.innerHTML = "未输入标题呀";
 			setTimeout(function() {
-				errorText.style.visibility = "hidden";
+				errorTitle.style.visibility = "hidden";
 			}, 2000);
 		}
 
@@ -627,7 +627,7 @@ function funcAjax() {
 				releasFlag = false;
 				errorOri.innerHTML = "请选择作品性质"
 				setTimeout(function() {
-					errorText.style.visibility = "hidden";
+					errorOri.style.visibility = "hidden";
 				}, 2000);
 			}
 		}
@@ -650,6 +650,9 @@ function funcAjax() {
 			} else {
 				releasFlag = false;
 				errorSerial.innerHTML = "这是篇连载文章吗？";
+				setTimeout(function() {
+					errorSerial.style.visibility = "hidden";
+				}, 2000);
 			}
 		} else {
 			if (unSerial[0].checked) {
@@ -657,6 +660,9 @@ function funcAjax() {
 			} else {
 				releasFlag = false;
 				errorSerial.innerHTML = "这是篇连载文章吗？";
+				setTimeout(function() {
+					errorSerial.style.visibility = "hidden";
+				}, 2000);
 			}
 		}
 

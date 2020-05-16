@@ -8,7 +8,7 @@ function getArticle(articleClass) {
 	//文章放置容器
 	var searchArticleContObj = document.getElementById("every_article_cont");
 	var outStr = '';
-
+	
 	searchArticleContObj.innerHTML = '';
 	outStr = '';
 	
@@ -167,9 +167,9 @@ function getArticle(articleClass) {
 					'<img src="../file/icon/browse.svg" class="info_logo"><span class="detailed_data">' + readNum +
 					'</span><img src="../file/icon/up.svg" class="info_logo"><span class="detailed_data">' + upNum + '</span>' +
 					'<img src="../file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +
-					'</span></div><!--右侧投稿者--><div class="head_name_cont"><img src="../userFile/' + authorId +
+					'</span></div><!--右侧投稿者--><div class="head_name_cont"><a href="../personal/personal.php?pid='+authorId+'" target="_blank"><img src="../userFile/' + authorId +
 					'/headPortrait.jpg" alt="head_portrait" class="head_portrait">' +
-					'<div class="user_name">' + authorName + '</div></div></div></div>';
+					'<div class="user_name">' + authorName + '</div></a></div></div></div>';
 
 				searchArticleContObj.innerHTML = outStr;
 

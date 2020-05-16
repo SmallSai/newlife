@@ -85,6 +85,7 @@ body{
 	border-radius: 20px;
 	width: 54px;
 	margin: 0 auto;
+	cursor: pointer;
 }
 
 /*---分割div---*/
@@ -122,8 +123,11 @@ body{
 
 /* 文章预览样式 */
 .real_time_article{
+	border-bottom: solid 1px #d9d9d9;
 	height:170px;
 	padding:5px 25px;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .real_time_article:last-child{
@@ -148,6 +152,10 @@ body{
 
 .article_preview:hover{
 	text-decoration: underline;
+}
+
+#not_more_article{
+	border: none;
 }
 
 /*----标题的一行信息------*/
@@ -234,7 +242,6 @@ body{
 
 /*----没有更多结果----*/
 #no_result{
-	border-top:solid 1px #e7e7e7;
 	text-align: center;
 	font: 25px "微软雅黑", "黑体", "宋体";
 	color:#696969;	

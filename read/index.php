@@ -59,17 +59,40 @@ if(key_exists("cid",$_GET)&&$_GET['cid']!=null){
 			$oriAuthor=$row['oriAuthor'];
 		}
 		$chapterTitle=$row['chapterTitle'];
-		$text=$row['serialText'];
+		
+		// 对换行转义
+		$pattern = array(
+		
+		    '/ /',//半角下空格
+		
+		    '/　/',//全角下空格
+		
+		    '/\r\n/',//window 下换行符
+		
+		    '/\n/',//Linux && Unix 下换行符
+		
+		    );
+		
+		    $replace = array('&nbsp;','&nbsp;','<br />','<br />');
+		
+		    $text=preg_replace($pattern, $replace, $row['serialText']);
+		
 		$date=$row['date'];
 		$hiddenVal="chapterId=".$chapterId;
 		
 		// 增加本文阅读量
 		$insertRead="INSERT INTO `read` VALUES(".$userId.",".$chapterId.");";
-		
 		$insertResult=mysqli_query($dbc,$insertRead);
+		
 		if(mysqli_affected_rows($dbc)==1){
 			$updateReadNum="UPDATE serial SET readNum=readNum+1 WHERE chapterId=".$chapterId.";";
 			mysqli_query($dbc,$updateReadNum);
+			
+			// 增加用户总阅读
+			$updateUserReadNum="UPDATE user SET allReadNum=allReadNum+1 WHERE userId=".$releasUserId;
+			$resultReadNum=mysqli_query($dbc,$updateUserReadNum);
+			print "语句：".$updateUserReadNum."----";
+			print mysqli_error($dbc);
 		}
 	}
 	else{
@@ -94,8 +117,25 @@ else{
 				// 转载
 				$oriAuthor=$row['oriAuthor'];
 			}
+			
+			// 对换行转义
+			$pattern = array(
+			
+			    '/ /',//半角下空格
+			
+			    '/　/',//全角下空格
+			
+			    '/\r\n/',//window 下换行符
+			
+			    '/\n/',//Linux && Unix 下换行符
+			
+			    );
+			
+			    $replace = array('&nbsp;','&nbsp;','<br />','<br />');
+			
+			    $text=preg_replace($pattern, $replace, $row['articleText']);
 
-			$text=$row['articleText'];
+			
 			$date=$row['date'];
 			$hiddenVal="articleId=".$articleId;
 			// print "php中hiddenVal:".$hiddenVal."-----";
@@ -107,6 +147,12 @@ else{
 			if(mysqli_affected_rows($dbc)==1){
 				$updateReadNum="UPDATE serial SET readNum=readNum+1 WHERE chapterId=".$chapterId.";";
 				mysqli_query($dbc,$updateReadNum);
+				
+				// 增加用户总阅读
+				$updateUserReadNum="UPDATE user SET allReadNum=allReadNum+1 WHERE userId=".$releasUserId;
+				$resultReadNum=mysqli_query($dbc,$updateUserReadNum);
+				print "语句：".$updateUserReadNum."----";
+				print mysqli_error($dbc);
 			}
 		}
 		else{
@@ -114,14 +160,6 @@ else{
 			header("Location:../");
 			die();
 		}
-	}
-	
-	// 增加本文阅读量
-	$insertRead="INSERT INTO `read` VALUES(".$userId.",".$articleId.");";
-	$insertResult=mysqli_query($dbc,$insertRead);
-	if(mysqli_affected_rows($dbc)==1){
-		$updateReadNum="UPDATE article SET readNum=readNum+1 WHERE articleId=".$articleId.";";
-		mysqli_query($dbc,$updateReadNum);
 	}
 }
 

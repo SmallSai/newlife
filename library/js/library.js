@@ -145,9 +145,9 @@ function classFilt(){
 											outStrChapter='';
 											outStrChapter+='<a href="../read/index.php?aid='+hiddenAid+'&cid='+chapterObj[k]['chapterId']+'" target="_blank"><h2 class="specifc_chapter">'+
 											chapterObj[k]['chapterTitle']+'</h2></a>';
-											
+											chapterCont.innerHTML+=outStrChapter;
 										}
-										chapterCont.innerHTML=outStrChapter;
+										
 										showChapterCont.style.display="block";
 									}
 									

@@ -104,4 +104,12 @@ $(function(){
 		preface_sp.css({"background":"none","color": "#ff557f","border": "solid 1px"});
 	});
 	
+	
+	// 字数统计
+	var textArea=document.getElementById("textarea");
+	var wordNum=document.getElementById("tip_word_num");
+	
+	textArea.onkeyup=function(){
+		wordNum.innerHTML=textArea.value.length;
+	}
 });

@@ -104,7 +104,7 @@ function getArticle(articleClass) {
 					'<img src="file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +
 					'</span></div><!--右侧投稿者--><div class="head_name_cont"><a href="personal/personal.php?pid='+authorId+'" target="_blank"><img src="userFile/' + authorId +
 					'/headPortrait.jpg" alt="head_portrait" class="head_portrait">' +
-					'<div class="user_name">' + authorName + '</div></div></div></div>';
+					'<div class="user_name">' + authorName + '</div></a></div></div></div>';
 
 				searchArticleContObj.innerHTML = outStr;
 

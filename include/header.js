@@ -38,7 +38,7 @@ document.writeln("						");
 document.writeln("						<!-- 个人操作框 -->");
 document.writeln("						<div id=\'header_operation_cont\'>");
 document.writeln("							<p id=\'first_operation_transparent\'></p>");
-document.writeln("							<a href=\'../userPages/\' target=\'_blank\'><p class=\'header_operation\'><img src=\'../file/icon/people_fill.svg\' class=\'header_operation_logo\'>我的空间</p></a>");
+document.writeln("							<a href=\'\' target=\'_blank\' id=\'user_page_href\'><p class=\'header_operation\'><img src=\'../file/icon/people_fill.svg\' class=\'header_operation_logo\'>我的空间</p></a>");
 document.writeln("							<p class=\'header_operation\'><img src=\'../file/icon/mail_fill.svg\' class=\'header_operation_logo\'>我的来信</p>");
 document.writeln("							<p class=\'header_operation\' id=\'sign_out_operation\'><img src=\'../file/icon/close.svg\' class=\'header_operation_logo\' id=\'last_header_operation_logo\'>退出登录</p>");
 document.writeln("							<p id=\'last_operation_transparent\'></p>");
