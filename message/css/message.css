@@ -1,0 +1,122 @@
+body{
+	font: 16px 微软雅黑;
+}
+dl dd a{
+	text-decoration: none;
+}
+dl{
+	clear: left;
+}
+dt{
+	float: left;
+}
+/*信息外div*/
+.message_div{
+	width: 60%;
+	margin-left: 20%;
+}
+
+dl {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+	font: 微软雅黑;
+}
+dt {
+    display: block;
+	text-align: center;
+	width: 64px;
+	margin-left: 16px;
+}
+dd {
+    display: block;
+    margin-inline-start: 40px;
+	margin-left: 90px;
+}
+
+.message_from{
+	height: 900px;
+}
+/*提交按钮*/
+.m_buttton{
+	    font-size: 14px;
+	    line-height: 15px;
+	    display: inline-block;
+	    overflow: visible;
+	    min-width: 50px;
+	    padding: 7px 15px;
+	    cursor: pointer;
+	    transition: background-color .15s,opacity .15s;
+	    text-align: center;
+	    color: #fff;
+	    border: 1px solid transparent;
+	    background-color: #bf2c24;
+	    background-repeat: no-repeat;
+	    background-position: center;
+		margin: 20px;
+		
+}
+/*取消按钮*/
+.m_q{
+	font-size: 14px;
+	line-height: 15px;
+	display: inline-block;
+	overflow: visible;
+	min-width: 50px;
+	padding: 7px 15px;
+	cursor: pointer;
+	transition: background-color .15s,opacity .15s;
+	text-align: center;
+	color: #fff;
+	border: 1px solid transparent;
+	background-color: #bf2c24;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 20px;
+}
+
+fieldset{
+	border: 1px #40E0D0 solid;
+	height: 600px;
+	border: none;
+}
+/*text输入框*/
+.message_input{
+	width: 200px;
+	height: 30px;
+	border-radius: 50px;
+	outline: none;
+	border: 1px gray solid;
+	font: 14px 微软雅黑;
+	padding-left: 10px;
+}
+/*texterea输入框*/
+.message_input2{
+	width: 300px;
+	height: 100px;
+	resize: none;
+	border: 1px gray solid;
+	font: 14px 微软雅黑;
+	border-radius: 5px;
+	outline: none;
+	padding-left: 10px;
+}
+/*更换头像*/
+.message_a{
+	display: inline-block;
+	width: 88px;
+	height: 26px;
+	text-align: center;
+	border-radius: 50px;
+	outline: none;
+	border: 1px solid rgba(59,194,29,.7);
+	color: #42c02e!important;
+	font: 14px 微软雅黑;
+}
+
+.message_a:hover{
+	background-color:rgba(59,194,29,.2) ;
+	
+}
