@@ -2,10 +2,6 @@
 	//修改个人信息脚本
 
      
-
-
-
-
 	var xhrLoadUser=new XMLHttpRequest();
 	xhrLoadUser.open('GET','../php/loadUserInfo.php',true);
 	xhrLoadUser.send();
@@ -44,7 +40,7 @@
 				for(var i=0;i<3;i++){
 					if(name[i].value==sex)
 					name[i].checked=true;
-				
+				}
 				
 								
 				//设置头像
@@ -57,8 +53,9 @@
 				userHeadCont.style.display="block";
 				
 				
-				
-				保存.onclick=function(){
+				//保存检测
+				var user_sub=document.getElementById("sub");
+				user_sub.onclick=function(){
 					
 					if (username.value.indexOf(" ") == -1||username.value.length==0) {
 					    alert("昵称为空或者存在空格,请重新输入");
@@ -69,35 +66,34 @@
 					xhrusername.send();
 					xhrusername.onreadystatechange=function(){
 						if(xhrusername.readyState==4&&xhrusername.status==200){
-							if(xhrusername.responseText=="1")
-							alert("该昵称已存在,请重新输入");
-						}
-						
-						else  {
-						var sexaa;
-						for(var i=0;i<3;i++){
-							if(name[i].checked==true)
-							{
-								if(i==0) sexaa="0";
-								else if(i==1) sexaa="1";
-								else sexaa="2";
-							}
-							}
+							if(xhrusername.responseText=="1"){
+								alert("该昵称已存在,请重新输入");}
+												
+							else  {
+									var sexaa;
+										for(var i=0;i<3;i++){
+											if(name[i].checked==true)
+												{
+													if(i==0) sexaa="0";
+													else if(i==1) sexaa="1";
+													else sexaa="2";
+												}
+															}
 							
 						xhrusername.open('get','php/saveChange.php?userName='+username.value+'&old='+userold.value+'&place='+userplace.value+'&sign='+usergx.value+'&sex='+sexaa+'&uid='+userId,true);
 						xhrusername.send();
 					    xhrusername.onreadystatechange=function(){
 					    	if(xhrusername.readyState==4&&xhrusername.status==200){
 					    		if(xhrusername.responseText=="0")
-					    		alert("保存失败");
+					    		{alert("保存失败");}
 								if(xhrusername.responseText=="1")
-								alert("保存成功");
+								{alert("保存成功");}
 								if(xhrusername.responseText=="2")
-								alert("存在昵称,保存失败");
+								{alert("存在昵称,保存失败");}
 								
-					    	}
-							}
-					}
+																				}
+																}
+								}
 					
 					}
 				}
@@ -106,6 +102,8 @@
 			
 		}
 	}
+}
+}
 }
 
 window.onload=changeInfo();
