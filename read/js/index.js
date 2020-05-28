@@ -1,4 +1,4 @@
-// 阅读页面加载顶部栏用户信息以及浮动栏用户信息，以及评论的加载
+// 阅读页面加载顶部栏用户信息以及浮动栏用户信息，以及评论的加载,用户的关注
 function addUserInfo() {
 	// 获取隐藏表单的值,写评论，加载评论都会用到
 	// hiddenVal值：articleId=n 或者 chapterId=n
@@ -29,7 +29,11 @@ function addUserInfo() {
 				var userHeadCont = document.getElementById("user_head_cont");
 				var userHeadIma = document.getElementById("user_head");
 				userHeadIma.setAttribute("src", "../userFile/" + userId + "/headPortrait.jpg");
-
+				
+				// 设置头部我的空间链接
+				var userPageHref=document.getElementById("user_page_href");
+				userPageHref.setAttribute("href","../personal/personal.php?pid="+userId);
+				
 				var loginCont = document.getElementById("login_on_cont");
 				loginCont.style.display = "none";
 				userHeadCont.style.display = "block";
@@ -245,7 +249,86 @@ function addUserInfo() {
 						}
 					}
 				}
-
+				
+				
+				// 关注操作
+				var followBut=document.getElementById("follow_cont");//关注按钮
+				var beFollowUid=document.getElementsByClassName("hidden_inp_uid")[0].value;//被关注者uid
+				var xhrFollowCheck=new XMLHttpRequest();
+				xhrFollowCheck.open('GET','../search/php/follow.php?userId='+userId+'&beFollowUid='+beFollowUid+'&flag=1');
+				xhrFollowCheck.send();
+				xhrFollowCheck.onreadystatechange=function(){
+					if(xhrFollowCheck.readyState==4&&xhrFollowCheck.status==200){
+						if(xhrFollowCheck.responseText=='0'){
+							// 还未关注
+							followBut.style.color="#e6757d";
+							followBut.style.background="none";
+							followBut.innerHTML="关注";
+							
+							followBut.onclick=function(obj){
+								followUser(this);
+							}
+						}
+						else{
+							// 已经关注
+							followBut.style.color="#FFFFFF";
+							followBut.style.background="#e6757d";
+							followBut.innerHTML="已关注";
+							
+							followBut.onclick=function(obj){
+								followClose(this);
+							}
+						}
+					}
+				}//检查是否关注结束
+				
+				// 关注作者函数
+				function followUser(ths){
+					var xhrFollowUser=new XMLHttpRequest();
+					
+					xhrFollowUser.open('GET','../search/php/follow.php?flag=2&userId=' + userId + '&beFollowUid=' + beFollowUid);
+					xhrFollowUser.send();
+					
+					xhrFollowUser.onreadystatechange=function(){
+						if(xhrFollowUser.readyState==4&&xhrFollowUser.status==200){
+							if(xhrFollowUser.responseText=='1'){
+								//console.log(xhrFollowUser.responseText);
+								ths.innerHTML="已关注";
+								ths.style.background= "#e6757d";
+								ths.style.color = "#ffffff";
+								
+								// 点击取关
+								ths.onclick=function(obj){
+									followClose(this);
+								}
+							}
+						}
+					}
+				}
+				
+				// 取关作者函数
+				function followClose(ths){
+					var xhrFollowClose=new XMLHttpRequest();
+					
+					xhrFollowClose.open('GET','../search/php/follow.php?flag=3&userId=' + userId + '&beFollowUid=' + beFollowUid);
+					xhrFollowClose.send();
+					
+					xhrFollowClose.onreadystatechange=function(){
+						if(xhrFollowClose.readyState==4&&xhrFollowClose.status==200){
+							if(xhrFollowClose.responseText=='1'){
+								//console.log(xhrFollowClose.responseText);
+								ths.innerHTML="关注";
+								ths.style.background = "none";
+								ths.style.color = "#e6757d";
+								
+								// 点击关注
+								ths.onclick=function(obj){
+									followUser(this);
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -286,7 +369,7 @@ function addUserInfo() {
 					comUpNum = commentObj[i]['upNum'];
 
 					var outCommentStr = '<!-- 具体展示评论 --><div class="specifi_comment"><!-- 评论人信息容器 --><div class="commentator_info">' +
-						'<img src="../userFile/' + comUserId + '/headPortrait.jpg" class="commentator_head"><!-- 评论者名字以及点赞数量 -->' +
+						'<div class="commentator_head_div"><img src="../userFile/' + comUserId + '/headPortrait.jpg" class="commentator_head"></div><!-- 评论者名字以及点赞数量 -->' +
 						'<p class="commentator_name">' + comUserName +
 						'</p><!-- 点赞数量 --><img src="../file/icon/up.svg" class="comment_up_logo">' +
 						'<div class="comment_up_num">' + comUpNum + '</div></div><!-- 评论展示容器 --><p class="show_comment_word">' +

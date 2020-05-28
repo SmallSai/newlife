@@ -1,0 +1,71 @@
+/* 管理员 */
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	text-align: center;
+}
+
+/* 用户管理 */
+#user{
+	display: inline-block;
+	border: solid 1px;
+	vertical-align: top;
+}
+
+#user_cont{
+	margin: 10px 0;
+}
+
+.specific_user_cont{
+	display: flex;
+	align-items: center;
+}
+
+.user_name,.user_sign,.user_ban_reason,.user_ban_inp{
+	font-size: 20px;
+}
+
+.user_sign{
+	
+}
+.user_head{
+	width: 40px;
+	margin-left: 10px;
+}
+
+p{
+	margin: 0 10px;
+}
+
+/* 文章管理 */
+#article{
+	width: 1000px;
+	display: inline-block;
+	border: solid 1px;
+}
+
+#article_cont{
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+.title,.author,.chapterTitle,.pass_or_not_but{
+	font-size: 20px;
+	margin: 0 10px;
+}
+
+.user_ban_inp{
+	width: 150px;
+}
+
+.text,.chapterText{
+	cursor: pointer;
+}
+
+.text,.chapterText{
+	color: #0B92B9;
+}

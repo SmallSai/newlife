@@ -144,11 +144,11 @@ function getArticle(articleClass) {
 					
 					// 判断关键字是否存在文章处
 					var strArticleIndex=articleText.indexOf(wd);
-					console.log(strArticleIndex);
+					//console.log(strArticleIndex);
 					if(strArticleIndex>=0){
 						// 存在于文章处
 						var wdHeadFooterArt=articleText.split(wd);
-						console.log(wdHeadFooterArt[1]);
+						//console.log(wdHeadFooterArt[1]);
 						var wdHeadArt=wdHeadFooterArt[0].substr(-35);
 						var wdFooterArt=wdHeadFooterArt[1].substr(0,50);
 						
@@ -167,8 +167,8 @@ function getArticle(articleClass) {
 					'<img src="../file/icon/browse.svg" class="info_logo"><span class="detailed_data">' + readNum +
 					'</span><img src="../file/icon/up.svg" class="info_logo"><span class="detailed_data">' + upNum + '</span>' +
 					'<img src="../file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +
-					'</span></div><!--右侧投稿者--><div class="head_name_cont"><a href="../personal/personal.php?pid='+authorId+'" target="_blank"><img src="../userFile/' + authorId +
-					'/headPortrait.jpg" alt="head_portrait" class="head_portrait">' +
+					'</span></div><!--右侧投稿者--><div class="head_name_cont"><a href="../personal/personal.php?pid='+authorId+'" target="_blank"><div class="head_portrait_div"><img src="../userFile/' + authorId +
+					'/headPortrait.jpg" alt="head_portrait" class="head_portrait"></div>' +
 					'<div class="user_name">' + authorName + '</div></a></div></div></div>';
 
 				searchArticleContObj.innerHTML = outStr;

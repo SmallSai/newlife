@@ -16,11 +16,11 @@ if($aFilt==0){
 		// a0 b0
 		if($cFilt==0){
 			// a0 b0 c0
-			$query="SELECT * FROM article ORDER BY date DESC";
+			$query="SELECT * FROM article WHERE state='3' ORDER BY date DESC";
 		}
 		else{
 			// a0 b0 cn
-			$query="SELECT * FROM article WHERE type='".$cFilt."' ORDER BY date DESC";
+			$query="SELECT * FROM article WHERE type='".$cFilt."' AND state='3' ORDER BY date DESC";
 		}
 	}
 	else{
@@ -28,11 +28,11 @@ if($aFilt==0){
 			// a0 b1
 			if($cFilt==0){
 				// a0 b1 c0
-				$query="SELECT * FROM article WHERE unSerial='0' ORDER BY date DESC";
+				$query="SELECT * FROM article WHERE unSerial='0' AND state='3' ORDER BY date DESC";
 			}
 			else{
 				// a0 b1 cn
-				$query="SELECT * FROM article WHERE type='".$cFilt."' AND unSerial='0' ORDER BY date DESC";
+				$query="SELECT * FROM article WHERE type='".$cFilt."' AND unSerial='0' AND state='3' ORDER BY date DESC";
 			}
 		}
 		else{
@@ -57,11 +57,11 @@ else{
 			// a1 b0
 			if($cFilt==0){
 				// a1 b0 c0
-				$query="SELECT * FROM article ORDER BY date";
+				$query="SELECT * FROM article WHERE state='3' ORDER BY date";
 			}
 			else{
 				// a1 b0 cn
-				$query="SELECT * FROM article WHERE type='".$cFilt."' ORDER BY date";
+				$query="SELECT * FROM article WHERE type='".$cFilt."' AND state='3' ORDER BY date";
 			}
 		}
 		else{
@@ -69,11 +69,11 @@ else{
 				// a1 b1
 				if($cFilt==0){
 					// a1 b1 c0
-					$query="SELECT * FROM article WHERE unSerial='0' ORDER BY date";
+					$query="SELECT * FROM article WHERE unSerial='0' AND state='3' ORDER BY date";
 				}
 				else{
 					// a1 b1 cn
-					$query="SELECT * FROM article WHERE type='".$cFilt."' AND unSerial='0' ORDER BY date";
+					$query="SELECT * FROM article WHERE type='".$cFilt."' AND unSerial='0' AND state='3' ORDER BY date";
 				}
 			}
 			else{
@@ -98,11 +98,11 @@ else{
 				// a2 b0
 				if($cFilt==0){
 					// a2 b0 c0
-					$query="SELECT * FROM article ORDER BY upNum DESC";
+					$query="SELECT * FROM article WHERE state='3' ORDER BY upNum DESC";
 				}
 				else{
 					// a2 b0 cn
-					$query="SELECT * FROM article WHERE type='".$cFilt."' ORDER BY upNum DESC";
+					$query="SELECT * FROM article WHERE type='".$cFilt."' AND state='3' ORDER BY upNum DESC";
 				}
 			}
 			else{
@@ -110,11 +110,11 @@ else{
 					// a2 b1
 					if($cFilt==0){
 						// a2 b1 c0
-						$query="SELECT * FROM article WHERE unSerial='0' ORDER BY upNum DESC";
+						$query="SELECT * FROM article WHERE unSerial='0' AND state='3' ORDER BY upNum DESC";
 					}
 					else{
 						// a2 b1 cn
-						$query="SELECT * FROM article WHERE type='".$cFilt."' AND unSerial='0' ORDER BY upNum DESC";
+						$query="SELECT * FROM article WHERE type='".$cFilt."' AND unSerial='0' AND state='3' ORDER BY upNum DESC";
 					}
 				}
 				else{

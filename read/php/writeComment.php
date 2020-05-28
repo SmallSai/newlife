@@ -14,8 +14,20 @@ if(key_exists("articleId",$_GET)&&$_GET['articleId']>0){
 	$insertComment="INSERT INTO comment (userId,userName,articleId,content) VALUES(".$userId.",'".$userName."',".$articleId.",'".$content."')";
 	$result=mysqli_query($dbc,$insertComment);
 	
+	$commitId=mysqli_insert_id($dbc);//插入的评论ID
+	
 	// 返回插入行数，正常为1
 	print mysqli_affected_rows($dbc);
+	
+	// 查询被点赞者uid
+	$queryBeUid="SELECT userId FROM article WHERE articleId=".$articleId;
+	$resultBeUid=mysqli_query($dbc,$queryBeUid);
+	$beUid=mysqli_fetch_assoc($resultBeUid)['userId'];
+	
+	// 消息表插入评论消息
+	$insertLetter="INSERT INTO letter(userId,articleId,commitId,actUserId,state,date) VALUES(".$beUid.",".$articleId.",".$commitId.",".$userId.",'2',".time().");";
+	mysqli_query($dbc,$insertLetter);
+	
 }
 else{
 	if(key_exists("chapterId",$_GET)&&$_GET['chapterId']>0){
@@ -26,7 +38,20 @@ else{
 		
 		// 返回插入行数，正常为1
 		print mysqli_affected_rows($dbc);
-		print mysqli_error($dbc);
+		
+		// 查询连载文章对应的aid
+		$queryArticleId="SELECT articleId FROM serial WHERE chapterId=".$chapterId;
+		$resultArticleId=mysqli_query($dbc,$queryArticleId);
+		$articleId=mysqli_fetch_assoc($resultArticleId)['articleId'];
+		
+		// 查询被点赞者uid
+		$queryBeUid="SELECT userId FROM article WHERE articleId=".$articleId;
+		$resultBeUid=mysqli_query($dbc,$queryBeUid);
+		$beUid=mysqli_fetch_assoc($resultBeUid)['userId'];
+		
+		// 消息表插入评论消息
+		$insertLetter="INSERT INTO letter(userId,chapterId,commitId,actUserId,state,date) VALUES(".$beUid.",".$chapterId.",".$commitId.",".$userId.",'2',".time().");";
+		mysqli_query($dbc,$insertLetter);
 	}
 }
 

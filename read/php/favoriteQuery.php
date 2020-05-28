@@ -47,6 +47,15 @@ if($operaFlag==2){
 	// 文章收藏数+1
 	$updateUpNum="UPDATE article SET favoriteNum=favoriteNum+1 WHERE articleId=".$articleId;
 	mysqli_query($dbc,$updateUpNum);
+	
+	// 查询被点赞者uid
+	$queryBeUid="SELECT userId FROM article WHERE articleId=".$articleId;
+	$resultBeUid=mysqli_query($dbc,$queryBeUid);
+	$beUid=mysqli_fetch_assoc($resultBeUid)['userId'];
+	
+	// 收藏消息插入
+	$insertLetter="INSERT INTO letter(userId,articleId,actUserId,state,date) VALUES(".$beUid.",".$articleId.",".$userId.",'4',".time().");";
+	mysqli_query($dbc,$insertLetter);
 }
 
 //3-取消收藏
@@ -60,6 +69,15 @@ if($operaFlag==3){
 	// 文章收藏数-1
 	$updateUpNum="UPDATE article SET favoriteNum=favoriteNum-1 WHERE articleId=".$articleId;
 	mysqli_query($dbc,$updateUpNum);
+	
+	// 查询被点赞者uid
+	$queryBeUid="SELECT userId FROM article WHERE articleId=".$articleId;
+	$resultBeUid=mysqli_query($dbc,$queryBeUid);
+	$beUid=mysqli_fetch_assoc($resultBeUid)['userId'];
+	
+	// 消息表删除信息
+	$deleteLetter="DELETE FROM letter WHERE chapterId=".$chapterId." AND actUserId=".$userId." AND state='4';";
+	mysqli_query($dbc,$deleteLetter);
 }
 
 include("../../php/dbClose.php");

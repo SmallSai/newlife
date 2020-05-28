@@ -58,7 +58,7 @@ if($unSerial==0){
 if($unSerial==1){
 	//情况3：直接发表新的连载文章以及章节
 	if($articleId==-1){
-		$insertArticle="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','$state','$articleText',0,$date);";
+		$insertArticle="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','3','$articleText',0,$date);";
 		mysqli_query($dbc,$insertArticle);
 		
 		$getArticleId=mysqli_insert_id($dbc);
@@ -70,7 +70,7 @@ if($unSerial==1){
 	//情况4：发表新的章节
 	if($articleId>=1){
 		if(array_key_exists("inputFlag",$_POST)&&$_POST['inputFlag']==1){ //新增加章节操作，ID为文章ID
-			$updateArticle="UPDATE article SET title='".$title."',type='".$type."',nature='".$nature."',oriAuthor='".$oriAuthor."',unSerial='".$unSerial."',articleText='".$articleText."',state='".$state."',wordNum=".$wordNum.",date=".$date." WHERE articleId=".$articleId." AND userId=".$userId.";";
+			$updateArticle="UPDATE article SET title='".$title."',type='".$type."',nature='".$nature."',oriAuthor='".$oriAuthor."',unSerial='".$unSerial."',articleText='".$articleText."',state='3',wordNum=".$wordNum.",date=".$date." WHERE articleId=".$articleId." AND userId=".$userId.";";
 			mysqli_query($dbc,$updateArticle);
 			
 			$insertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,state,wordNum,date) VALUES($articleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$state,$wordNum,$date);";

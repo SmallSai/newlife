@@ -8,12 +8,13 @@ $articleClass=$_GET['articleClass'];
 
 // 降序查询，id值大的排前面，限制最多查询7条记录
 if($articleClass=='1'||$articleClass=='2'||$articleClass=='3'||$articleClass=='4'||$articleClass=='5'){
-	$query="SELECT A.articleId AS AarticleId,title,articleText,userId,userName,nature,oriAuthor,unSerial,A.readNum AS AreadNum,A.upNum AS AupNum,favoriteNum,A.date AS Adate,type,chapterId,B.articleId AS BarticleId,chapterTitle,serialText,B.readNum AS BreadNum,B.upNum AS BupNum,B.date AS Bdate FROM article A LEFT JOIN serial B ON A.state='2' AND A.articleId=B.articleId WHERE A.type=".$articleClass." ORDER BY A.date DESC LIMIT 7;";
+	$query="SELECT A.state AS Astate,B.state AS Bstate,A.articleId AS AarticleId,title,articleText,userId,userName,nature,oriAuthor,unSerial,A.readNum AS AreadNum,A.upNum AS AupNum,favoriteNum,A.date AS Adate,type,chapterId,B.articleId AS BarticleId,chapterTitle,serialText,B.readNum AS BreadNum,B.upNum AS BupNum,B.date AS Bdate FROM article A LEFT JOIN serial B ON A.articleId=B.articleId WHERE A.type=".$articleClass." AND ((A.state='3' AND A.unSerial='0') OR (A.unSerial='1' AND B.state='3')) ORDER BY A.date DESC LIMIT 7;";
+	//print $query;
 	// $query="SELECT A.articleId,title,userId,userName,nature,oriAuthor,unSerial,A.readNum,A.upNum,favoriteNum,A.date,type,chapterId,B.articleId,chapterTitle,serialText,B.readNum,B.upNum,B.date FROM article A LEFT JOIN serial B ON A.state='2' AND A.articleId=B.articleId WHERE A.type='1' ORDER BY A.date DESC LIMIT 7";"
 }
 else{
 	if($articleClass=='6'){
-		$query="SELECT A.articleId AS AarticleId,title,articleText,userId,userName,nature,oriAuthor,unSerial,A.readNum AS AreadNum,A.upNum AS AupNum,favoriteNum,A.date AS Adate,type,chapterId,B.articleId AS BarticleId,chapterTitle,serialText,B.readNum AS BreadNum,B.upNum AS BupNum,B.date AS Bdate FROM article A,serial B WHERE A.unSerial='1' AND A.articleId=B.articleId AND A.state='2' ORDER BY A.date DESC LIMIT 7";
+		$query="SELECT A.articleId AS AarticleId,title,articleText,userId,userName,nature,oriAuthor,unSerial,A.readNum AS AreadNum,A.upNum AS AupNum,favoriteNum,A.date AS Adate,type,chapterId,B.articleId AS BarticleId,chapterTitle,serialText,B.readNum AS BreadNum,B.upNum AS BupNum,B.date AS Bdate FROM article A,serial B WHERE A.unSerial='1' AND A.articleId=B.articleId AND B.state='3' ORDER BY A.date DESC LIMIT 7";
 	}
 }
 

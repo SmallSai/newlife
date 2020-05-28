@@ -2,21 +2,26 @@
 include("../php/dbConnect.php");
 // 用户输入关键字
 $wd=mysqli_real_escape_string($dbc,$_GET['wd']);
+if(!$wd){
+	$wd="青春";
+}
 
 // 查询作者AJAX
 $queryAuthor="SELECT * FROM user WHERE userName LIKE '%".$wd."%';";
 $resultAuthor=mysqli_query($dbc,$queryAuthor);
 //print "作者数量".mysqli_num_rows($resultAuthor);
 
-// 查询文章
-$queryArticle="SELECT A.articleId AS AarticleId,title,articleText,userId,userName,nature,".
+//查询文章
+$queryArticle="SELECT A.state AS Astate,B.state AS Bstate,A.articleId AS AarticleId,title,articleText,userId,userName,nature,".
 "oriAuthor,unSerial,A.readNum AS AreadNum,A.upNum AS AupNum,favoriteNum,A.date AS Adate,type".
 ",chapterId,B.articleId AS BarticleId,chapterTitle,serialText,B.readNum AS BreadNum,B.upNum ".
-"AS BupNum,B.date AS Bdate FROM article A LEFT JOIN serial B ON A.state='2' AND A.articleId=B.articleId ".
-"WHERE title LIKE '%".$wd."% OR articleText LIKE '%".$wd."%' OR chapterTitle LIKE '%".$wd."%' OR serialText LIKE '%".$wd."%' ORDER BY A.date DESC LIMIT 7;";
+"AS BupNum,B.date AS Bdate FROM article A LEFT JOIN serial B ON A.articleId=B.articleId ".
+"WHERE (title LIKE '%".$wd."%' OR articleText LIKE '%".$wd."%' OR chapterTitle LIKE '%".$wd."%' OR serialText LIKE '%".$wd."%') AND ((A.state='3' AND A.unSerial='0') OR (A.unSerial='1' AND B.state='3')) ORDER BY A.date DESC LIMIT 7;";
 
+//$queryArticle="SELECT A.state AS Astate,B.state AS Bstate,A.articleId AS AarticleId,title,articleText,userId,userName,nature,oriAuthor,unSerial,A.readNum AS AreadNum,A.upNum AS AupNum,favoriteNum,A.date AS Adate,type,chapterId,B.articleId AS BarticleId,chapterTitle,serialText,B.readNum AS BreadNum,B.upNum AS BupNum,B.date AS Bdate FROM article A LEFT JOIN serial B ON A.articleId=B.articleId WHERE ((A.state='3' AND A.unSerial='0') OR (A.unSerial='1' AND B.state='3')) ORDER BY A.date DESC LIMIT 7;";
+ //print $queryArticle;
 $resultArticle=mysqli_query($dbc,$queryArticle);
-
+//print mysqli_num_rows($resultArticle);
 
 include("../php/dbClose.php");
 ?>
@@ -71,9 +76,9 @@ include("../php/dbClose.php");
 	
 							
 							print '<!-- 具体一个相关作者 --><a href="../personal/personal.php?pid='.$rowAuthor['userId'].'" target="_blank"><div class="search_specific_article">'.
-							'<img src="../userFile/'.$rowAuthor['userId'].'/headPortrait.jpg" alt="head" class="search_author_head"></a>'.
+							'<div class="search_author_head_div"><img src="../userFile/'.$rowAuthor['userId'].'/headPortrait.jpg" alt="head" class="search_author_head"></div></a>'.
 							'<h1 class="search_author_name">'.$keyWdHead.'<span class="key_wd">'.$wd.'</span>'.$keyWdFooter.'</h1>'.
-							'<h2 class="search_follow_mark">+关注<input type="hidden" value="'.$rowAuthor['userId'].'" class="follow_hidden_inp"></h2></div><div class="divsion"></div>';
+							'<h2 class="search_follow_mark" onload="checkFollow()"><span class="sp_follow_word">+关注</span><input type="hidden" value="'.$rowAuthor['userId'].'" class="follow_hidden_inp"></h2></div><div class="divsion"></div>';
 							
 							if($i==($resultAuthorNum-1)){
 								// 已经历遍最后一个结果，退出
@@ -129,6 +134,7 @@ include("../php/dbClose.php");
 		</div>
 	<script src="../js/indexAjaxOtherPage.js"></script>
 	<script src="js/index.js"></script>
-	<script src="../js/indexUserInfo.js"></script>
+	<script src="js/indexUserInfo.js"></script>
+	<script src="js/demo.js"></script>
 	</body>
 </html>

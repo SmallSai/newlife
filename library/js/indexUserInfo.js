@@ -18,7 +18,7 @@ function userInfo(){
 				//设置名字
 				var userHeadCont=document.getElementById("user_href");
 				userHeadCont.innerHTML="你好，"+userName;
-				userHeadCont.setAttribute("href","../user");
+				userHeadCont.setAttribute("href","../personal/personal.php?pid="+userId);
 				
 				var loginCont=document.getElementById("login_on_cont");
 				loginCont.style.display="none";

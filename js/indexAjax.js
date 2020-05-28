@@ -25,6 +25,7 @@ function getArticle(articleClass) {
 			var articleObj = JSON.parse(articleJsonStr)['article'];
 			//将文章插入
 			articleObjLength = articleObj.length;
+			
 			for (var i = 0; i < articleObjLength; i++) {
 				//单篇情况
 				var articleId=articleObj[i]['AarticleId'];
@@ -59,7 +60,7 @@ function getArticle(articleClass) {
 					articleTextPreview =articleText.substr(0,88);
 					
 					for(var key in articleObj[i]){
-						console.log("key:"+key+"---value:"+articleObj[i][key]);
+						//console.log("key:"+key+"---value:"+articleObj[i][key]);
 					}
 					
 					chapterId=articleObj[i]['chapterId'];
@@ -102,15 +103,19 @@ function getArticle(articleClass) {
 					'<img src="file/icon/browse.svg" class="info_logo"><span class="detailed_data">' + readNum +
 					'</span><img src="file/icon/up.svg" class="info_logo"><span class="detailed_data">' + upNum + '</span>' +
 					'<img src="file/icon/collection.svg" class="info_logo"><span class="detailed_data">' + favoriteNum +
-					'</span></div><!--右侧投稿者--><div class="head_name_cont"><a href="personal/personal.php?pid='+authorId+'" target="_blank"><img src="userFile/' + authorId +
-					'/headPortrait.jpg" alt="head_portrait" class="head_portrait">' +
+					'</span></div><!--右侧投稿者--><div class="head_name_cont"><a href="personal/personal.php?pid='+authorId+'" target="_blank"><div class="head_portrait_cont"><img src="userFile/' + authorId +
+					'/headPortrait.jpg" alt="head_portrait" class="head_portrait"></div>' +
 					'<div class="user_name">' + authorName + '</div></a></div></div></div>';
 
 				searchArticleContObj.innerHTML = outStr;
 
 			}
-			searchArticleContObj.innerHTML +=
-				'<!-- 无更多结果文字 --><div class="real_time_article"><p id="no_result">没有更多结果了~</p></div>';
+			
+			if(articleObjLength<7){
+				searchArticleContObj.innerHTML +=
+					'<!-- 无更多结果文字 --><div class="real_time_article"><p id="no_result">没有更多结果了~</p></div>';
+			}
+			
 		}
 	}
 }

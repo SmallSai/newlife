@@ -91,8 +91,8 @@ if(key_exists("cid",$_GET)&&$_GET['cid']!=null){
 			// 增加用户总阅读
 			$updateUserReadNum="UPDATE user SET allReadNum=allReadNum+1 WHERE userId=".$releasUserId;
 			$resultReadNum=mysqli_query($dbc,$updateUserReadNum);
-			print "语句：".$updateUserReadNum."----";
-			print mysqli_error($dbc);
+			//print "语句：".$updateUserReadNum."----";
+			//print mysqli_error($dbc);
 		}
 	}
 	else{
@@ -151,8 +151,8 @@ else{
 				// 增加用户总阅读
 				$updateUserReadNum="UPDATE user SET allReadNum=allReadNum+1 WHERE userId=".$releasUserId;
 				$resultReadNum=mysqli_query($dbc,$updateUserReadNum);
-				print "语句：".$updateUserReadNum."----";
-				print mysqli_error($dbc);
+				//print "语句：".$updateUserReadNum."----";
+				//print mysqli_error($dbc);
 			}
 		}
 		else{
@@ -225,7 +225,7 @@ include("../php/dbClose.php");
 				<!-- 发布人容器 -->
 				<div id="releas_user_cont">
 					<?php
-						print "<img src='../userFile/".$releasUserId."/headPortrait.jpg' id='releas_user_head'>";
+						print "<a href='../personal/personal.php?pid=".$releasUserId."' target='_blank'><div id='release_head_div'><img src='../userFile/".$releasUserId."/headPortrait.jpg' id='releas_user_head'></div></a>";
 					?>
 
 					<!-- 右侧发布人信息 -->
@@ -238,6 +238,9 @@ include("../php/dbClose.php");
 								?>
 							</p>
 							<div id="follow_cont">关注</div>
+							<?php
+								print '<input type="hidden" class="hidden_inp_uid" value="'.$releasUserId.'">';
+							?>
 						</div>
 
 						<!-- 下部分发布时间 -->
@@ -271,7 +274,7 @@ include("../php/dbClose.php");
 
 				<!-- 写评论容器 -->
 				<div id="write_comment">
-					<img src="../file/icon/mine_fill.svg" id="comment_user_head">
+					<div id="comment_user_head_div"><img src="../file/icon/mine_fill.svg" id="comment_user_head"></div>
 					<textarea id="comment_textarea" placeholder="写下你的评论..."></textarea>
 
 					<div id="send_comment_cont">

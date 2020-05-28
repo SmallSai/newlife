@@ -102,7 +102,7 @@ function classFilt(){
 							'<div id="article_bottom_info_cont"><!--左侧阅读，点赞等logo--><div class="info_logo_cont"><img src="../file/icon/browse.svg" class="info_logo read_logo">'+
 							'<span class="detailed_data read_num_data">'+readNum+'</span><img src="../file/icon/up.svg" class="info_logo up_logo">'+
 							'<span class="detailed_data up_num_data">'+upNum+'</span><p class="release_time">'+dateStr+'</p></div><!--右侧投稿者-->'+
-							'<div class="head_name_cont"><img src="../userFile/'+userId+'/headPortrait.jpg" alt="head_portrait" class="head_portrait">'+
+							'<div class="head_name_cont"><div class="head_portrait_div"><img src="../userFile/'+userId+'/headPortrait.jpg" alt="head_portrait" class="head_portrait"></div>'+
 							'<div class="user_name">'+userName+'</div></div></div></div><!-- 第N篇结束 -->';
 						
 						resultArticleCont.innerHTML+=outStr;
@@ -125,6 +125,7 @@ function classFilt(){
 					
 					for(var j=0;j<showChapterObjNum;j++){
 						showChapterObj[j].onclick=function(){
+							chapterCont.innerHTML='';
 							// 隐藏框中的aid值
 							hiddenAid=this.getElementsByClassName("show_chapter_hidden_inp")[0].value;
 							// AJAX加载章节标题
