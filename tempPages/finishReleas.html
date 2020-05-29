@@ -3,8 +3,55 @@
 	<head>
 		<meta charset="utf-8">
 		<title>新生文学-投稿成功</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			
+			body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			#title{
+				font: 85px "宋体";
+				margin-bottom: 30px;
+			}
+			
+			#float{
+				float: right;
+			}
+			
+			#cont{
+				padding-bottom: 100px;
+			}
+			
+			.select_href{
+				font: 40px "黑体";
+				color: #676767;
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+		</style>
 	</head>
 	<body>
-		<h1>恭喜投稿成功</h1>
+		<div id="cont">
+			<p id="title">恭喜投稿成功</p>
+			<div id="select">
+				<a href="../write/" target="_blank"><p class="select_href" id="float">再写一篇</p></a>
+				<a href="../" target="_blank"><p class="select_href" >返回首页</p></a>
+			</div>
+		</div>
+		
 	</body>
 </html>

@@ -46,6 +46,7 @@ if($operaFlag==1){
 
 //2-点赞操作
 if($operaFlag==2){
+	$beUid='';
 	if(isset($_GET['articleId'])){
 		$articleId=mysqli_real_escape_string($dbc,$_GET['articleId']);
 		$insert="INSERT INTO `up`(userId,articleId) VALUES(".$userId.",".$articleId.")";
@@ -66,7 +67,6 @@ if($operaFlag==2){
 		// 消息表插入点赞消息
 		$insertLetter="INSERT INTO letter(userId,articleId,actUserId,state,date) VALUES(".$beUid.",".$articleId.",".$userId.",'3',".time().");";
 		mysqli_query($dbc,$insertLetter);
-		
 	}
 	else{
 		if(isset($_GET['chapterId'])){
@@ -97,11 +97,14 @@ if($operaFlag==2){
 		}
 	}
 	
-	
+	// 被点赞者点赞总数增加
+	$updateAllUp="UPDATE user SET upNum=upNum+1 WHERE userId=".$beUid;
+	mysqli_query($dbc,$updateAllUp);
 }
 
 //3-取消点赞
 if($operaFlag==3){
+	$beUid='';
 	if(isset($_GET['articleId'])){
 		$articleId=mysqli_real_escape_string($dbc,$_GET['articleId']);
 		$delete="DELETE FROM `up` WHERE userId=".$userId." AND articleId=".$articleId;
@@ -118,6 +121,10 @@ if($operaFlag==3){
 		$deleteLetter="DELETE FROM letter WHERE articleId=".$articleId." AND actUserId=".$userId." AND state='3';";
 		mysqli_query($dbc,$deleteLetter);
 		
+		// 查询被点赞者uid
+		$queryBeUid="SELECT userId FROM article WHERE articleId=".$articleId;
+		$resultBeUid=mysqli_query($dbc,$queryBeUid);
+		$beUid=mysqli_fetch_assoc($resultBeUid)['userId'];
 	}
 	else{
 		if(isset($_GET['chapterId'])){
@@ -136,8 +143,22 @@ if($operaFlag==3){
 			// 消息表删除信息
 			$deleteLetter="DELETE FROM letter WHERE chapterId=".$chapterId." AND actUserId=".$userId." AND state='3';";
 			mysqli_query($dbc,$deleteLetter);
+			
+			// 查询连载文章对应的aid
+			$queryArticleId="SELECT articleId FROM serial WHERE chapterId=".$chapterId;
+			$resultArticleId=mysqli_query($dbc,$queryArticleId);
+			$articleId=mysqli_fetch_assoc($resultArticleId)['articleId'];
+			
+			// 查询被点赞者uid
+			$queryBeUid="SELECT userId FROM article WHERE articleId=".$articleId;
+			$resultBeUid=mysqli_query($dbc,$queryBeUid);
+			$beUid=mysqli_fetch_assoc($resultBeUid)['userId'];
 		}
 	}
+	
+	// 被点赞者点赞总数增加
+	$updateAllUp="UPDATE user SET upNum=upNum-1 WHERE userId=".$beUid;
+	mysqli_query($dbc,$updateAllUp);
 }
 
 include("../../php/dbClose.php");

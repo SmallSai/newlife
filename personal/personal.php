@@ -40,14 +40,7 @@ else{
 	$pFanNum=$row['fanNum'];
 	$pUpNum=$row['upNum'];
 	$pAllReadNum=$row['allReadNum'];
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
 
 
@@ -249,6 +242,6 @@ else{
 	
 	<script src="../js/deleteCookieOtherPage.js"></script>
 	<script src="js/personalAjax.js"></script>
-	<script src="js/viewchapter.js"></script>
+	<!-- <script src="js/viewchapter.js"></script> -->
 </body>
 </html>

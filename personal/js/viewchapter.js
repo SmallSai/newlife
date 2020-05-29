@@ -3,7 +3,7 @@ function viewChapter(){
 	// 加载完成后可执行查看章节目录操作
 	var showChapterObj=document.getElementsByClassName("view_chapter");
 	var showChapterObjNum=showChapterObj.length;
-	
+	console.log(showChapterObjNum);
 	var hiddenAid='';
 	var outStrChapter='';
 	

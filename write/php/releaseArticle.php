@@ -43,6 +43,7 @@ if($unSerial==0){
 		$query="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','$state','$articleText','$wordNum',$date);";
 		mysqli_query($dbc,$query);
 		print mysqli_affected_rows($dbc);
+		
 	}
 	
 	//情况2：从草稿中发表单篇文章
@@ -52,7 +53,9 @@ if($unSerial==0){
 		print mysqli_affected_rows($dbc);
 	}
 	
-	
+	// 用户总文章+1
+	$updateArticleNum="UPDATE user SET articleNum=articleNum+1 WHERE userId=".$userId;
+	mysqli_query($dbc,$updateArticleNum);
 }
 
 if($unSerial==1){
@@ -65,6 +68,10 @@ if($unSerial==1){
 		$insertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,state,wordNum,date) VALUES($getArticleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$state,$wordNum,$date);";
 		mysqli_query($dbc,$insertSerial);
 		print mysqli_affected_rows($dbc);
+		
+		// 用户总文章+1
+		$updateArticleNum="UPDATE user SET articleNum=articleNum+1 WHERE userId=".$userId;
+		mysqli_query($dbc,$updateArticleNum);
 	}
 	
 	//情况4：发表新的章节
