@@ -43,6 +43,7 @@ if($unSerial==0){
 		$query="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','$state','$articleText','$wordNum',$date);";
 		mysqli_query($dbc,$query);
 		print mysqli_affected_rows($dbc);
+		
 	}
 	
 	//情况2：从草稿中发表单篇文章
@@ -52,25 +53,31 @@ if($unSerial==0){
 		print mysqli_affected_rows($dbc);
 	}
 	
-	
+	// 用户总文章+1
+	$updateArticleNum="UPDATE user SET articleNum=articleNum+1 WHERE userId=".$userId;
+	mysqli_query($dbc,$updateArticleNum);
 }
 
 if($unSerial==1){
 	//情况3：直接发表新的连载文章以及章节
 	if($articleId==-1){
-		$insertArticle="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','$state','$articleText',0,$date);";
+		$insertArticle="INSERT INTO article(title,userId,userName,type,nature,oriAuthor,unSerial,state,articleText,wordNum,date) VALUES('$title',$userId,'$userName','$type','$nature','$oriAuthor','$unSerial','3','$articleText',0,$date);";
 		mysqli_query($dbc,$insertArticle);
 		
 		$getArticleId=mysqli_insert_id($dbc);
 		$insertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,state,wordNum,date) VALUES($getArticleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$state,$wordNum,$date);";
 		mysqli_query($dbc,$insertSerial);
 		print mysqli_affected_rows($dbc);
+		
+		// 用户总文章+1
+		$updateArticleNum="UPDATE user SET articleNum=articleNum+1 WHERE userId=".$userId;
+		mysqli_query($dbc,$updateArticleNum);
 	}
 	
 	//情况4：发表新的章节
 	if($articleId>=1){
 		if(array_key_exists("inputFlag",$_POST)&&$_POST['inputFlag']==1){ //新增加章节操作，ID为文章ID
-			$updateArticle="UPDATE article SET title='".$title."',type='".$type."',nature='".$nature."',oriAuthor='".$oriAuthor."',unSerial='".$unSerial."',articleText='".$articleText."',state='".$state."',wordNum=".$wordNum.",date=".$date." WHERE articleId=".$articleId." AND userId=".$userId.";";
+			$updateArticle="UPDATE article SET title='".$title."',type='".$type."',nature='".$nature."',oriAuthor='".$oriAuthor."',unSerial='".$unSerial."',articleText='".$articleText."',state='3',wordNum=".$wordNum.",date=".$date." WHERE articleId=".$articleId." AND userId=".$userId.";";
 			mysqli_query($dbc,$updateArticle);
 			
 			$insertSerial="INSERT INTO serial(articleId,chapterTitle,chapterNum,chapterClass,serialText,state,wordNum,date) VALUES($articleId,'$chapterTitle',$chapterNum,'$chapterClass','$serialText',$state,$wordNum,$date);";

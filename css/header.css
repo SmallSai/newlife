@@ -1,4 +1,4 @@
-/* 顶部栏复用css */
+/* 顶部栏复用css以及右侧我的信息css*/
 *{
 	margin: 0;
 	padding: 0;
@@ -109,19 +109,50 @@ header{
 	display: none;
 }
 
+/* 有消息时的红点 */
+#read_dot{
+	display: none;
+	width: 5px;
+	height: 5px;
+	background-color: red;
+	border-radius: 50%;
+	float: right;
+	margin-right: 60px;
+	margin-bottom: -15px;
+}
+
+#read_dot_mail{
+	background-color: red;
+	display: none;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	position: absolute;
+	/* margin-bottom: 20px; */
+	vertical-align: top;
+}
 /* 鼠标浮在头像(a元素)上以及本体上显示本体操作栏 */
 #header_operation_cont:hover,#user_head_href:hover+#header_operation_cont{
 	display: block;
 }
 
-#user_head{
+#user_head_img_cont{
+	display: inline-block;
 	width: 38px;
-	border-radius: 20px;
+	height: 38px;
 	margin-left: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	
+}
+
+#user_head{
+	height: 38px;
 }
 
 /* 个人操作按钮 */
 #header_operation_cont{
+	z-index: 1;
 	margin-top: -22px;
 	display: none;
 	position: absolute;
@@ -181,4 +212,62 @@ header{
 #write_logo{
 	width: 30px;
 	vertical-align: middle;
+}
+
+/* 右侧我的信息css */
+#my_mail_cont{
+	z-index: 0;
+	position: fixed;
+	right: 0;
+	width: 250px;
+	top: 57px;
+	height: 879px;
+	border: solid 1px;
+	border-right: none;
+	display: none;
+	padding: 0 10px;
+	color: #b3b3b3;
+	background: #ffffff;
+}
+
+#specific_mail_cont{
+	overflow-y: scroll;
+	overflow-style: unset;
+	height: 820px;
+}
+
+#my_mail_title{
+	margin: 5px 0;
+	text-align: center;
+	font: 20px "宋体";
+	color: #535353;
+}
+
+.specifc_mail{
+	list-style: none;
+	font: 18px "楷体";
+	color: #535353;
+	padding: 10px 0;
+	border-top: solid 1px #bcbcbc;
+}
+
+.mail_date{
+	text-align: right;
+	color: #535353;
+	font-size: 13px;
+	color: #999999;
+}
+
+#close_mail{
+	font-size: 20px;
+	float: left;
+	cursor: pointer;
+}
+
+#actUserName{
+	font-size: inherit;
+}
+
+.refuse_reason{
+	font-size: inherit;
 }

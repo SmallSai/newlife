@@ -14,12 +14,19 @@ function scrollIma(){
 	//正在展示的图片
 	var showFlag=0;
 	placeIma.setAttribute("src","image/scrollIma0.jpg");
-	// imaHref.setAttribute("href")
+	imaHref.setAttribute("href","tempPages/page1.html");
 	
 	//每5秒变化一次图片
 	setInterval(function(){
 		$("#scroll_ima").fadeOut(300,function(){
-			placeIma.setAttribute("src","image/scrollIma"+(showFlag+1)%3+".jpg");
+			if((showFlag+1)%2==0){
+				imaHref.setAttribute("href","tempPages/page1.html");
+			}
+			else{
+				imaHref.removeAttribute("href");
+			}
+			
+			placeIma.setAttribute("src","image/scrollIma"+(showFlag+1)%2+".jpg");
 			$("#scroll_ima").fadeIn(300);
 			showFlag++;
 		});

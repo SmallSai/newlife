@@ -309,3 +309,32 @@ body {
 	border-radius: 50%;
 	cursor: pointer;
 }
+
+.view_chapter{
+	text-align: center;
+	font-size: 18px;
+	padding: 20px 0;
+	cursor: pointer;
+}
+
+a{
+	text-decoration: none;
+}
+
+#follow_cont{
+	cursor: pointer;
+	text-align: center;
+	font: 20px "宋体";
+	margin-top: 80px;
+	border: solid 1px;
+	color: #FFFFFF;
+	padding: 5px 0;
+	border-radius: 20px;
+}
+
+.previous_page,.next_page{
+	cursor: pointer;
+}
+
+
+

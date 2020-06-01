@@ -20,7 +20,7 @@
 }
 
 #float_user_operation_head{
-	width:50px;
+	height: 50px;
 	border-radius:25px;
 }
 
@@ -31,6 +31,8 @@
 
 #float_user_head_cont{
 	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
 .float_operation_logo{

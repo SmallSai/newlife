@@ -6,7 +6,6 @@
 	position:fixed;
 	top:100px;
 	right:100px;
-	//background-color: #40E0D0;
 
 }
 
@@ -14,6 +13,8 @@
 	width:55px;
 	margin: 0 auto;
 	background-color: #FFFFFF;
+	border-radius: 50px;
+	border: solid 2px #ececec;
 }
 
 /*----用户操作logo----*/
@@ -23,17 +24,17 @@
 }
 
 #float_user_operation_head{
-	width:50px;
-	border-radius:25px;
-}
-
-#float_user_head_operation_cont{
-	border-radius: 50px;
-	border: solid 2px #ececec;
+	height: 50px;
 }
 
 #float_user_head_cont{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	margin-left: 3px;
 	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
 .float_operation_logo{

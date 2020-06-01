@@ -120,3 +120,25 @@ fieldset{
 	background-color:rgba(59,194,29,.2) ;
 	
 }
+
+.head_view{
+	height: 60px;
+	border-radius: 50%;
+}
+
+#change_head_but{
+	margin: 10px 0;
+}
+
+/* 初始头像 */
+.head_cont{
+	height: 60px;
+}
+
+.head_cont_div{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+}

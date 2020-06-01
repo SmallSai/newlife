@@ -262,9 +262,16 @@ body{
 	float:right;
 }
 
+.head_portrait_cont{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+}
+
 .head_portrait{
-	width:30px;
-	border-radius:20px;	
+	height: 30px;
 }
 
 .user_name{
